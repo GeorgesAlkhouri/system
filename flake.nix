@@ -38,6 +38,10 @@
         (std.blockTypes.nixago "configs")
         (std.blockTypes.devshells "shells")
       ];
+    }
+    {
+      devShells = std.harvest self ["repo" "shells"];
+      packages = std.harvest self ["repo" "packages"];
     };
 
   nixConfig = {
