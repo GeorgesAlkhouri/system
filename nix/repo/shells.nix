@@ -2,6 +2,7 @@
   inputs,
   cell,
 }: let
+  inherit (inputs.std) lib;
   l = inputs.nixpkgs.lib // builtins;
 in
   l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
@@ -11,10 +12,13 @@ in
       imports = [inputs.std.std.devshellProfiles.default];
 
       nixago = [
-        inputs.std.lib.cfg.conform
-        (inputs.std.lib.cfg.treefmt cell.configs.treefmt)
-        (inputs.std.lib.cfg.editorconfig cell.configs.editorconfig)
-        (inputs.std.lib.cfg.lefthook cell.configs.lefthook)
+        ((lib.dev.mkNixago lib.cfg.conform)
+          {data = {inherit (inputs) cells;};})
+        ((lib.dev.mkNixago lib.cfg.treefmt)
+          cell.configs.treefmt)
+        ((lib.dev.mkNixago lib.cfg.editorconfig)
+          cell.configs.editorconfig)
+        (lib.dev.mkNixago lib.cfg.lefthook)
       ];
     };
   }

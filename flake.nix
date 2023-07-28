@@ -2,7 +2,6 @@
   outputs = {
     self,
     std,
-    incl,
     ...
   } @ inputs: let
     nixpkgsConfig = {
@@ -11,7 +10,7 @@
   in
     std.growOn {
       inherit inputs nixpkgsConfig;
-      cellsFrom = incl ./nix ["repo"];
+      cellsFrom = ./nix;
       cellBlocks = [
         (std.blockTypes.nixago "configs")
         (std.blockTypes.devshells "shells")
@@ -22,20 +21,10 @@
       packages = std.harvest self ["repo" "packages"];
     };
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    std = {
-      url = "github:divnix/std/release/0.23";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    incl = {
-      url = "github:divnix/incl";
-      inputs.nixlib.follows = "std/dmerge/haumea/nixpkgs";
-    };
+    std.url = "github:divnix/std";
+    std.inputs.devshell.url = "github:numtide/devshell";
+    std.inputs.nixago.url = "github:nix-community/nixago";
+    nixpkgs.follows = "std/nixpkgs";
   };
   nixConfig = {
     extra-experimental-features = "nix-command flakes";
