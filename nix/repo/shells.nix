@@ -6,7 +6,7 @@
 in
   l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
     default = {
-      name = "hive-example";
+      name = "devshell";
 
       imports = [inputs.std.std.devshellProfiles.default];
 

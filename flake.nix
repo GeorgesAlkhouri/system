@@ -1,26 +1,4 @@
 {
-  description = "Cognitive Singularity";
-
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    std = {
-      url = "github:divnix/std/release/0.23";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    incl = {
-      url = "github:divnix/incl";
-      inputs.nixlib.follows = "std/dmerge/haumea/nixpkgs";
-    };
-  };
-
   outputs = {
     self,
     std,
@@ -43,7 +21,22 @@
       devShells = std.harvest self ["repo" "shells"];
       packages = std.harvest self ["repo" "packages"];
     };
-
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    std = {
+      url = "github:divnix/std/release/0.23";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    incl = {
+      url = "github:divnix/incl";
+      inputs.nixlib.follows = "std/dmerge/haumea/nixpkgs";
+    };
+  };
   nixConfig = {
     extra-experimental-features = "nix-command flakes";
     extra-substituters = [
