@@ -1,0 +1,6 @@
+#![enable(implicit_some)]
+(
+    border_width: 0,
+    margin: 5,
+    background_color: "#000000",
+)

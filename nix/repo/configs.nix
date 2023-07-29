@@ -42,35 +42,18 @@
   treefmt = {
     packages = [
       inputs.nixpkgs.alejandra
-      inputs.nixpkgs.nodePackages.prettier
-      inputs.nixpkgs.nodePackages.prettier-plugin-toml
       inputs.nixpkgs.shfmt
+      inputs.nixpkgs.taplo
     ];
-    devshell.startup.prettier-plugin-toml = inputs.nixpkgs.lib.stringsWithDeps.noDepEntry ''
-      export NODE_PATH=${inputs.nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH-}
-    '';
     data = {
       formatter = {
         nix = {
           command = "alejandra";
           includes = ["*.nix"];
         };
-        prettier = {
-          command = "prettier";
-          options = ["--plugin" "prettier-plugin-toml" "--write"];
-          includes = [
-            "*.css"
-            "*.html"
-            "*.js"
-            "*.json"
-            "*.jsx"
-            "*.md"
-            "*.mdx"
-            "*.scss"
-            "*.ts"
-            "*.yaml"
-            "*.toml"
-          ];
+        toml = {
+          command = "taplo";
+          includes = ["*.toml"];
         };
         shell = {
           command = "shfmt";

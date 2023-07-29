@@ -1,0 +1,63 @@
+{inputs}: let
+  inherit (inputs.nixpkgs) lib;
+in {
+  enable = true;
+  commandLineArgs = [
+    "--enable-unsafe-webgpu"
+    "--enable-features=Vulkan"
+    "--disable-background-timer-throttling"
+    "--disable-backgrounding-occluded-windows"
+    "--disable-breakpad"
+    "--disable-device-discovery-notifications"
+    "--disable-ipc-flooding-protection"
+    "--disable-notifications"
+    "--disable-popup-blocking"
+    "--disable-reading-from-canvas"
+    "--disable-renderer-backgrounding"
+    "--disable-search-engine-collection"
+    "--disable-smooth-scrolling"
+    "--disable-speech-api"
+    "--disable-speech-synthesis-api"
+    "--disable-sync"
+    "--disable-sync-preferences"
+    "--disable-translate"
+    "--disable-wake-on-wifi"
+    "--document-user-activation-required"
+    "--enable-accelerated-video-decode"
+    "--enable-parallel-downloading"
+    "--enable-dom-distiller"
+    "--enable-gpu-rasterization"
+    "--enable-reader-mode"
+    "--enable-zero-copy"
+    "--extension-mime-request-handling=always-prompt-for-install"
+    "--fingerprinting-canvas-image-data-noise"
+    "--fingerprinting-canvas-measuretext-noise"
+    "--fingerprinting-client-rects-noise"
+    "--ignore-gpu-blocklist"
+    "--load-media-router-component-extension"
+    "--no-crash-upload"
+    "--no-default-browser-check"
+    "--no-experiments"
+    "--no-first-run"
+    "--no-pings"
+    "--no-recovery-component"
+    "--no-report-upload"
+    "--no-service-autorun"
+    "--no-wifi"
+    "--password-store=basic"
+    "--popups-to-tabs"
+    "--show-avatar-button=incognito-and-guest"
+    "--url about:blank"
+
+    "--enable-features=${lib.concatStringsSep "," [
+      "OverlayScrollbar"
+      "VaapiVideoDecoder"
+      "BackForwardCache:enable_same_site/true"
+    ]}"
+
+    "--disable-features=${lib.concatStringsSep "," [
+      "MediaEngagementBypassAutoplayPolicies"
+      "PreloadMediaEngagementData"
+    ]}"
+  ];
+}
