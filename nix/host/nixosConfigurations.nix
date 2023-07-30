@@ -20,7 +20,7 @@
       base
     ];
 
-    users.nixos = {
+    home-manager.users.nixos = {
       imports = with cell.homeProfiles; [
         inputs.sops-nix.homeManagerModules.sops
         base
