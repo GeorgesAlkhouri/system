@@ -1,7 +1,7 @@
 def main [] {}
 
 export def rebuild [] {
-  watchexec --exts=nix git add .; git commit --amend; sudo nixos-rebuild switch --impure --flake .#host-default
+  watchexec --exts=nix sudo nixos-rebuild switch --impure --flake .#host-default
 }
 
 export def syntaxes [] {

@@ -1,0 +1,3 @@
+{
+  user.startServices = "sd-switch";
+}

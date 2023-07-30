@@ -1,3 +1,3 @@
 {
-  imeZone = "Europe/Warsaw";
+  timeZone = "Europe/Warsaw";
 }

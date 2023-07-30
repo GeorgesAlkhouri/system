@@ -20,6 +20,14 @@
       base
     ];
 
+    users.nixos = {
+      imports = with cell.homeProfiles; [
+        inputs.sops-nix.homeManagerModules.sops
+        base
+        graphical
+      ];
+    };
+
     nix.settings.experimental-features = "nix-command flakes";
     nix.settings.trusted-users = ["root" "nixos"];
 
