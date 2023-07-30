@@ -23,6 +23,19 @@ in
         {
           package = nixpkgs.jq;
         }
+        {
+          package = inputs.nixpkgs.nvfetcher;
+          category = "versioning";
+        }
+        {
+          package = inputs.nixpkgs.sops;
+          category = "secrets";
+        }
+
+        {
+          package = inputs.nixpkgs.age;
+          category = "secrets";
+        }
       ];
     };
   }

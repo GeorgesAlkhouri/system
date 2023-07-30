@@ -11,7 +11,7 @@ export def monitor [] {
 
 export def rebuild [] {
   git add .
-  sudo nixos-rebuild switch --impure --flake .#host-default
+  sudo nixos-rebuild switch --impure --flake "/home/nixos/system#host-default"
 }
 
 export def syntaxes [] {
@@ -29,6 +29,14 @@ export def syntaxes [] {
   }
 }
 
-export def contrib [] {
-
+export def contribution [] {
+  let path = "/home/nixos/contribution"
+  mkdir $path
+  cd $path
+  gh repo list cognitive-singularity --json url
+  | from json
+  | get url
+  | par-each {|i|
+    git clone $i ($i | url parse | get path | str downcase | split column "/" | get column3)
+  }
 }

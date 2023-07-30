@@ -4,6 +4,7 @@
       inherit (flake-parts-lib) importApply;
       flakeModules.hive = importApply ./hive-flake-module.nix {inherit (inputs) hive;};
     in {
+      debug = true;
       imports = [
         flakeModules.hive
         inputs.std.flakeModule

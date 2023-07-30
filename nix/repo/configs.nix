@@ -52,7 +52,7 @@
           includes = ["*.nix"];
         };
         toml = {
-          command = "taplo";
+          command = "taplo fmt";
           includes = ["*.toml"];
         };
         shell = {
