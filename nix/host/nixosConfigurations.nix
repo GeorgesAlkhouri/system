@@ -13,10 +13,11 @@
       home = inputs.home;
     };
 
-    imports = [
+    imports = with cell.nixosProfiles; [
       ./hardware-configuration.nix
       inputs.sops-nix.nixosModules.sops
       inputs.home.nixosModules.home-manager
+      base
     ];
 
     boot.loader.systemd-boot.enable = true;
