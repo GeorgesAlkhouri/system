@@ -9,6 +9,10 @@
       inherit (inputs.nixpkgs) system;
     };
 
-    imports = with cell.homeProfiles; [base graphical];
+    imports = with cell.homeProfiles; [
+      sops-nix.homeManagerModules.sops
+      base
+      graphical
+    ];
   };
 }

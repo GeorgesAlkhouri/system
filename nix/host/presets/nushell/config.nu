@@ -1,3 +1,5 @@
+use /home/nixos/system/start.nu *
+
 $env.config = {
   show_banner: false
 
@@ -22,5 +24,13 @@ $env.config = {
       methodology: wrapping
       wrapping_try_keep_words: true
     }
+  }
+
+  hooks: {
+    pre_prompt: [{ ||
+      let direnv = (direnv export json | from json)
+      let direnv = if ($direnv | length) == 1 { $direnv } else { {} }
+      $direnv | load-env
+    }]
   }
 }

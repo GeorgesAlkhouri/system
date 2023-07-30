@@ -6,39 +6,14 @@
     in {
       imports = [
         flakeModules.hive
-
         inputs.std.flakeModule
-        inputs.treefmt-nix.flakeModule
-        inputs.devenv.flakeModule
       ];
-      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
+      systems = import inputs.systems;
       perSystem = {
         config,
         system,
         ...
-      }: {
-        treefmt.programs.alejandra.enable = true;
-        treefmt.projectRootFile = ".git/config";
-        devenv.shells.devenv = {
-          pre-commit = {
-            hooks = {
-              shfmt.enable = true;
-              shellcheck.enable = true;
-              alejandra.enable = true;
-              deadnix.enable = false;
-              nil.enable = true;
-              black.enable = true;
-              commitizen.enable = true;
-            };
-          };
-          packages = [
-            config.treefmt.build.wrapper
-            inputs.std.packages.${system}.std
-            inputs.colmena.packages.${system}.colmena
-            inputs.nvfetcher.packages.${system}.default
-          ];
-        };
-      };
+      }: {};
       std = {
         grow = {
           cellsFrom = ./nix;
@@ -62,7 +37,6 @@
       hive.collect = [
         "nixosConfigurations"
         "homeConfigurations"
-        "colmenaConfigurations"
       ];
       flake = {
         colmenaHive = inputs.hive.collect inputs.self "colmenaConfigurations";
@@ -76,6 +50,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs-fork.url = "github:cognitive-singularity/nixpkgs";
 
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -118,6 +93,8 @@
     hive.inputs.disko.follows = "disko";
 
     home.url = "github:nix-community/home-manager";
+    home-stable.url = "github:nix-community/home-manager/release-23.05";
+    home-fork.url = "github:cognitive-singularity/home-manager";
     home.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin/master";
@@ -135,6 +112,8 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+
+    systems.url = "github:nix-systems/default";
   };
 
   nixConfig = {

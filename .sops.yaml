@@ -1,0 +1,9 @@
+keys:
+  - &host_nixos age1eluxcwllls3p88wem8zrrmkt2glz0aarfcnxyxna83dqus7273uq2jtjf4
+  - &user_nixos age14yfee3uzfggn86k5v9m6rhslh3adq5y2am37c8xqyepkrwtatgkqvvlhdp
+creation_rules:
+  - path_regex: nix/host/secrets/[^/]+\.yml$
+    key_groups:
+    - age:
+      - *host_nixos
+      - *user_nixos

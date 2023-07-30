@@ -22,25 +22,57 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    sops.defaultSopsFile = "${cell}/secrets/secrets.yml";
+    sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+
+    # sops.secrets."github_token" = {};
+
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.extraSpecialArgs = {inherit inputs;};
-    home-manager.users.nixos.systemd.user.startServices = "sd-switch";
+
     home-manager.users.nixos = {
-      imports = with cell.homeProfiles; [base graphical];
+      imports = with cell.homeProfiles; [
+        inputs.sops-nix.homeManagerModules.sops
+        base
+        graphical
+      ];
+
+      # sops.defaultSopsFile = "${cell}/secrets/secrets.yml";
+      # sops.age.sshKeyPaths = ["/home/nixos/.ssh/id_ed25519"];
+
+      # sops.secrets.github_token = {};
+
+      systemd.user.startServices = "sd-switch";
+
+      home.sessionVariables = {
+        # GPG_TTY = "$(tty)";
+        # KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
+        # GH_TOKEN = "$(cat ${nixosConfig.sops.secrets.gh_token.path})";
+        # #    AWS_CONFIG_FILE = nixosConfig.sops.secrets.awscli2-config.path;
+        # #    AWS_SHARED_CREDENTIALS_FILE =
+        # #      nixosConfig.sops.secrets.awscli2-credentials.path;
+        # OPENAI_API_KEY = "$(cat ${nixosConfig.sops.secrets.openai_api_key.path})";
+        # XDG_SESSION_TYPE = "wayland";
+        # XDG_CURRENT_DESKTOP = "sway";
+        # BROWSER = "firefox";
+      };
+
+      xdg.configFile."nushell/config.nu".source = ./presets/nushell/config.nu;
+      xdg.configFile."nushell/env.nu".source = ./presets/nushell/env.nu;
+      xdg.configFile."leftwm/config.ron".source = ./presets/leftwm/config.ron;
+      xdg.configFile."leftwm/themes/current/theme.ron".source = ./presets/leftwm/theme.ron;
+      xdg.configFile."leftwm/themes/current/up".executable = true;
+      xdg.configFile."leftwm/themes/current/up".source = ./presets/leftwm/up.sh;
+      xdg.configFile."leftwm/themes/current/down".executable = true;
+      xdg.configFile."leftwm/themes/current/down".source = ./presets/leftwm/down.sh;
+      xdg.configFile."tree-sitter/config.json".text = inputs.nixpkgs.lib.generators.toJSON {} {
+        "parser-directories" = ["/home/nixos/.config/tree-sitter/syntaxes"];
+      };
     };
 
-    home-manager.users.nixos.xdg.configFile."nushell/config.nu".source = ./presets/nushell/config.nu;
-    home-manager.users.nixos.xdg.configFile."nushell/env.nu".source = ./presets/nushell/env.nu;
-    home-manager.users.nixos.xdg.configFile."leftwm/config.ron".source = ./presets/leftwm/config.ron;
-    home-manager.users.nixos.xdg.configFile."leftwm/theme.ron".source = ./presets/leftwm/theme.ron;
-    home-manager.users.nixos.xdg.configFile."leftwm/themes/current/up".executable = true;
-    home-manager.users.nixos.xdg.configFile."leftwm/themes/current/up".source = ./presets/leftwm/up.sh;
-    home-manager.users.nixos.xdg.configFile."leftwm/themes/current/down".executable = true;
-    home-manager.users.nixos.xdg.configFile."leftwm/themes/current/down".source = ./presets/leftwm/down.sh;
-    home-manager.users.nixos.xdg.configFile."tree-sitter/config.json".text = inputs.nixpkgs.lib.generators.toJSON {} {
-      "parser-directories" = ["/home/nixos/.config/tree-sitter/syntaxes"];
-    };
+    nix.settings.experimental-features = "nix-command flakes";
+    nix.settings.trusted-users = ["root" "nixos"];
 
     networking.hostName = "nixos";
 
