@@ -38,13 +38,8 @@
 
       systemd.user.startServices = "sd-switch";
 
-      # sops.defaultSopsFile = ./secrets/secrets.yml;
-      # sops.age.sshKeyPaths = ["/home/nixos/.ssh/id_ed25519"];
-
-      # # sops.secrets.gh_token = {};
-      home.sessionVariables = {
-        GH_TOKEN = "$(cat ${cell.homeConfigurations.sops.secrets.gh_token.path})";
-      };
+      sops.defaultSopsFile = ./secrets/secrets.yml;
+      sops.age.sshKeyPaths = ["/home/nixos/.ssh/id_ed25519"];
 
       xdg.configFile."nushell/config.nu".source = ./presets/nushell/config.nu;
       xdg.configFile."nushell/env.nu".source = ./presets/nushell/env.nu;

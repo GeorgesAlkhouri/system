@@ -23,6 +23,7 @@
             homeConfigurations
             colmenaConfigurations
             (functions "homeProfiles")
+            (functions "nixosProfiles")
             (functions "lib")
             (nixago "configs")
             (devshells "shells")
