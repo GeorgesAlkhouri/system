@@ -4,9 +4,8 @@ def main [cmd] {
   }
 }
 
-
 export def monitor [] {
-  watchexec --exts=nix nu start.nu rebuild
+  watchexec --exts=nix nu main.nu rebuild
 }
 
 export def rebuild [] {

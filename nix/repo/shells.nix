@@ -2,13 +2,19 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs;
   inherit (inputs.std) lib;
+
   l = inputs.nixpkgs.lib // builtins;
+
+  nixpkgs =
+    inputs.nixpkgs.appendOverlays
+    [];
 in
   l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
     default = {
       name = "devshell";
+
+      packages = [cell.packages.wgsl-analyzer];
 
       imports = [inputs.std.std.devshellProfiles.default];
 
@@ -22,6 +28,7 @@ in
       commands = [
         {
           package = nixpkgs.jq;
+          category = "tools";
         }
         {
           package = inputs.nixpkgs.nvfetcher;
@@ -31,7 +38,6 @@ in
           package = inputs.nixpkgs.sops;
           category = "secrets";
         }
-
         {
           package = inputs.nixpkgs.age;
           category = "secrets";

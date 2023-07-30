@@ -6,8 +6,8 @@
     in {
       debug = true;
       imports = [
-        flakeModules.hive
         inputs.std.flakeModule
+        flakeModules.hive
       ];
       systems = import inputs.systems;
       perSystem = {
@@ -25,15 +25,18 @@
             colmenaConfigurations
             (functions "homeProfiles")
             (functions "nixosProfiles")
+            (installables "packages")
             (functions "lib")
             (nixago "configs")
             (devshells "shells")
           ];
-          nixpkgsConfig = {allowUnfree = true;};
+          nixpkgsConfig = {
+            allowUnfree = true;
+          };
         };
         harvest = {
           devShells = ["repo" "shells"];
-          packages = ["repo" "packages"];
+          packages = [["repo" "packages"] ["host" "packages"]];
         };
       };
       hive.collect = [
@@ -116,6 +119,18 @@
     sops-nix.inputs.nixpkgs-stable.follows = "nixpkgs-stable";
 
     systems.url = "github:nix-systems/default";
+
+    fenix.url = "github:nix-community/fenix";
+    fenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    crane.url = "github:ipetkov/crane";
+    crane.inputs.nixpkgs.follows = "nixpkgs";
+
+    dream2nix.url = "github:nix-community/dream2nix";
+    dream2nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    poetry2nix.url = "github:nix-community/poetry2nix";
+    poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {

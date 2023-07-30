@@ -1,0 +1,22 @@
+{
+    "nu_plugin_json_path": {
+        "cargoLocks": null,
+        "date": "2023-07-27",
+        "extract": null,
+        "name": "nu_plugin_json_path",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "nu_plugin_json_path",
+            "rev": "252e120d64b586a10e39ed3b545383936492d37f",
+            "sha256": "sha256-q7aisxwx1vVPXyxXZKz2k2YaNo4llLYAxzEGWNMO9bc=",
+            "type": "github"
+        },
+        "version": "252e120d64b586a10e39ed3b545383936492d37f"
+    }
+}

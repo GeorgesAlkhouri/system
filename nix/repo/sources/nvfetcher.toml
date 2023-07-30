@@ -1,0 +1,6 @@
+[nu_plugin_json_path]
+src.git = "https://github.com/cognitive-singularity/nu_plugin_json_path"
+fetch.github = "cognitive-singularity/nu_plugin_json_path"
+
+
+

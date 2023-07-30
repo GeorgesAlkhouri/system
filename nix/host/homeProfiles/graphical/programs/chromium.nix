@@ -20,7 +20,6 @@ in {
     "--enable-features=${lib.concatStringsSep "," [
       "OverlayScrollbar"
       "VaapiVideoDecoder"
-      "BackForwardCache:enable_same_site/true"
     ]}"
 
     "--disable-features=${lib.concatStringsSep "," [

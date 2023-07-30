@@ -123,3 +123,6 @@ syntaxes:
     - https://github.com/wasm-lsp/tree-sitter-wasm
     - https://github.com/yuja/tree-sitter-qmljs
     - https://github.com/zwpaper/tree-sitter-beancount
+dependencies:
+    - source: https://github.com/danny0838/PyWebScrapBook
+      fork: https://github.com/cognitive-singularity/PyWebScrapBook

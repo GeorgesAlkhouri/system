@@ -47,11 +47,13 @@ $env.ENV_CONVERSIONS = {
 }
 
 $env.NU_LIB_DIRS = [
-    # ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    ($nu.default-config-dir | path join 'scripts')
+    /home/nixos/system/nix/host/presets/nushell/scripts
 ]
 
 $env.NU_PLUGIN_DIRS = [
-    # ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+    ($nu.default-config-dir | path join 'plugins')
+    /home/nixos/system/nix/host/presets/nushell/plugins
 ]
 
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')

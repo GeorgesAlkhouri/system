@@ -1,4 +1,4 @@
-use /home/nixos/system/start.nu *
+use /home/nixos/system/main.nu *
 
 $env.config = {
   show_banner: false
