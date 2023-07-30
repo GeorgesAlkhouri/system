@@ -10,7 +10,7 @@
     };
 
     imports = with cell.homeProfiles; [
-      sops-nix.homeManagerModules.sops
+      inputs.sops-nix.homeManagerModules.sops
       base
       graphical
     ];

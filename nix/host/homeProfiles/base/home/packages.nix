@@ -6,7 +6,6 @@ with inputs.nixpkgs; [
   nil
   nurl
   p7zip
-  taplo
   tree-sitter
   watchexec
   sops
