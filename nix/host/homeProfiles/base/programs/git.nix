@@ -2,5 +2,7 @@
   enable = true;
   userEmail = "bohushvitali@gmail.com";
   userName = "bohushvitali";
-  includes = [{path = "~/.gitconfig";}];
+  includes = [
+    {path = "~/.gitconfig";}
+  ];
 }

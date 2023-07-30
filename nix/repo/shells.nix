@@ -2,6 +2,7 @@
   inputs,
   cell,
 }: let
+  inherit (inputs) nixpkgs;
   inherit (inputs.std) lib;
   l = inputs.nixpkgs.lib // builtins;
 in
@@ -16,6 +17,12 @@ in
         ((lib.dev.mkNixago lib.cfg.treefmt) cell.configs.treefmt)
         ((lib.dev.mkNixago lib.cfg.editorconfig) cell.configs.editorconfig)
         (lib.dev.mkNixago lib.cfg.lefthook)
+      ];
+
+      commands = [
+        {
+          package = nixpkgs.jq;
+        }
       ];
     };
   }

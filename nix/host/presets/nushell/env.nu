@@ -33,6 +33,8 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 $env.EDITOR = hx
 
+$env.GH_TOKEN = open "/run/secret/gh_token"
+
 $env.ENV_CONVERSIONS = {
     "PATH": {
         from_string: { |s| $s | split row (char esep) | path expand --no-symlink }

@@ -1,7 +1,17 @@
-def main [] {}
+def main [cmd] {
+  if ($cmd == "rebuild") {
+    rebuild
+  }
+}
+
+
+export def monitor [] {
+  watchexec --exts=nix nu start.nu rebuild
+}
 
 export def rebuild [] {
-  watchexec --exts=nix sudo nixos-rebuild switch --impure --flake .#host-default
+  git add .
+  sudo nixos-rebuild switch --impure --flake .#host-default
 }
 
 export def syntaxes [] {
