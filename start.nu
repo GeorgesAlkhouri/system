@@ -1,7 +1,7 @@
 def main [] {}
 
 export def rebuild [] {
-  watchexec --exts=nix sudo nixos-rebuild switch --flake /home/nixos/system#host-default
+  watchexec --exts=nix sudo nixos-rebuild switch --impure --flake /home/nixos/system#host-default
 }
 
 export def syntaxes [] {

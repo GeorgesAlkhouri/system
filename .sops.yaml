@@ -6,4 +6,4 @@ creation_rules:
     key_groups:
     - age:
       - *host_nixos
-      # - *user_nixos
+      - *user_nixos
