@@ -6,6 +6,10 @@ with inputs.nixpkgs; [
   nil
   nixfmt
   nurl
+  mupdf
+  httrack
+  fclones
+  yt-dlp
   p7zip
   sops
   ssh-to-age
