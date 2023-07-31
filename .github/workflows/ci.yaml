@@ -19,7 +19,7 @@ jobs:
           nix_conf: experimental-features = nix-command flakes
 
       - name: Run checks
-        run: nix flake check --impure
+        run: nix flake check
 
       - name: Check formatting
         run: nix develop --no-update-lock-file --command treefmt

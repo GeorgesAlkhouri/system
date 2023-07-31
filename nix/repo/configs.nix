@@ -47,6 +47,7 @@
         };
         toml = {
           command = "taplo";
+          options = [ "format" ];
           includes = [ "*.toml" ];
         };
         shell = {
