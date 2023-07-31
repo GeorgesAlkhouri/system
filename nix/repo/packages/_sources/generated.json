@@ -1,0 +1,37 @@
+{
+    "lint-staged": {
+        "cargoLocks": null,
+        "date": "2023-07-14",
+        "extract": null,
+        "name": "lint-staged",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "okonet",
+            "repo": "lint-staged",
+            "rev": "5cead2d4c1fc79171f41dd269402a8ee46d442cc",
+            "sha256": "sha256-LZ7kEsM7HC79KkxiuFOwOCWH/lrvDALW8EqeeiyIRSE=",
+            "type": "github"
+        },
+        "version": "5cead2d4c1fc79171f41dd269402a8ee46d442cc"
+    },
+    "wgsl_analyzer": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "wgsl_analyzer",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-HvQfvfvXcgkfk3Ly47eam0PpaIOQaMEZp6dqVnQgrAY=",
+            "type": "url",
+            "url": "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64"
+        },
+        "version": "latest"
+    }
+}

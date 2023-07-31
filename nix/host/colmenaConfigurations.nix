@@ -1,22 +1,17 @@
-{
-  inputs,
-  cell,
-}: {
+{ inputs, cell, }: {
   default = {
     bee = {
       system = "x86_64-linux";
       pkgs = import inputs.nixpkgs {
         inherit (inputs.nixpkgs) system;
         config.allowUnfree = true;
-        overlays = [];
+        overlays = [ ];
       };
     };
-
     deployment = {
       allowLocalDeployment = true;
       targetHost = "127.0.0.1";
     };
-
-    imports = [cell.nixosConfigurations.default];
+    imports = [ cell.nixosConfigurations.default ];
   };
 }

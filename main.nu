@@ -5,10 +5,14 @@ def main [cmd] {
 }
 
 export def monitor [] {
+  let path = "/home/nixos/system"
+  cd $path
   watchexec --exts=nix nu main.nu rebuild
 }
 
 export def rebuild [] {
+  let path = "/home/nixos/system"
+  cd $path
   git add .
   sudo nixos-rebuild switch --impure --flake "/home/nixos/system#host-default"
 }

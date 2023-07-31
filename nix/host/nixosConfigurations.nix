@@ -1,7 +1,4 @@
-{
-  inputs,
-  cell,
-}: {
+{ inputs, cell, }: {
   default = {
     bee = {
       system = "x86_64-linux";

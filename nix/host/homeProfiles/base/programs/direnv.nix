@@ -1,4 +1,5 @@
 {
   enable = true;
-  nix-direnv.enable = true;
+  enableNushellIntegration = false;
+  nix-direnv = { enable = true; };
 }

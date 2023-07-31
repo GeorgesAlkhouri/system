@@ -31,10 +31,6 @@ $env.PROMPT_INDICATOR_VI_INSERT = {|| " : " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| " > " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
-$env.EDITOR = hx
-
-$env.GH_TOKEN = (open /home/nixos/.config/gh/gh_token)
-
 $env.ENV_CONVERSIONS = {
     "PATH": {
         from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
@@ -57,3 +53,5 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+
+$env.GH_TOKEN = (open /home/nixos/.config/gh/gh_token)

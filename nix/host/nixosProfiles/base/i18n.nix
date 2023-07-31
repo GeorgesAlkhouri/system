@@ -1,3 +1,1 @@
-{
-  defaultLocale = "en_US.UTF-8";
-}
+{ defaultLocale = "en_US.UTF-8"; }

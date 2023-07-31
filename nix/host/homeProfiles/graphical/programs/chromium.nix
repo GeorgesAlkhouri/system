@@ -1,5 +1,5 @@
-{inputs}: let
-  inherit (inputs.nixpkgs) lib;
+{ inputs }:
+let inherit (inputs.nixpkgs) lib;
 in {
   enable = true;
   commandLineArgs = [
@@ -16,15 +16,14 @@ in {
     "--enable-accelerated-video-decode"
     "--enable-parallel-downloading"
     "--url about:blank"
-
-    "--enable-features=${lib.concatStringsSep "," [
-      "OverlayScrollbar"
-      "VaapiVideoDecoder"
-    ]}"
-
-    "--disable-features=${lib.concatStringsSep "," [
-      "MediaEngagementBypassAutoplayPolicies"
-      "PreloadMediaEngagementData"
-    ]}"
+    "--enable-features=${
+      lib.concatStringsSep "," [ "OverlayScrollbar" "VaapiVideoDecoder" ]
+    }"
+    "--disable-features=${
+      lib.concatStringsSep "," [
+        "MediaEngagementBypassAutoplayPolicies"
+        "PreloadMediaEngagementData"
+      ]
+    }"
   ];
 }

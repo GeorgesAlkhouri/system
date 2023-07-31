@@ -1,10 +1,6 @@
-{hive}: {
-  inputs,
-  config,
-  options,
-  lib,
-  ...
-}: let
+{ hive }:
+{ inputs, config, options, lib, ... }:
+let
   inherit (hive) collect;
   inherit (lib) mkIf genAttrs mkOption literalExpression;
   std-opt = options.std;
@@ -21,7 +17,8 @@ in {
     };
   };
   config = {
-    flake = mkIf (opt.collect.isDefined && std-opt.grow.isDefined) (genAttrs cfg.collect (n: collect inputs.self n));
-    perInput = system: flake: {hives = flake.${system} or {};};
+    flake = mkIf (opt.collect.isDefined && std-opt.grow.isDefined)
+      (genAttrs cfg.collect (n: collect inputs.self n));
+    perInput = system: flake: { hives = flake.${system} or { }; };
   };
 }

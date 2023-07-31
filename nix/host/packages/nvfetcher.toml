@@ -1,0 +1,3 @@
+[nu_scripts]
+src.git = "https://github.com/cognitive-singularity/nu_scripts"
+fetch.github = "cognitive-singularity/nu_scripts"

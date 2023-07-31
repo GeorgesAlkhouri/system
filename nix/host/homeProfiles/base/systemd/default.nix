@@ -1,3 +1,1 @@
-{
-  user.startServices = "sd-switch";
-}
+{ user = { startServices = "sd-switch"; }; }

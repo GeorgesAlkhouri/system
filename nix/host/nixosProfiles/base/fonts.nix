@@ -1,4 +1,4 @@
-{inputs}: {
-  fontDir.enable = true;
-  packages = [inputs.nixpkgs.nerdfonts];
+{ inputs }: {
+  fontDir = { enable = true; };
+  packages = [ inputs.nixpkgs.nerdfonts ];
 }

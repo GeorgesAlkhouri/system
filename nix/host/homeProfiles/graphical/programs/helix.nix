@@ -1,26 +1,36 @@
 {
   enable = true;
   settings = {
-    editor.auto-info = false;
-    editor.auto-save = true;
-    editor.auto-format = true;
-    editor.cursor-shape.insert = "bar";
-    editor.cursor-shape.normal = "block";
-    editor.cursor-shape.select = "underline";
-    editor.line-number = "relative";
-    editor.lsp.display-messages = true;
-    editor.soft-wrap.enable = true;
-    keys.normal.space.q = ":q";
-    keys.normal."C-k" = ":buffer-previous";
-    keys.normal."C-j" = ":buffer-next";
-    keys.normal.space.ret = ":w";
+    editor = {
+      auto-info = false;
+      auto-save = true;
+      auto-format = true;
+      cursor-shape = {
+        insert = "bar";
+        normal = "block";
+        select = "underline";
+      };
+      line-number = "relative";
+      lsp = { display-messages = true; };
+      soft-wrap = { enable = true; };
+    };
+    keys = {
+      normal = {
+        "C-k" = ":buffer-previous";
+        "C-j" = ":buffer-next";
+        space = {
+          q = ":q";
+          ret = ":w";
+        };
+      };
+    };
     theme = "base16_transparent";
   };
-  languages.language = [
-    {
+  languages = {
+    language = [{
       name = "nix";
-      formatter.command = "alejandra";
+      formatter = { command = "nixfmt"; };
       auto-format = true;
-    }
-  ];
+    }];
+  };
 }

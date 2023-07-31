@@ -1,7 +1,4 @@
-{
-  inputs,
-  cell,
-}: {
+{ inputs, cell, }: {
   editorconfig = {
     data = {
       root = true;
@@ -40,25 +37,22 @@
 
   # Tool Homepage: https://numtide.github.io/treefmt/
   treefmt = {
-    packages = [
-      inputs.nixpkgs.alejandra
-      inputs.nixpkgs.shfmt
-      inputs.nixpkgs.taplo
-    ];
+    packages =
+      [ inputs.nixpkgs.nixfmt inputs.nixpkgs.shfmt inputs.nixpkgs.taplo ];
     data = {
       formatter = {
         nix = {
-          command = "alejandra";
-          includes = ["*.nix"];
+          command = "nixfmt";
+          includes = [ "*.nix" ];
         };
         toml = {
           command = "taplo";
-          includes = ["*.toml"];
+          includes = [ "*.toml" ];
         };
         shell = {
           command = "shfmt";
-          options = ["-i" "2" "-s" "-w"];
-          includes = ["*.sh"];
+          options = [ "-i" "2" "-s" "-w" ];
+          includes = [ "*.sh" ];
         };
       };
     };
@@ -74,7 +68,7 @@
             run = ''
               [[ "$(head -n 1 {1})" =~ ^WIP(:.*)?$|^wip(:.*)?$|fixup\!.*|squash\!.* ]] ||
               conform enforce --commit-msg-file {1}'';
-            skip = ["merge" "rebase"];
+            skip = [ "merge" "rebase" ];
           };
         };
       };
@@ -82,7 +76,7 @@
         commands = {
           treefmt = {
             run = "treefmt --fail-on-change {staged_files}";
-            skip = ["merge" "rebase"];
+            skip = [ "merge" "rebase" ];
           };
         };
       };

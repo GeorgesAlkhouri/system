@@ -1,6 +1,8 @@
 {
   hostName = "nixos";
-  firewall.allowedTCPPorts = [];
-  firewall.allowedUDPPorts = [];
-  firewall.enable = false;
+  firewall = {
+    allowedTCPPorts = [ ];
+    allowedUDPPorts = [ ];
+    enable = false;
+  };
 }

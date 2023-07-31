@@ -1,4 +1,4 @@
 {
-  sudo.wheelNeedsPassword = false;
-  rtkit.enable = true;
+  sudo = { wheelNeedsPassword = false; };
+  rtkit = { enable = true; };
 }

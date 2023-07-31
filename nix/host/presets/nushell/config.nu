@@ -1,5 +1,3 @@
-use /home/nixos/system/main.nu *
-
 $env.config = {
   show_banner: false
 
