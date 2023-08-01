@@ -33,6 +33,9 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
         package = inputs.nixpkgs.age;
         category = "secrets";
       }
+      # archi
+      # structurizr
+      # enso
     ];
   };
 }
