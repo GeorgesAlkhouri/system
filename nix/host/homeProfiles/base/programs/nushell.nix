@@ -11,7 +11,7 @@
     use ${cell.packages.nu-scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu *
     use ${cell.packages.nu-scripts}/share/nu_scripts/custom-completions/tealdeer/tldr-completions.nu *
 
-    use /home/hixos/system/main.nu *
+    use /home/nixos/system/main.nu *
   '';
 
   envFile = { source = inputs.self + "/nix/host/presets/nushell/env.nu"; };

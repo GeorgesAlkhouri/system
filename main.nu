@@ -1,5 +1,5 @@
-def main [cmd: string] {
-  if ($cmd == "rebuild") {
+def main [command: string] {
+  if ($command == "rebuild") {
     rebuild
   }
 }
@@ -49,8 +49,8 @@ export def generate [] {
   alias td = terminusdb
 }
   
-export def upload-as [message: string] {
+export def upload [message: string] {
   git add .
-  git commit --message $m 
+  git commit --message $message
   git push
 }
