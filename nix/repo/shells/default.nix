@@ -6,7 +6,7 @@ let
 in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
   default = {
     name = "devshell";
-    packages = [ cell.packages.wgsl-analyzer ];
+    packages = [ cell.packages.wgsl-analyzer nixpkgs.cargo-spellcheck ];
     imports = [ inputs.std.std.devshellProfiles.default ];
     nixago = [
       ((lib.dev.mkNixago lib.cfg.conform) {

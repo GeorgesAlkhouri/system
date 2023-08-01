@@ -43,3 +43,7 @@ export def contribution [] {
     git clone $i ($i | url parse | get path | str downcase | split column "/" | get column3)
   }
 }
+
+export def generate [] {
+  
+}

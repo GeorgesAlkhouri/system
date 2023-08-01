@@ -1,4 +1,4 @@
-{
+{ inputs }: {
   enable = true;
   settings = {
     editor = {
@@ -19,18 +19,34 @@
         "C-k" = ":buffer-previous";
         "C-j" = ":buffer-next";
         space = {
+          space = "file_picker";
           q = ":q";
           ret = ":w";
         };
+        esc = [ "collapse_selection" "keep_primary_selection" ];
+        ret = [ "open_below" "normal_mode" ];
       };
     };
     theme = "base16_transparent";
   };
   languages = {
-    language = [{
-      name = "nix";
-      formatter = { command = "nixfmt"; };
-      auto-format = true;
-    }];
+    typescript-language-server = with inputs.nixpkgs.nodePackages; {
+      command = "${typescript-language-server}/bin/typescript-language-server";
+      args = [
+        "--stdio"
+        "--tsserver-path=${typescript}/lib/node_modules/typescript/lib"
+      ];
+    };
+    language = [
+      {
+        name = "nix";
+        formatter = { command = "nixfmt"; };
+        auto-format = true;
+      }
+      {
+        name = "rust";
+        auto-format = false;
+      }
+    ];
   };
 }

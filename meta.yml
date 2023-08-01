@@ -124,5 +124,176 @@ syntaxes:
     - https://github.com/yuja/tree-sitter-qmljs
     - https://github.com/zwpaper/tree-sitter-beancount
 dependencies:
-    - source: https://github.com/danny0838/PyWebScrapBook
-      fork: https://github.com/cognitive-singularity/PyWebScrapBook
+    - f: https://github.com/cognitive-singularity/leptos
+      o: https://github.com/leptos-rs/leptos
+
+    # https://github.com/cognitive-singularity/terraform
+    # https://github.com/hashicorp/terraform
+
+    # https://github.com/cognitive-singularity/rust
+    # https://github.com/rust-lang/rust
+
+    # https://github.com/cognitive-singularity/nix
+    # https://github.com/NixOS/nix
+
+    # https://github.com/cognitive-singularity/enso
+    # https://github.com/enso-org/enso
+
+    # https://github.com/cognitive-singularity/kubernetes
+    # https://github.com/kubernetes/kubernetes
+
+    # https://github.com/cognitive-singularity/flux2
+    # https://github.com/fluxcd/flux2
+
+    # https://github.com/cognitive-singularity/nickel
+    # https://github.com/tweag/nickel
+
+    # https://github.com/cognitive-singularity/crossplane
+    # https://github.com/crossplane/crossplane
+
+    # https://github.com/cognitive-singularity/nickel-nix
+    # https://github.com/nickel-lang/nickel-nix
+
+    # https://github.com/cognitive-singularity/CommunitySolidServer
+    # https://github.com/CommunitySolidServer/CommunitySolidServer
+
+    # https://github.com/cognitive-singularity/linux
+    # https://github.com/torvalds/linux
+
+    # https://github.com/cognitive-singularity/direnv
+    # https://github.com/direnv/direnv
+
+    # https://github.com/cognitive-singularity/flake-parts
+    # https://github.com/hercules-ci/flake-parts
+
+    # https://github.com/cognitive-singularity/skaffold
+    # https://github.com/GoogleContainerTools/skaffold
+
+    # https://github.com/cognitive-singularity/nushell
+    # https://github.com/nushell/nushell
+
+    # https://github.com/cognitive-singularity/nu_plugin_regex
+    # https://github.com/fdncred/nu_plugin_regex
+
+    # https://github.com/cognitive-singularity/nu_plugin_json_path
+    # https://github.com/fdncred/nu_plugin_json_path
+
+    # https://github.com/cognitive-singularity/nu_plugin_from_parquet
+    # https://github.com/fdncred/nu_plugin_from_parquet
+
+    # https://github.com/cognitive-singularity/nu_scripts
+    # https://github.com/nushell/nu_scripts
+
+    # https://github.com/cognitive-singularity/archi
+    # https://github.com/archimatetool/archi
+
+    # https://github.com/cognitive-singularity/crane
+    # https://github.com/ipetkov/crane
+
+    # https://github.com/cognitive-singularity/nixpkgs
+    # https://github.com/NixOS/nixpkgs
+
+    # https://github.com/cognitive-singularity/home-manager
+    # https://github.com/nix-community/home-manager
+
+    # https://github.com/cognitive-singularity/tinygrad
+    # https://github.com/tinygrad/tinygrad
+
+    # https://github.com/cognitive-singularity/helix
+    # https://github.com/helix-editor/helix
+
+    # https://github.com/cognitive-singularity/LocalAI
+    # https://github.com/go-skynet/LocalAI
+
+    # https://github.com/cognitive-singularity/hive
+    # https://github.com/divnix/hive
+
+    # https://github.com/cognitive-singularity/k8sgpt
+    # https://github.com/k8sgpt-ai/k8sgpt
+
+    # https://github.com/cognitive-singularity/tree-sitter
+    # https://github.com/tree-sitter/tree-sitter
+
+    # https://github.com/cognitive-singularity/SingleFile-Lite
+    # https://github.com/gildas-lormeau/SingleFile-Lite
+
+    # https://github.com/cognitive-singularity/cli
+    # https://github.com/structurizr/cli
+
+    # https://github.com/cognitive-singularity/tortoise-tts-fastest
+    # https://github.com/manmay-nakhashi/tortoise-tts-fastest
+
+    # https://github.com/cognitive-singularity/mods
+    # https://github.com/charmbracelet/mods
+
+    # https://github.com/cognitive-singularity/lingua-rs
+    # https://github.com/pemistahl/lingua-rs
+
+    # https://github.com/cognitive-singularity/llama-cpp-python
+    # https://github.com/abetlen/llama-cpp-python
+
+    # https://github.com/cognitive-singularity/terminusdb
+    # https://github.com/terminusdb/terminusdb
+
+    # https://github.com/cognitive-singularity/terminusdb-semantic-indexer
+    # https://github.com/terminusdb-labs/terminusdb-semantic-indexer
+
+    # https://github.com/cognitive-singularity/comunica
+    # https://github.com/comunica/comunica
+
+    # https://github.com/cognitive-singularity/umbrella
+    # https://github.com/thi-ng/umbrella
+
+    # https://github.com/cognitive-singularity/devshell
+    # https://github.com/numtide/devshell
+
+    # https://github.com/cognitive-singularity/flagger
+    # https://github.com/fluxcd/flagger
+
+    # https://github.com/cognitive-singularity/flops
+    # https://github.com/GTrunSec/flops
+
+    # https://github.com/cognitive-singularity/dufs
+    # https://github.com/sigoden/dufs
+
+    # https://github.com/cognitive-singularity/kubenix
+    # https://github.com/hall/kubenix
+
+    # https://github.com/cognitive-singularity/gherkin-ast
+    # https://github.com/gherking/gherkin-ast
+
+    # https://github.com/cognitive-singularity/haumea
+    # https://github.com/nix-community/haumea
+
+    # https://github.com/cognitive-singularity/rust-bert
+    # https://github.com/guillaume-be/rust-bert
+
+    # https://github.com/cognitive-singularity/std
+    # https://github.com/divnix/std
+
+    # https://github.com/cognitive-singularity/pueue
+    # https://github.com/Nukesor/pueue
+
+    # https://github.com/cognitive-singularity/flake
+    # https://github.com/nixified-ai/flake
+
+    # https://github.com/cognitive-singularity/infy-scroll
+    # https://github.com/sixcious/infy-scroll
+
+    # https://github.com/cognitive-singularity/core
+    # https://github.com/paisano-nix/core
+
+    # https://github.com/cognitive-singularity/webscrapbook
+    # https://github.com/danny0838/webscrapbook
+
+    # https://github.com/cognitive-singularity/terranix
+    # https://github.com/terranix/terranix
+
+    # https://github.com/cognitive-singularity/PyWebScrapBook
+    # https://github.com/danny0838/PyWebScrapBook
+
+    # https://github.com/cognitive-singularity/atomspace
+    # https://github.com/opencog/atomspace
+
+    # https://github.com/cognitive-singularity/automa
+    # https://github.com/AutomaApp/automa

@@ -1,7 +1,10 @@
 { inputs, cell, }: {
   default = {
     bee = {
-      pkgs = inputs.nixpkgs;
+      pkgs = import inputs.nixpkgs {
+        inherit (inputs.nixpkgs) system;
+        config.allowUnfree = true;
+      };
       home = inputs.home;
       inherit (inputs.nixpkgs) system;
     };
