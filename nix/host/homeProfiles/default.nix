@@ -1,10 +1,10 @@
 { inputs, cell, }: {
   base = inputs.hive.load {
     inherit inputs cell;
-    src = ./homeProfiles/base;
+    src = ./base;
   };
   graphical = inputs.hive.load {
     inherit inputs cell;
-    src = ./homeProfiles/graphical;
+    src = ./graphical;
   };
 }
