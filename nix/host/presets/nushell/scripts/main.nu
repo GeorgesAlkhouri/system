@@ -1,4 +1,4 @@
-def main [cmd] {
+def main [cmd: string] {
   if ($cmd == "rebuild") {
     rebuild
   }
@@ -7,7 +7,8 @@ def main [cmd] {
 export def monitor [] {
   let path = "/home/nixos/system"
   cd $path
-  watchexec --exts=nix nu main.nu rebuild
+  let main = "/home/nixos/system/nix/host/presets/nushell/scripts/main"
+  watchexec --exts=nix nu $main rebuild
 }
 
 export def rebuild [] {
@@ -45,5 +46,11 @@ export def contribution [] {
 }
 
 export def generate [] {
+  alias td = terminusdb
+}
   
+export def upload-as [message: string] {
+  git add .
+  git commit --message $m 
+  git push
 }
