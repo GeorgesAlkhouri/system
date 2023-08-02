@@ -33,6 +33,10 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
         package = inputs.nixpkgs.age;
         category = "secrets";
       }
+      {
+        package = inputs.cells.host.packages.terminusdb;
+        category = "data";
+      }
       # archi
       # structurizr
       # enso

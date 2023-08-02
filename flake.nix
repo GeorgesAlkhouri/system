@@ -30,6 +30,7 @@
             nixpkgsConfig = { allowUnfree = true; };
           };
           harvest = {
+
             devShells = [ "repo" "shells" ];
             packages = [ [ "repo" "packages" ] [ "host" "packages" ] ];
           };
@@ -50,8 +51,6 @@
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
     nvfetcher.inputs.flake-utils.follows = "flake-utils";
-  };
-  inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
@@ -102,6 +101,8 @@
     poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
     nix-init.url = "github:nix-community/nix-init";
     nix-init.inputs.nixpkgs.follows = "nixpkgs";
+    nushell.url = "github:cognitive-singularity/nushell";
+    nushell.inputs.nixpkgs.follows = "nixpkgs";
   };
   nixConfig = {
     extra-experimental-features = "nix-command flakes";

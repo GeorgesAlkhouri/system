@@ -1,7 +1,187 @@
 {
+    "archive-page": {
+        "cargoLocks": null,
+        "date": "2023-07-26",
+        "extract": null,
+        "name": "archive-page",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "archiveweb.page",
+            "rev": "94d15e94430ccc9ee4b96454cd357cf902a4d3fb",
+            "sha256": "sha256-LF+x6TbQyZuUiM+Wx4wpPdDSuuqz0cG0MSJX73niXfI=",
+            "type": "github"
+        },
+        "version": "94d15e94430ccc9ee4b96454cd357cf902a4d3fb"
+    },
+    "automa": {
+        "cargoLocks": null,
+        "date": "2023-02-16",
+        "extract": null,
+        "name": "automa",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "automa",
+            "rev": "b2e20a7a50cf47ec8bd5903a7059ece74a6dd571",
+            "sha256": "sha256-c9OlADjG/6LC/TQyToaq32bBN0JgKuCAnvBv/puKb2k=",
+            "type": "github"
+        },
+        "version": "b2e20a7a50cf47ec8bd5903a7059ece74a6dd571"
+    },
+    "bypass-paywall": {
+        "cargoLocks": null,
+        "date": "2023-06-17",
+        "extract": null,
+        "name": "bypass-paywall",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "bypass-paywalls-chrome",
+            "rev": "97b84f09512bf0d589f2d6c64c30a039cbd6d8b5",
+            "sha256": "sha256-nOxeB7ty6njHhhv3D8z2Kj+sG9JXTPIdi1OGWQI11ic=",
+            "type": "github"
+        },
+        "version": "97b84f09512bf0d589f2d6c64c30a039cbd6d8b5"
+    },
+    "goscrape": {
+        "cargoLocks": null,
+        "date": "2023-04-04",
+        "extract": null,
+        "name": "goscrape",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "goscrape",
+            "rev": "570f891f14eb66177f4a70a83d06f8fc2481afc0",
+            "sha256": "sha256-tuYJot5YPkhvJpC6WYGRun3yc41A2JJCCUQjvDKN1oY=",
+            "type": "github"
+        },
+        "version": "570f891f14eb66177f4a70a83d06f8fc2481afc0"
+    },
+    "infy-scroll": {
+        "cargoLocks": null,
+        "date": "2023-06-30",
+        "extract": null,
+        "name": "infy-scroll",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "infy-scroll",
+            "rev": "965cf2bc681682fad9ed5736e3f8b8f9bd08ea85",
+            "sha256": "sha256-Wok3H5CAwThA9UF1OguHbUkUMO/uJeSS+ZuIY/1W1fE=",
+            "type": "github"
+        },
+        "version": "965cf2bc681682fad9ed5736e3f8b8f9bd08ea85"
+    },
+    "isdcac": {
+        "cargoLocks": null,
+        "date": "2023-07-05",
+        "extract": null,
+        "name": "isdcac",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "I-Still-Dont-Care-About-Cookies",
+            "rev": "88484fdc60a6bb5f0792f858203a588737351727",
+            "sha256": "sha256-IV4OkvxqHzlt9fOS1Ks+MpADUU0I5LvhxuV5V/LBK28=",
+            "type": "github"
+        },
+        "version": "88484fdc60a6bb5f0792f858203a588737351727"
+    },
+    "nu_plugin_from_parquet": {
+        "cargoLocks": null,
+        "date": "2023-08-02",
+        "extract": null,
+        "name": "nu_plugin_from_parquet",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "nu_plugin_from_parquet",
+            "rev": "d6140d00223616d6632ed01bf90b4aa88c0a75e3",
+            "sha256": "sha256-3XDdBO4lZx3xwQJek9y4aEJl9geizLFhh0TgOwI+hBA=",
+            "type": "github"
+        },
+        "version": "d6140d00223616d6632ed01bf90b4aa88c0a75e3"
+    },
+    "nu_plugin_json_path": {
+        "cargoLocks": null,
+        "date": "2023-08-02",
+        "extract": null,
+        "name": "nu_plugin_json_path",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "nu_plugin_json_path",
+            "rev": "1d603f804c03326b99c2ac9e7f9dc0ffa5c91565",
+            "sha256": "sha256-d51BoPCUSAM+sQPD5eeybw3ZMChbGW467izpHSkBqrs=",
+            "type": "github"
+        },
+        "version": "1d603f804c03326b99c2ac9e7f9dc0ffa5c91565"
+    },
+    "nu_plugin_regex": {
+        "cargoLocks": null,
+        "date": "2023-08-02",
+        "extract": null,
+        "name": "nu_plugin_regex",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "nu_plugin_regex",
+            "rev": "aee2bd945f8141fa3be92f34ff1efafeac9d8384",
+            "sha256": "sha256-URomcTJao0Er2JmJNXwOdKMD7jlenhZUt+Rrw+cvB6M=",
+            "type": "github"
+        },
+        "version": "aee2bd945f8141fa3be92f34ff1efafeac9d8384"
+    },
     "nu_scripts": {
         "cargoLocks": null,
-        "date": "2023-07-29",
+        "date": "2023-08-01",
         "extract": null,
         "name": "nu_scripts",
         "passthru": null,
@@ -13,11 +193,31 @@
             "name": null,
             "owner": "cognitive-singularity",
             "repo": "nu_scripts",
-            "rev": "3ee56c6ec31fcc8dbffee85e1c73eb6fe0bbba8d",
-            "sha256": "sha256-luGIvcKOfhDorPfGfL449+eD+58MGo5jMCsNwIRJWt4=",
+            "rev": "83ce76d5f29d45c8c3d35109daa99a962470389b",
+            "sha256": "sha256-4BQy+iEOB0dgpbB9AlGJp4mr+vHpch2iE5LTm5RWscs=",
             "type": "github"
         },
-        "version": "3ee56c6ec31fcc8dbffee85e1c73eb6fe0bbba8d"
+        "version": "83ce76d5f29d45c8c3d35109daa99a962470389b"
+    },
+    "nushell": {
+        "cargoLocks": null,
+        "date": "2023-08-02",
+        "extract": null,
+        "name": "nushell",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "nushell",
+            "rev": "64ed77200758b279a4e4e29f5b0d00b1263f8b01",
+            "sha256": "sha256-2/Kp3KQhEHN7g2GkzLOc3sv5uG/NLI89fCZAo17x5tQ=",
+            "type": "github"
+        },
+        "version": "64ed77200758b279a4e4e29f5b0d00b1263f8b01"
     },
     "pywebscrapbook": {
         "cargoLocks": null,
@@ -39,6 +239,46 @@
         },
         "version": "7e5068a8254328dada4bca25130ed84eb80ddadd"
     },
+    "singlefile-lite": {
+        "cargoLocks": null,
+        "date": "2023-08-02",
+        "extract": null,
+        "name": "singlefile-lite",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "singlefile-lite",
+            "rev": "ab12a788c4baaa6bc325d2e1a151e17ed463906a",
+            "sha256": "sha256-68n5Fyuzzv+0MLOXcAC76SgURo01/QKsPTCIyLu9Q70=",
+            "type": "github"
+        },
+        "version": "ab12a788c4baaa6bc325d2e1a151e17ed463906a"
+    },
+    "terminusdb": {
+        "cargoLocks": null,
+        "date": "2023-08-02",
+        "extract": null,
+        "name": "terminusdb",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "terminusdb",
+            "rev": "9913160a663e0f370886bdbccafa2d6e17a41918",
+            "sha256": "sha256-wr/UXQYXwzQWzqlDBh6mSeKt2Dypcpc62rolwtlSN8c=",
+            "type": "github"
+        },
+        "version": "9913160a663e0f370886bdbccafa2d6e17a41918"
+    },
     "tg-archive": {
         "cargoLocks": null,
         "date": "2023-07-24",
@@ -58,5 +298,45 @@
             "type": "github"
         },
         "version": "f8e0cfbbc591405a570365d3af4497bd3125544d"
+    },
+    "ublock": {
+        "cargoLocks": null,
+        "date": "2023-07-31",
+        "extract": null,
+        "name": "ublock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "ublock",
+            "rev": "4bd562f3c2b04a460492829beb2a687c116d7571",
+            "sha256": "sha256-wDzizs23wMFXP64no348BUXRmWvydMoeQap2VGDVuV0=",
+            "type": "github"
+        },
+        "version": "4bd562f3c2b04a460492829beb2a687c116d7571"
+    },
+    "webscrapbook": {
+        "cargoLocks": null,
+        "date": "2023-06-21",
+        "extract": null,
+        "name": "webscrapbook",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "webscrapbook",
+            "rev": "c573fff2edb50885d966eeaa91df6cdef83e2fbb",
+            "sha256": "sha256-CZVRZ2ztZ74jXTR/kfdBwuuisAuKX8Imk/g08rAbj1c=",
+            "type": "github"
+        },
+        "version": "c573fff2edb50885d966eeaa91df6cdef83e2fbb"
     }
 }

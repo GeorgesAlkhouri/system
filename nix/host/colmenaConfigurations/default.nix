@@ -4,7 +4,10 @@
       system = "x86_64-linux";
       pkgs = import inputs.nixpkgs {
         inherit (inputs.nixpkgs) system;
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [ "openssl-1.1.1u" ];
+        };
       };
     };
     deployment = {

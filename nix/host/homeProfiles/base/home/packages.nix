@@ -1,5 +1,6 @@
 { inputs, ... }:
 with inputs.nixpkgs; [
+  archi
   cachix
   cargo
   dufs
@@ -11,7 +12,6 @@ with inputs.nixpkgs; [
   nixfmt
   nurl
   p7zip
-  firefox
   sops
   ssh-to-age
   tree-sitter

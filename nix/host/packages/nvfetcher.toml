@@ -1,3 +1,7 @@
+[nushell]
+src.git = "https://github.com/cognitive-singularity/nushell"
+fetch.github = "cognitive-singularity/nushell"
+
 [nu_scripts]
 src.git = "https://github.com/cognitive-singularity/nu_scripts"
 fetch.github = "cognitive-singularity/nu_scripts"
@@ -36,4 +40,28 @@ fetch.github = "cognitive-singularity/automa"
 
 [archive-page]
 src.git = "https://github.com/cognitive-singularity/archiveweb.page"
-fetch.github = "cognitive-singularity/acrhiveweb.page"
+fetch.github = "cognitive-singularity/archiveweb.page"
+
+[singlefile-lite]
+src.git = "https://github.com/cognitive-singularity/singlefile-lite"
+fetch.github = "cognitive-singularity/singlefile-lite"
+
+[goscrape]
+src.git = "https://github.com/cognitive-singularity/goscrape"
+fetch.github = "cognitive-singularity/goscrape"
+
+[terminusdb]
+src.git = "https://github.com/cognitive-singularity/terminusdb"
+fetch.github = "cognitive-singularity/terminusdb"
+
+[nu_plugin_from_parquet]
+src.git = "https://github.com/cognitive-singularity/nu_plugin_from_parquet"
+fetch.github = "cognitive-singularity/nu_plugin_from_parquet"
+
+[nu_plugin_json_path]
+src.git = "https://github.com/cognitive-singularity/nu_plugin_json_path"
+fetch.github = "cognitive-singularity/nu_plugin_json_path"
+
+[nu_plugin_regex]
+src.git = "https://github.com/cognitive-singularity/nu_plugin_regex"
+fetch.github = "cognitive-singularity/nu_plugin_regex"
