@@ -1,6 +1,5 @@
 {
   enable = true;
-  userEmail = "bohushvitali@gmail.com";
-  userName = "bohushvitali";
+  lfs = { enable = true; };
   includes = [{ path = "~/.gitconfig"; }];
 }

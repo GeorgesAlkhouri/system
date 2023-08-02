@@ -18,5 +18,45 @@
             "type": "github"
         },
         "version": "3ee56c6ec31fcc8dbffee85e1c73eb6fe0bbba8d"
+    },
+    "pywebscrapbook": {
+        "cargoLocks": null,
+        "date": "2023-06-17",
+        "extract": null,
+        "name": "pywebscrapbook",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "PyWebScrapBook",
+            "rev": "7e5068a8254328dada4bca25130ed84eb80ddadd",
+            "sha256": "sha256-YNVpz7FmSBftCtS/rwbCtY5Q/ZA2FXSLlmCeT9wnc3I=",
+            "type": "github"
+        },
+        "version": "7e5068a8254328dada4bca25130ed84eb80ddadd"
+    },
+    "tg-archive": {
+        "cargoLocks": null,
+        "date": "2023-07-24",
+        "extract": null,
+        "name": "tg-archive",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "tg-archive",
+            "rev": "f8e0cfbbc591405a570365d3af4497bd3125544d",
+            "sha256": "sha256-8m8E05p5KinqMmWAen2nygBV5daiqWjMwDE29zcNb/A=",
+            "type": "github"
+        },
+        "version": "f8e0cfbbc591405a570365d3af4497bd3125544d"
     }
 }

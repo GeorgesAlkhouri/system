@@ -123,177 +123,75 @@ syntaxes:
     - https://github.com/wasm-lsp/tree-sitter-wasm
     - https://github.com/yuja/tree-sitter-qmljs
     - https://github.com/zwpaper/tree-sitter-beancount
-dependencies:
-    - f: https://github.com/cognitive-singularity/leptos
-      o: https://github.com/leptos-rs/leptos
-
-    # https://github.com/cognitive-singularity/terraform
-    # https://github.com/hashicorp/terraform
-
-    # https://github.com/cognitive-singularity/rust
-    # https://github.com/rust-lang/rust
-
-    # https://github.com/cognitive-singularity/nix
-    # https://github.com/NixOS/nix
-
-    # https://github.com/cognitive-singularity/enso
-    # https://github.com/enso-org/enso
-
-    # https://github.com/cognitive-singularity/kubernetes
-    # https://github.com/kubernetes/kubernetes
-
-    # https://github.com/cognitive-singularity/flux2
-    # https://github.com/fluxcd/flux2
-
-    # https://github.com/cognitive-singularity/nickel
-    # https://github.com/tweag/nickel
-
-    # https://github.com/cognitive-singularity/crossplane
-    # https://github.com/crossplane/crossplane
-
-    # https://github.com/cognitive-singularity/nickel-nix
-    # https://github.com/nickel-lang/nickel-nix
-
-    # https://github.com/cognitive-singularity/CommunitySolidServer
-    # https://github.com/CommunitySolidServer/CommunitySolidServer
-
-    # https://github.com/cognitive-singularity/linux
-    # https://github.com/torvalds/linux
-
-    # https://github.com/cognitive-singularity/direnv
-    # https://github.com/direnv/direnv
-
-    # https://github.com/cognitive-singularity/flake-parts
-    # https://github.com/hercules-ci/flake-parts
-
-    # https://github.com/cognitive-singularity/skaffold
-    # https://github.com/GoogleContainerTools/skaffold
-
-    # https://github.com/cognitive-singularity/nushell
-    # https://github.com/nushell/nushell
-
-    # https://github.com/cognitive-singularity/nu_plugin_regex
-    # https://github.com/fdncred/nu_plugin_regex
-
-    # https://github.com/cognitive-singularity/nu_plugin_json_path
-    # https://github.com/fdncred/nu_plugin_json_path
-
-    # https://github.com/cognitive-singularity/nu_plugin_from_parquet
-    # https://github.com/fdncred/nu_plugin_from_parquet
-
-    # https://github.com/cognitive-singularity/nu_scripts
-    # https://github.com/nushell/nu_scripts
-
-    # https://github.com/cognitive-singularity/archi
-    # https://github.com/archimatetool/archi
-
-    # https://github.com/cognitive-singularity/crane
-    # https://github.com/ipetkov/crane
-
-    # https://github.com/cognitive-singularity/nixpkgs
-    # https://github.com/NixOS/nixpkgs
-
-    # https://github.com/cognitive-singularity/home-manager
-    # https://github.com/nix-community/home-manager
-
-    # https://github.com/cognitive-singularity/tinygrad
-    # https://github.com/tinygrad/tinygrad
-
-    # https://github.com/cognitive-singularity/helix
-    # https://github.com/helix-editor/helix
-
-    # https://github.com/cognitive-singularity/LocalAI
-    # https://github.com/go-skynet/LocalAI
-
-    # https://github.com/cognitive-singularity/hive
-    # https://github.com/divnix/hive
-
-    # https://github.com/cognitive-singularity/k8sgpt
-    # https://github.com/k8sgpt-ai/k8sgpt
-
-    # https://github.com/cognitive-singularity/tree-sitter
-    # https://github.com/tree-sitter/tree-sitter
-
-    # https://github.com/cognitive-singularity/SingleFile-Lite
-    # https://github.com/gildas-lormeau/SingleFile-Lite
-
-    # https://github.com/cognitive-singularity/cli
-    # https://github.com/structurizr/cli
-
-    # https://github.com/cognitive-singularity/tortoise-tts-fastest
-    # https://github.com/manmay-nakhashi/tortoise-tts-fastest
-
-    # https://github.com/cognitive-singularity/mods
-    # https://github.com/charmbracelet/mods
-
-    # https://github.com/cognitive-singularity/lingua-rs
-    # https://github.com/pemistahl/lingua-rs
-
-    # https://github.com/cognitive-singularity/llama-cpp-python
-    # https://github.com/abetlen/llama-cpp-python
-
-    # https://github.com/cognitive-singularity/terminusdb
-    # https://github.com/terminusdb/terminusdb
-
-    # https://github.com/cognitive-singularity/terminusdb-semantic-indexer
-    # https://github.com/terminusdb-labs/terminusdb-semantic-indexer
-
-    # https://github.com/cognitive-singularity/comunica
-    # https://github.com/comunica/comunica
-
-    # https://github.com/cognitive-singularity/umbrella
-    # https://github.com/thi-ng/umbrella
-
-    # https://github.com/cognitive-singularity/devshell
-    # https://github.com/numtide/devshell
-
-    # https://github.com/cognitive-singularity/flagger
-    # https://github.com/fluxcd/flagger
-
-    # https://github.com/cognitive-singularity/flops
-    # https://github.com/GTrunSec/flops
-
-    # https://github.com/cognitive-singularity/dufs
-    # https://github.com/sigoden/dufs
-
-    # https://github.com/cognitive-singularity/kubenix
-    # https://github.com/hall/kubenix
-
-    # https://github.com/cognitive-singularity/gherkin-ast
-    # https://github.com/gherking/gherkin-ast
-
-    # https://github.com/cognitive-singularity/haumea
-    # https://github.com/nix-community/haumea
-
-    # https://github.com/cognitive-singularity/rust-bert
-    # https://github.com/guillaume-be/rust-bert
-
-    # https://github.com/cognitive-singularity/std
-    # https://github.com/divnix/std
-
-    # https://github.com/cognitive-singularity/pueue
-    # https://github.com/Nukesor/pueue
-
-    # https://github.com/cognitive-singularity/flake
-    # https://github.com/nixified-ai/flake
-
-    # https://github.com/cognitive-singularity/infy-scroll
-    # https://github.com/sixcious/infy-scroll
-
-    # https://github.com/cognitive-singularity/core
-    # https://github.com/paisano-nix/core
-
-    # https://github.com/cognitive-singularity/webscrapbook
-    # https://github.com/danny0838/webscrapbook
-
-    # https://github.com/cognitive-singularity/terranix
-    # https://github.com/terranix/terranix
-
-    # https://github.com/cognitive-singularity/PyWebScrapBook
-    # https://github.com/danny0838/PyWebScrapBook
-
-    # https://github.com/cognitive-singularity/atomspace
-    # https://github.com/opencog/atomspace
-
-    # https://github.com/cognitive-singularity/automa
-    # https://github.com/AutomaApp/automa
+models:
+    - https://huggingface.co/TheBloke/13B-BlueMethod-GGML/blob/main/13b-bluemethod.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/13B-Ouroboros-GGML/blob/main/13b-ouroboros.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/30B-Epsilon-GGML/blob/main/30b-epsilon.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-33B-GPT4-2.0-GGML/blob/main/airoboros-33b-gpt4-2.0.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-33B-GPT4-m2.0-GGML/blob/main/airoboros-33b-gpt4-m2.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-l2-13B-gpt4-1.4.1-GGML/blob/main/airoboros-l2-13b-gpt4-1.4.1.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-l2-13b-gpt4-2.0-GGML/blob/main/airoboros-l2-13b-gpt4-2.0.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-l2-13b-gpt4-m2.0-GGML/blob/main/airoboros-l2-13b-gpt4-m2.0.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-l2-70B-gpt4-1.4.1-GGML/blob/main/airoboros-l2-70b-gpt4-1.4.1.ggmlv3.q8_0.z01
+    - https://huggingface.co/TheBloke/airoboros-l2-70B-gpt4-1.4.1-GGML/blob/main/airoboros-l2-70b-gpt4-1.4.1.ggmlv3.q8_0.zip
+    - https://huggingface.co/TheBloke/airoboros-l2-7b-gpt4-1.4.1-GGML/blob/main/airoboros-l2-7b-gpt4-1.4.1.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-l2-7B-gpt4-2.0-GGML/blob/main/airoboros-l2-7b-gpt4-2.0.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airoboros-l2-7B-gpt4-m2.0-GGML/blob/main/airoboros-l2-7b-gpt4-m2.0.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/airochronos-33B-GGML/blob/main/airochronos-33b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/AlpacaCielo-13B-GGML/blob/main/alpacacielo-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Chronoboros-33B-GGML/blob/main/chronoboros-33b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/CodeUp-Llama-2-13B-Chat-HF-GGML/blob/main/codeup-llama-2-13b-chat-hf.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Dolphin-Llama-13B-GGML/blob/main/dolphin-llama-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Evol-Replit-v1-GGML/blob/main/evol-replit-v1.ggmlv1.q8_0.bin
+    - https://huggingface.co/TheBloke/falcon-40b-sft-top1-560-GGML/blob/main/falcon-40b-top1-560.ggccv1.q8_0.bin
+    - https://huggingface.co/TheBloke/falcon-7b-instruct-GGML/blob/main/falcon-7b-instruct.ggccv1.q8_0.bin
+    - https://huggingface.co/TheBloke/GodziLLa-30B-GGML/blob/main/godzilla-30b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/guanaco-7B-GGML/blob/main/guanaco-7B.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/h2ogpt-gm-oasst1-en-2048-falcon-40b-v2-GGML/blob/main/h2ogpt-falcon-40b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/h2ogpt-gm-oasst1-en-2048-falcon-7b-v2-GGML/blob/main/h2ogpt-gm-oasst1-en-2048-falcon-7b-v2.ggccv1.q8_0.bin
+    - https://huggingface.co/TheBloke/Kimiko-13B-GGML/blob/main/kimiko-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Kimiko-7B-GGML/blob/main/kimiko-7b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/LLaMa-13B-GGML/blob/main/llama-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/blob/main/llama-2-13b-chat.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Llama-2-13B-GGML/blob/main/llama-2-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/llama-2-13B-Guanaco-QLoRA-GGML/blob/main/llama-2-13b-guanaco-qlora.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Llama-2-70B-GGML/blob/main/llama-2-70b.ggmlv3.q8_0.z01
+    - https://huggingface.co/TheBloke/Llama-2-70B-GGML/blob/main/llama-2-70b.ggmlv3.q8_0.zip
+    - https://huggingface.co/TheBloke/llama-2-70b-Guanaco-QLoRA-GGML/blob/main/llama-2-70b-guanaco-qlora.ggmlv3.q8_0.z01
+    - https://huggingface.co/TheBloke/llama-2-70b-Guanaco-QLoRA-GGML/blob/main/llama-2-70b-guanaco-qlora.ggmlv3.q8_0.zip
+    - https://huggingface.co/TheBloke/llama2-7b-chat-codeCherryPop-qLoRA-GGML/blob/main/llama-2-7b-chat-codeCherryPop.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/blob/main/llama-2-7b-chat.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Llama-2-7B-GGML/blob/main/llama-2-7b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/llama-2-7B-Guanaco-QLoRA-GGML/blob/main/llama-2-7b-guanaco-qlora.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/LLaMa-30B-GGML/blob/main/llama-30b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/LLaMa-7B-GGML/blob/main/llama-7b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/LLongMA-2-7B-GGML/blob/main/llongma-2-7b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/MPT-30B-Dolphin-v2-GGML/blob/main/mpt-30b-dolphin-v2.ggmlv1.q8_0.bin
+    - https://huggingface.co/TheBloke/MythoBoros-13B-GGML/blob/main/mythoboros-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/MythoLogic-13B-GGML/blob/main/mythologic-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/MythoLogic-Mini-7B-GGML/blob/main/mythologic-mini-7b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGML/blob/main/nous-hermes-llama-2-7b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML/blob/main/nous-hermes-llama2-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/OpenAssistant-Llama2-13B-Orca-8K-3319-GGML/blob/main/openassistant-llama2-13b-orca-8k-3319.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/OpenChat_v3.2-GGML/blob/main/openchat_v3.2.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/open-llama-7B-v2-open-instruct-GGML/blob/main/open-llama-7b-v2-open-instruct.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/OpenOrca-Preview1-13B-GGML/blob/main/openorca-preview1-200k-llama-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/orca_mini_v2_13b-GGML/blob/main/orca_mini_v2_13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Redmond-Puffin-13B-GGML/blob/main/redmond-puffin-13b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/replit-openorca-GGML/blob/main/replit-openorca.ggmlv1.q8_0.bin
+    - https://huggingface.co/TheBloke/Selfee-13B-SuperHOT-8K-GGML/blob/main/selfee-13b-superhot-8k.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Selfee-7B-SuperHOT-8K-GGML/blob/main/selfee-7b-superhot-8k.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/blob/main/stablebeluga2-70b.ggmlv3.q8_0.z01
+    - https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/blob/main/stablebeluga2-70b.ggmlv3.q8_0.zip
+    - https://huggingface.co/TheBloke/StableBeluga-7B-GGML/blob/main/stablebeluga-7b.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Starcoderplus-Guanaco-GPT4-15B-V1.0-GGML/blob/main/starcoderplus-guanaco-gpt4.ggmlv1.q8_0.bin
+    - https://huggingface.co/TheBloke/Tulu-7B-SuperHOT-8K-GGML/blob/main/tulu-7b-superhot-8k.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/blob/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.z01
+    - https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/blob/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.zip
+    - https://huggingface.co/TheBloke/Vigogne-2-13B-Instruct-GGML/blob/main/vigogne-2-13b-instruct.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/Vigogne-2-7B-Instruct-GGML/blob/main/vigogne-2-7b-instruct.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/WizardCoder-Guanaco-15B-V1.0-GGML/blob/main/wizardcoder-guanaco-15b-v1.0.ggmlv1.q8_0.bin
+    - https://huggingface.co/TheBloke/WizardCoder-Guanaco-15B-V1.1-GGML/blob/main/wizardcoder-guanaco-15b-v1.1.ggmlv1.q8_0.bin
+    - https://huggingface.co/TheBloke/WizardLM-13B-V1.1-GGML/blob/main/wizardlm-13b-v1.1.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/WizardLM-13B-V1-1-SuperHOT-8K-GGML/blob/main/wizardlm-13b-v1.1-superhot-8k.ggmlv3.q8_0.bin
+    - https://huggingface.co/TheBloke/WizardLM-13B-V1.2-GGML/blob/main/wizardlm-13b-v1.2.ggmlv3.q8_0.bin

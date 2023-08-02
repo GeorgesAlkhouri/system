@@ -1,3 +1,39 @@
 [nu_scripts]
 src.git = "https://github.com/cognitive-singularity/nu_scripts"
 fetch.github = "cognitive-singularity/nu_scripts"
+
+[tg-archive]
+src.git = "https://github.com/cognitive-singularity/tg-archive"
+fetch.github = "cognitive-singularity/tg-archive"
+
+[pywebscrapbook]
+src.git = "https://github.com/cognitive-singularity/PyWebScrapBook"
+fetch.github = "cognitive-singularity/PyWebScrapBook"
+
+[webscrapbook]
+src.git = "https://github.com/cognitive-singularity/webscrapbook"
+fetch.github = "cognitive-singularity/webscrapbook"
+
+[isdcac]
+src.git = "https://github.com/cognitive-singularity/I-Still-Dont-Care-About-Cookies"
+fetch.github = "cognitive-singularity/I-Still-Dont-Care-About-Cookies"
+
+[ublock]
+src.git = "https://github.com/cognitive-singularity/ublock"
+fetch.github = "cognitive-singularity/ublock"
+
+[bypass-paywall]
+src.git = "https://github.com/cognitive-singularity/bypass-paywalls-chrome"
+fetch.github = "cognitive-singularity/bypass-paywalls-chrome"
+
+[infy-scroll]
+src.git = "https://github.com/cognitive-singularity/infy-scroll"
+fetch.github = "cognitive-singularity/infy-scroll"
+
+[automa]
+src.git = "https://github.com/cognitive-singularity/automa"
+fetch.github = "cognitive-singularity/automa"
+
+[archive-page]
+src.git = "https://github.com/cognitive-singularity/archiveweb.page"
+fetch.github = "cognitive-singularity/acrhiveweb.page"

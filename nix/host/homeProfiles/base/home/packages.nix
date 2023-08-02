@@ -5,6 +5,7 @@ with inputs.nixpkgs; [
   dufs
   fclones
   hakrawler
+  gopass
   mupdf
   nil
   nixfmt
