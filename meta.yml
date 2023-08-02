@@ -195,3 +195,7 @@ models:
     - https://huggingface.co/TheBloke/WizardLM-13B-V1.1-GGML/blob/main/wizardlm-13b-v1.1.ggmlv3.q8_0.bin
     - https://huggingface.co/TheBloke/WizardLM-13B-V1-1-SuperHOT-8K-GGML/blob/main/wizardlm-13b-v1.1-superhot-8k.ggmlv3.q8_0.bin
     - https://huggingface.co/TheBloke/WizardLM-13B-V1.2-GGML/blob/main/wizardlm-13b-v1.2.ggmlv3.q8_0.bin
+forks:
+  github:
+    - origin
+    - upstream

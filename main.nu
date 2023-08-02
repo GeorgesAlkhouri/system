@@ -33,15 +33,26 @@ export def syntaxes [] {
 }
 
 export def contribution [org = "cognitive-singularity", path = "contribution"] {
-  let path = ([$env.HOME $path] | path join)
-  mkdir $path
-  cd $path
-  gh repo list $org --json url
+  let meta_path = ([$env.HOME "system" "meta.yml"] | path join)
+  let dist_path = ([$env.HOME $path] | path join)
+  mkdir $dist_path
+  cd $dist_path
+  gh repo list $org -L 2 --json owner,name,parent
   | from json
-  | get url
-  | par-each {|url|
-    git clone $url ($url | url parse | get path | str downcase | split column "/" | get column3)
+  | par-each {|data|
+    let entry = {
+      origin_owner: ()
+      origin_name: ()
+      parent_owner: ()
+      parent_name: ()
+    }
+
+    # git clone $url ($url | url parse | get path | str downcase | split column "/" | get column3)
   }
+}
+
+export def generate [] {
+
 }
 
 export def generate [] {
