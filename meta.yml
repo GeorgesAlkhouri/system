@@ -1,201 +1,296 @@
 syntaxes:
-    - https://git.sr.ht/~yotam/tree-sitter-smali
-    - https://github.com/6cdh/tree-sitter-racket
-    - https://github.com/6cdh/tree-sitter-scheme
-    - https://github.com/abstractmachineslab/tree-sitter-sexp
-    - https://github.com/azganoth/tree-sitter-lua
-    - https://github.com/bonabeavis/tree-sitter-sparql
-    - https://github.com/bonabeavis/tree-sitter-turtle
-    - https://github.com/chimehq/swifttreesitter
-    - https://github.com/decodetalkers/tree-sitter-meson
-    - https://github.com/fallenangel97/tree-sitter-rego
-    - https://github.com/flakebi/tree-sitter-llvm-mir
-    - https://github.com/flakebi/tree-sitter-tablegen
-    - https://github.com/fymyte/tree-sitter-rasi
-    - https://github.com/himujjal/tree-sitter-svelte
-    - https://github.com/hubro/tree-sitter-yang
-    - https://github.com/isopod/tree-sitter-pascal
-    - https://github.com/joakker/tree-sitter-json5
-    - https://github.com/julian/tree-sitter-lean
-    - https://github.com/mdeiml/tree-sitter-markdown
-    - https://github.com/michahoffmann/tree-sitter-hcl
-    - https://github.com/observeroftime/tree-sitter-gitattributes
-    - https://github.com/powershell/tree-sitter-powershell
-    - https://github.com/systemrdl/tree-sitter-systemrdl
-    - https://github.com/usernobody14/tree-sitter-dart
-    - https://github.com/whatsapp/tree-sitter-erlang
-    - https://github.com/wilfred/tree-sitter-elisp
-    - https://github.com/aheber/tree-sitter-sfapex
-    - https://github.com/alemuller/tree-sitter-make
-    - https://github.com/alemuller/tree-sitter-re2c
-    - https://github.com/alemuller/tree-sitter-vhdl
-    - https://github.com/alex-pinkus/tree-sitter-swift
-    - https://github.com/amaanq/tree-sitter-capnp
-    - https://github.com/amaanq/tree-sitter-smali
-    - https://github.com/benwilliamgraham/tree-sitter-llvm
-    - https://github.com/bkegley/tree-sitter-graphql
-    - https://github.com/briot/tree-sitter-ada
-    - https://github.com/calicoday/ruby-tree-sitter-ffi
-    - https://github.com/camdencheek/tree-sitter-dockerfile
-    - https://github.com/camdencheek/tree-sitter-go-mod
-    - https://github.com/cstrahan/tree-sitter-nix
-    - https://github.com/dhcmrlchtdj/tree-sitter-sqlite
-    - https://github.com/duskmoon314/tree-sitter-thrift
-    - https://github.com/elixir-lang/tree-sitter-elixir
-    - https://github.com/elm-tooling/tree-sitter-elm
-    - https://github.com/eno-lang/tree-sitter-eno
-    - https://github.com/euclidianace/ltreesitter
-    - https://github.com/flurie/tree-sitter-jq
-    - https://github.com/fwcd/tree-sitter-kotlin
-    - https://github.com/ganezdragon/tree-sitter-perl
-    - https://github.com/gbprod/tree-sitter-twig
-    - https://github.com/gdamore/tree-sitter-d
-    - https://github.com/gleam-lang/tree-sitter-gleam
-    - https://github.com/grahambates/tree-sitter-m68k
-    - https://github.com/ikatyang/tree-sitter-markdown
-    - https://github.com/ikatyang/tree-sitter-toml
-    - https://github.com/ikatyang/tree-sitter-vue
-    - https://github.com/ikatyang/tree-sitter-yaml
-    - https://github.com/jiyee/tree-sitter-objc
-    - https://github.com/latex-lsp/tree-sitter-latex
-    - https://github.com/m-novikov/tree-sitter-sql
-    - https://github.com/maxxnino/tree-sitter-zig
-    - https://github.com/mehmetoguzderin/tree-sitter-wgsl
-    - https://github.com/metio/tree-sitter-ssh-client-config
-    - https://github.com/milisims/tree-sitter-org
-    - https://github.com/mitchellh/tree-sitter-proto
-    - https://github.com/nilshelmig/tree-sitter-sourcepawn
-    - https://github.com/nvim-treesitter/tree-sitter-query
-    - https://github.com/omertuc/tree-sitter-go-work
-    - https://github.com/oxisto/kotlintree
-    - https://github.com/r-lib/tree-sitter-r
-    - https://github.com/ram02z/tree-sitter-fish
-    - https://github.com/returntocorp/ocaml-tree-sitter-core
-    - https://github.com/rolandwalker/tree-sitter-pgn
-    - https://github.com/rydesun/tree-sitter-dot
-    - https://github.com/serenadeai/java-tree-sitter
-    - https://github.com/serenadeai/tree-sitter-scss
-    - https://github.com/shunsambongi/tree-sitter-gitignore
-    - https://github.com/siraben/tree-sitter-formula
-    - https://github.com/slackhq/tree-sitter-hack
-    - https://github.com/smacker/go-tree-sitter
-    - https://github.com/sogaiu/tree-sitter-clojure
-    - https://github.com/stadelmanma/tree-sitter-fortran
-    - https://github.com/staysail/tree-sitter-meson
-    - https://github.com/stsewd/tree-sitter-comment
-    - https://github.com/stsewd/tree-sitter-rst
-    - https://github.com/takegue/tree-sitter-sql-bigquery
-    - https://github.com/thehamsta/tree-sitter-commonlisp
-    - https://github.com/thehamsta/tree-sitter-cuda
-    - https://github.com/thehamsta/tree-sitter-glsl
-    - https://github.com/travonted/tree-sitter-fennel
-    - https://github.com/traxys/tree-sitter-lalrpop
-    - https://github.com/tree-sitter-perl/tree-sitter-perl
-    - https://github.com/tree-sitter-perl/tree-sitter-pod
-    - https://github.com/tree-sitter/haskell-tree-sitter
-    - https://github.com/tree-sitter/node-tree-sitter
-    - https://github.com/tree-sitter/py-tree-sitter
-    - https://github.com/tree-sitter/ruby-tree-sitter
-    - https://github.com/tree-sitter/tree-sitter-agda
-    - https://github.com/tree-sitter/tree-sitter-bash
-    - https://github.com/tree-sitter/tree-sitter-c
-    - https://github.com/tree-sitter/tree-sitter-c-sharp
-    - https://github.com/tree-sitter/tree-sitter-cpp
-    - https://github.com/tree-sitter/tree-sitter-css
-    - https://github.com/tree-sitter/tree-sitter-embedded-template
-    - https://github.com/tree-sitter/tree-sitter-go
-    - https://github.com/tree-sitter/tree-sitter-haskell
-    - https://github.com/tree-sitter/tree-sitter-html
-    - https://github.com/tree-sitter/tree-sitter-java
-    - https://github.com/tree-sitter/tree-sitter-javascript
-    - https://github.com/tree-sitter/tree-sitter-json
-    - https://github.com/tree-sitter/tree-sitter-julia
-    - https://github.com/tree-sitter/tree-sitter-ocaml
-    - https://github.com/tree-sitter/tree-sitter-php
-    - https://github.com/tree-sitter/tree-sitter-python
-    - https://github.com/tree-sitter/tree-sitter-regex
-    - https://github.com/tree-sitter/tree-sitter-ruby
-    - https://github.com/tree-sitter/tree-sitter-rust
-    - https://github.com/tree-sitter/tree-sitter-scala
-    - https://github.com/tree-sitter/tree-sitter-typescript
-    - https://github.com/tree-sitter/tree-sitter-verilog
-    - https://github.com/uyha/tree-sitter-cmake
-    - https://github.com/wasm-lsp/tree-sitter-wasm
-    - https://github.com/yuja/tree-sitter-qmljs
-    - https://github.com/zwpaper/tree-sitter-beancount
+- https://git.sr.ht/~yotam/tree-sitter-smali
+- https://github.com/6cdh/tree-sitter-racket
+- https://github.com/6cdh/tree-sitter-scheme
+- https://github.com/abstractmachineslab/tree-sitter-sexp
+- https://github.com/azganoth/tree-sitter-lua
+- https://github.com/bonabeavis/tree-sitter-sparql
+- https://github.com/bonabeavis/tree-sitter-turtle
+- https://github.com/chimehq/swifttreesitter
+- https://github.com/decodetalkers/tree-sitter-meson
+- https://github.com/fallenangel97/tree-sitter-rego
+- https://github.com/flakebi/tree-sitter-llvm-mir
+- https://github.com/flakebi/tree-sitter-tablegen
+- https://github.com/fymyte/tree-sitter-rasi
+- https://github.com/himujjal/tree-sitter-svelte
+- https://github.com/hubro/tree-sitter-yang
+- https://github.com/isopod/tree-sitter-pascal
+- https://github.com/joakker/tree-sitter-json5
+- https://github.com/julian/tree-sitter-lean
+- https://github.com/mdeiml/tree-sitter-markdown
+- https://github.com/michahoffmann/tree-sitter-hcl
+- https://github.com/observeroftime/tree-sitter-gitattributes
+- https://github.com/powershell/tree-sitter-powershell
+- https://github.com/systemrdl/tree-sitter-systemrdl
+- https://github.com/usernobody14/tree-sitter-dart
+- https://github.com/whatsapp/tree-sitter-erlang
+- https://github.com/wilfred/tree-sitter-elisp
+- https://github.com/aheber/tree-sitter-sfapex
+- https://github.com/alemuller/tree-sitter-make
+- https://github.com/alemuller/tree-sitter-re2c
+- https://github.com/alemuller/tree-sitter-vhdl
+- https://github.com/alex-pinkus/tree-sitter-swift
+- https://github.com/amaanq/tree-sitter-capnp
+- https://github.com/amaanq/tree-sitter-smali
+- https://github.com/benwilliamgraham/tree-sitter-llvm
+- https://github.com/bkegley/tree-sitter-graphql
+- https://github.com/briot/tree-sitter-ada
+- https://github.com/calicoday/ruby-tree-sitter-ffi
+- https://github.com/camdencheek/tree-sitter-dockerfile
+- https://github.com/camdencheek/tree-sitter-go-mod
+- https://github.com/cstrahan/tree-sitter-nix
+- https://github.com/dhcmrlchtdj/tree-sitter-sqlite
+- https://github.com/duskmoon314/tree-sitter-thrift
+- https://github.com/elixir-lang/tree-sitter-elixir
+- https://github.com/elm-tooling/tree-sitter-elm
+- https://github.com/eno-lang/tree-sitter-eno
+- https://github.com/euclidianace/ltreesitter
+- https://github.com/flurie/tree-sitter-jq
+- https://github.com/fwcd/tree-sitter-kotlin
+- https://github.com/ganezdragon/tree-sitter-perl
+- https://github.com/gbprod/tree-sitter-twig
+- https://github.com/gdamore/tree-sitter-d
+- https://github.com/gleam-lang/tree-sitter-gleam
+- https://github.com/grahambates/tree-sitter-m68k
+- https://github.com/ikatyang/tree-sitter-markdown
+- https://github.com/ikatyang/tree-sitter-toml
+- https://github.com/ikatyang/tree-sitter-vue
+- https://github.com/ikatyang/tree-sitter-yaml
+- https://github.com/jiyee/tree-sitter-objc
+- https://github.com/latex-lsp/tree-sitter-latex
+- https://github.com/m-novikov/tree-sitter-sql
+- https://github.com/maxxnino/tree-sitter-zig
+- https://github.com/mehmetoguzderin/tree-sitter-wgsl
+- https://github.com/metio/tree-sitter-ssh-client-config
+- https://github.com/milisims/tree-sitter-org
+- https://github.com/mitchellh/tree-sitter-proto
+- https://github.com/nilshelmig/tree-sitter-sourcepawn
+- https://github.com/nvim-treesitter/tree-sitter-query
+- https://github.com/omertuc/tree-sitter-go-work
+- https://github.com/oxisto/kotlintree
+- https://github.com/r-lib/tree-sitter-r
+- https://github.com/ram02z/tree-sitter-fish
+- https://github.com/returntocorp/ocaml-tree-sitter-core
+- https://github.com/rolandwalker/tree-sitter-pgn
+- https://github.com/rydesun/tree-sitter-dot
+- https://github.com/serenadeai/java-tree-sitter
+- https://github.com/serenadeai/tree-sitter-scss
+- https://github.com/shunsambongi/tree-sitter-gitignore
+- https://github.com/siraben/tree-sitter-formula
+- https://github.com/slackhq/tree-sitter-hack
+- https://github.com/smacker/go-tree-sitter
+- https://github.com/sogaiu/tree-sitter-clojure
+- https://github.com/stadelmanma/tree-sitter-fortran
+- https://github.com/staysail/tree-sitter-meson
+- https://github.com/stsewd/tree-sitter-comment
+- https://github.com/stsewd/tree-sitter-rst
+- https://github.com/takegue/tree-sitter-sql-bigquery
+- https://github.com/thehamsta/tree-sitter-commonlisp
+- https://github.com/thehamsta/tree-sitter-cuda
+- https://github.com/thehamsta/tree-sitter-glsl
+- https://github.com/travonted/tree-sitter-fennel
+- https://github.com/traxys/tree-sitter-lalrpop
+- https://github.com/tree-sitter-perl/tree-sitter-perl
+- https://github.com/tree-sitter-perl/tree-sitter-pod
+- https://github.com/tree-sitter/haskell-tree-sitter
+- https://github.com/tree-sitter/node-tree-sitter
+- https://github.com/tree-sitter/py-tree-sitter
+- https://github.com/tree-sitter/ruby-tree-sitter
+- https://github.com/tree-sitter/tree-sitter-agda
+- https://github.com/tree-sitter/tree-sitter-bash
+- https://github.com/tree-sitter/tree-sitter-c
+- https://github.com/tree-sitter/tree-sitter-c-sharp
+- https://github.com/tree-sitter/tree-sitter-cpp
+- https://github.com/tree-sitter/tree-sitter-css
+- https://github.com/tree-sitter/tree-sitter-embedded-template
+- https://github.com/tree-sitter/tree-sitter-go
+- https://github.com/tree-sitter/tree-sitter-haskell
+- https://github.com/tree-sitter/tree-sitter-html
+- https://github.com/tree-sitter/tree-sitter-java
+- https://github.com/tree-sitter/tree-sitter-javascript
+- https://github.com/tree-sitter/tree-sitter-json
+- https://github.com/tree-sitter/tree-sitter-julia
+- https://github.com/tree-sitter/tree-sitter-ocaml
+- https://github.com/tree-sitter/tree-sitter-php
+- https://github.com/tree-sitter/tree-sitter-python
+- https://github.com/tree-sitter/tree-sitter-regex
+- https://github.com/tree-sitter/tree-sitter-ruby
+- https://github.com/tree-sitter/tree-sitter-rust
+- https://github.com/tree-sitter/tree-sitter-scala
+- https://github.com/tree-sitter/tree-sitter-typescript
+- https://github.com/tree-sitter/tree-sitter-verilog
+- https://github.com/uyha/tree-sitter-cmake
+- https://github.com/wasm-lsp/tree-sitter-wasm
+- https://github.com/yuja/tree-sitter-qmljs
+- https://github.com/zwpaper/tree-sitter-beancount
 models:
-    - https://huggingface.co/TheBloke/13B-BlueMethod-GGML/blob/main/13b-bluemethod.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/13B-Ouroboros-GGML/blob/main/13b-ouroboros.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/30B-Epsilon-GGML/blob/main/30b-epsilon.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-33B-GPT4-2.0-GGML/blob/main/airoboros-33b-gpt4-2.0.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-33B-GPT4-m2.0-GGML/blob/main/airoboros-33b-gpt4-m2.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-l2-13B-gpt4-1.4.1-GGML/blob/main/airoboros-l2-13b-gpt4-1.4.1.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-l2-13b-gpt4-2.0-GGML/blob/main/airoboros-l2-13b-gpt4-2.0.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-l2-13b-gpt4-m2.0-GGML/blob/main/airoboros-l2-13b-gpt4-m2.0.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-l2-70B-gpt4-1.4.1-GGML/blob/main/airoboros-l2-70b-gpt4-1.4.1.ggmlv3.q8_0.z01
-    - https://huggingface.co/TheBloke/airoboros-l2-70B-gpt4-1.4.1-GGML/blob/main/airoboros-l2-70b-gpt4-1.4.1.ggmlv3.q8_0.zip
-    - https://huggingface.co/TheBloke/airoboros-l2-7b-gpt4-1.4.1-GGML/blob/main/airoboros-l2-7b-gpt4-1.4.1.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-l2-7B-gpt4-2.0-GGML/blob/main/airoboros-l2-7b-gpt4-2.0.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airoboros-l2-7B-gpt4-m2.0-GGML/blob/main/airoboros-l2-7b-gpt4-m2.0.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/airochronos-33B-GGML/blob/main/airochronos-33b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/AlpacaCielo-13B-GGML/blob/main/alpacacielo-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Chronoboros-33B-GGML/blob/main/chronoboros-33b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/CodeUp-Llama-2-13B-Chat-HF-GGML/blob/main/codeup-llama-2-13b-chat-hf.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Dolphin-Llama-13B-GGML/blob/main/dolphin-llama-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Evol-Replit-v1-GGML/blob/main/evol-replit-v1.ggmlv1.q8_0.bin
-    - https://huggingface.co/TheBloke/falcon-40b-sft-top1-560-GGML/blob/main/falcon-40b-top1-560.ggccv1.q8_0.bin
-    - https://huggingface.co/TheBloke/falcon-7b-instruct-GGML/blob/main/falcon-7b-instruct.ggccv1.q8_0.bin
-    - https://huggingface.co/TheBloke/GodziLLa-30B-GGML/blob/main/godzilla-30b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/guanaco-7B-GGML/blob/main/guanaco-7B.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/h2ogpt-gm-oasst1-en-2048-falcon-40b-v2-GGML/blob/main/h2ogpt-falcon-40b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/h2ogpt-gm-oasst1-en-2048-falcon-7b-v2-GGML/blob/main/h2ogpt-gm-oasst1-en-2048-falcon-7b-v2.ggccv1.q8_0.bin
-    - https://huggingface.co/TheBloke/Kimiko-13B-GGML/blob/main/kimiko-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Kimiko-7B-GGML/blob/main/kimiko-7b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/LLaMa-13B-GGML/blob/main/llama-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/blob/main/llama-2-13b-chat.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Llama-2-13B-GGML/blob/main/llama-2-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/llama-2-13B-Guanaco-QLoRA-GGML/blob/main/llama-2-13b-guanaco-qlora.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Llama-2-70B-GGML/blob/main/llama-2-70b.ggmlv3.q8_0.z01
-    - https://huggingface.co/TheBloke/Llama-2-70B-GGML/blob/main/llama-2-70b.ggmlv3.q8_0.zip
-    - https://huggingface.co/TheBloke/llama-2-70b-Guanaco-QLoRA-GGML/blob/main/llama-2-70b-guanaco-qlora.ggmlv3.q8_0.z01
-    - https://huggingface.co/TheBloke/llama-2-70b-Guanaco-QLoRA-GGML/blob/main/llama-2-70b-guanaco-qlora.ggmlv3.q8_0.zip
-    - https://huggingface.co/TheBloke/llama2-7b-chat-codeCherryPop-qLoRA-GGML/blob/main/llama-2-7b-chat-codeCherryPop.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/blob/main/llama-2-7b-chat.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Llama-2-7B-GGML/blob/main/llama-2-7b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/llama-2-7B-Guanaco-QLoRA-GGML/blob/main/llama-2-7b-guanaco-qlora.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/LLaMa-30B-GGML/blob/main/llama-30b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/LLaMa-7B-GGML/blob/main/llama-7b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/LLongMA-2-7B-GGML/blob/main/llongma-2-7b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/MPT-30B-Dolphin-v2-GGML/blob/main/mpt-30b-dolphin-v2.ggmlv1.q8_0.bin
-    - https://huggingface.co/TheBloke/MythoBoros-13B-GGML/blob/main/mythoboros-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/MythoLogic-13B-GGML/blob/main/mythologic-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/MythoLogic-Mini-7B-GGML/blob/main/mythologic-mini-7b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGML/blob/main/nous-hermes-llama-2-7b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML/blob/main/nous-hermes-llama2-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/OpenAssistant-Llama2-13B-Orca-8K-3319-GGML/blob/main/openassistant-llama2-13b-orca-8k-3319.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/OpenChat_v3.2-GGML/blob/main/openchat_v3.2.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/open-llama-7B-v2-open-instruct-GGML/blob/main/open-llama-7b-v2-open-instruct.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/OpenOrca-Preview1-13B-GGML/blob/main/openorca-preview1-200k-llama-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/orca_mini_v2_13b-GGML/blob/main/orca_mini_v2_13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Redmond-Puffin-13B-GGML/blob/main/redmond-puffin-13b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/replit-openorca-GGML/blob/main/replit-openorca.ggmlv1.q8_0.bin
-    - https://huggingface.co/TheBloke/Selfee-13B-SuperHOT-8K-GGML/blob/main/selfee-13b-superhot-8k.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Selfee-7B-SuperHOT-8K-GGML/blob/main/selfee-7b-superhot-8k.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/blob/main/stablebeluga2-70b.ggmlv3.q8_0.z01
-    - https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/blob/main/stablebeluga2-70b.ggmlv3.q8_0.zip
-    - https://huggingface.co/TheBloke/StableBeluga-7B-GGML/blob/main/stablebeluga-7b.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Starcoderplus-Guanaco-GPT4-15B-V1.0-GGML/blob/main/starcoderplus-guanaco-gpt4.ggmlv1.q8_0.bin
-    - https://huggingface.co/TheBloke/Tulu-7B-SuperHOT-8K-GGML/blob/main/tulu-7b-superhot-8k.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/blob/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.z01
-    - https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/blob/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.zip
-    - https://huggingface.co/TheBloke/Vigogne-2-13B-Instruct-GGML/blob/main/vigogne-2-13b-instruct.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/Vigogne-2-7B-Instruct-GGML/blob/main/vigogne-2-7b-instruct.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/WizardCoder-Guanaco-15B-V1.0-GGML/blob/main/wizardcoder-guanaco-15b-v1.0.ggmlv1.q8_0.bin
-    - https://huggingface.co/TheBloke/WizardCoder-Guanaco-15B-V1.1-GGML/blob/main/wizardcoder-guanaco-15b-v1.1.ggmlv1.q8_0.bin
-    - https://huggingface.co/TheBloke/WizardLM-13B-V1.1-GGML/blob/main/wizardlm-13b-v1.1.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/WizardLM-13B-V1-1-SuperHOT-8K-GGML/blob/main/wizardlm-13b-v1.1-superhot-8k.ggmlv3.q8_0.bin
-    - https://huggingface.co/TheBloke/WizardLM-13B-V1.2-GGML/blob/main/wizardlm-13b-v1.2.ggmlv3.q8_0.bin
-forks:
-  github:
-    - origin
-    - upstream
+- https://huggingface.co/TheBloke/13B-BlueMethod-GGML/resolve/main/13b-bluemethod.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/13B-Ouroboros-GGML/resolve/main/13b-ouroboros.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/30B-Epsilon-GGML/resolve/main/30b-epsilon.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-33B-GPT4-2.0-GGML/resolve/main/airoboros-33b-gpt4-2.0.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-33B-GPT4-m2.0-GGML/resolve/main/airoboros-33b-gpt4-m2.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-l2-13B-gpt4-1.4.1-GGML/resolve/main/airoboros-l2-13b-gpt4-1.4.1.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-l2-13b-gpt4-2.0-GGML/resolve/main/airoboros-l2-13b-gpt4-2.0.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-l2-13b-gpt4-m2.0-GGML/resolve/main/airoboros-l2-13b-gpt4-m2.0.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-l2-70B-gpt4-1.4.1-GGML/resolve/main/airoboros-l2-70b-gpt4-1.4.1.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/airoboros-l2-70B-gpt4-1.4.1-GGML/resolve/main/airoboros-l2-70b-gpt4-1.4.1.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/airoboros-l2-7b-gpt4-1.4.1-GGML/resolve/main/airoboros-l2-7b-gpt4-1.4.1.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-l2-7B-gpt4-2.0-GGML/resolve/main/airoboros-l2-7b-gpt4-2.0.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airoboros-l2-7B-gpt4-m2.0-GGML/resolve/main/airoboros-l2-7b-gpt4-m2.0.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/airochronos-33B-GGML/resolve/main/airochronos-33b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/AlpacaCielo-13B-GGML/resolve/main/alpacacielo-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Chronoboros-33B-GGML/resolve/main/chronoboros-33b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/CodeUp-Llama-2-13B-Chat-HF-GGML/resolve/main/codeup-llama-2-13b-chat-hf.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Dolphin-Llama-13B-GGML/resolve/main/dolphin-llama-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Evol-Replit-v1-GGML/resolve/main/evol-replit-v1.ggmlv1.q8_0.bin
+- https://huggingface.co/TheBloke/falcon-40b-sft-top1-560-GGML/resolve/main/falcon-40b-top1-560.ggccv1.q8_0.bin
+- https://huggingface.co/TheBloke/falcon-7b-instruct-GGML/resolve/main/falcon-7b-instruct.ggccv1.q8_0.bin
+- https://huggingface.co/TheBloke/GodziLLa-30B-GGML/resolve/main/godzilla-30b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/guanaco-7B-GGML/resolve/main/guanaco-7B.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/h2ogpt-gm-oasst1-en-2048-falcon-40b-v2-GGML/resolve/main/h2ogpt-falcon-40b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/h2ogpt-gm-oasst1-en-2048-falcon-7b-v2-GGML/resolve/main/h2ogpt-gm-oasst1-en-2048-falcon-7b-v2.ggccv1.q8_0.bin
+- https://huggingface.co/TheBloke/Kimiko-13B-GGML/resolve/main/kimiko-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Kimiko-7B-GGML/resolve/main/kimiko-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/LLaMa-13B-GGML/resolve/main/llama-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/resolve/main/llama-2-13b-chat.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Llama-2-13B-GGML/resolve/main/llama-2-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/llama-2-13B-Guanaco-QLoRA-GGML/resolve/main/llama-2-13b-guanaco-qlora.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Llama-2-70B-GGML/resolve/main/llama-2-70b.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/Llama-2-70B-GGML/resolve/main/llama-2-70b.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/llama-2-70b-Guanaco-QLoRA-GGML/resolve/main/llama-2-70b-guanaco-qlora.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/llama-2-70b-Guanaco-QLoRA-GGML/resolve/main/llama-2-70b-guanaco-qlora.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/llama2-7b-chat-codeCherryPop-qLoRA-GGML/resolve/main/llama-2-7b-chat-codeCherryPop.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/resolve/main/llama-2-7b-chat.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Llama-2-7B-GGML/resolve/main/llama-2-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/llama-2-7B-Guanaco-QLoRA-GGML/resolve/main/llama-2-7b-guanaco-qlora.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/LLaMa-30B-GGML/resolve/main/llama-30b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/LLaMa-7B-GGML/resolve/main/llama-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/LLongMA-2-7B-GGML/resolve/main/llongma-2-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/MPT-30B-Dolphin-v2-GGML/resolve/main/mpt-30b-dolphin-v2.ggmlv1.q8_0.bin
+- https://huggingface.co/TheBloke/MythoBoros-13B-GGML/resolve/main/mythoboros-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/MythoLogic-13B-GGML/resolve/main/mythologic-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/MythoLogic-Mini-7B-GGML/resolve/main/mythologic-mini-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Nous-Hermes-Llama-2-7B-GGML/resolve/main/nous-hermes-llama-2-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Nous-Hermes-Llama2-GGML/resolve/main/nous-hermes-llama2-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/OpenAssistant-Llama2-13B-Orca-8K-3319-GGML/resolve/main/openassistant-llama2-13b-orca-8k-3319.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/OpenChat_v3.2-GGML/resolve/main/openchat_v3.2.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/open-llama-7B-v2-open-instruct-GGML/resolve/main/open-llama-7b-v2-open-instruct.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/OpenOrca-Preview1-13B-GGML/resolve/main/openorca-preview1-200k-llama-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/orca_mini_v2_13b-GGML/resolve/main/orca_mini_v2_13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Redmond-Puffin-13B-GGML/resolve/main/redmond-puffin-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/replit-openorca-GGML/resolve/main/replit-openorca.ggmlv1.q8_0.bin
+- https://huggingface.co/TheBloke/Selfee-13B-SuperHOT-8K-GGML/resolve/main/selfee-13b-superhot-8k.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Selfee-7B-SuperHOT-8K-GGML/resolve/main/selfee-7b-superhot-8k.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/resolve/main/stablebeluga2-70b.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/resolve/main/stablebeluga2-70b.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/StableBeluga-7B-GGML/resolve/main/stablebeluga-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Starcoderplus-Guanaco-GPT4-15B-V1.0-GGML/resolve/main/starcoderplus-guanaco-gpt4.ggmlv1.q8_0.bin
+- https://huggingface.co/TheBloke/Tulu-7B-SuperHOT-8K-GGML/resolve/main/tulu-7b-superhot-8k.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/resolve/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/resolve/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/Vigogne-2-13B-Instruct-GGML/resolve/main/vigogne-2-13b-instruct.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Vigogne-2-7B-Instruct-GGML/resolve/main/vigogne-2-7b-instruct.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/WizardCoder-Guanaco-15B-V1.0-GGML/resolve/main/wizardcoder-guanaco-15b-v1.0.ggmlv1.q8_0.bin
+- https://huggingface.co/TheBloke/WizardCoder-Guanaco-15B-V1.1-GGML/resolve/main/wizardcoder-guanaco-15b-v1.1.ggmlv1.q8_0.bin
+- https://huggingface.co/TheBloke/WizardLM-13B-V1.1-GGML/resolve/main/wizardlm-13b-v1.1.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/WizardLM-13B-V1-1-SuperHOT-8K-GGML/resolve/main/wizardlm-13b-v1.1-superhot-8k.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/WizardLM-13B-V1.2-GGML/resolve/main/wizardlm-13b-v1.2.ggmlv3.q8_0.bin
+contribute:
+- origin: git@github.com:bohushvitali/awesome-safety-critical.git
+  parent: https://github.com/stanislaw/awesome-safety-critical
+- origin: git@github.com:bohushvitali/milewski-ctfp-pdf.git
+  parent: https://github.com/hmemcpy/milewski-ctfp-pdf
+- origin: git@github.com:bohushvitali/archimate-patterns.git
+  parent: https://github.com/wilmerkrisp/patterns
+- origin: git@github.com:bohushvitali/Publications.git
+  parent: https://github.com/BartoszMilewski/Publications
+- origin: git@github.com:bohushvitali/nixos-homepage.git
+  parent: https://github.com/NixOS/nixos-homepage
+- origin: git@github.com:bohushvitali/fp-ts.git
+  parent: https://github.com/gcanti/fp-ts
+- origin: git@github.com:bohushvitali/rust-by-example.git
+  parent: https://github.com/rust-lang/rust-by-example
+- origin: git@github.com:bohushvitali/awesome-aws.git
+  parent: https://github.com/donnemartin/awesome-aws
+- origin: git@github.com:bohushvitali/nur-kapack.git
+  parent: https://github.com/oar-team/nur-kapack
+- origin: git@github.com:bohushvitali/github1s.git
+  parent: https://github.com/conwnet/github1s
+- origin: git@github.com:bohushvitali/Hexlet-solutions.git
+  parent: https://github.com/lazy-ocean/Hexlet-solutions
+- origin: git@github.com:bohushvitali/system-design-primer.git
+  parent: https://github.com/donnemartin/system-design-primer
+- origin: git@github.com:bohushvitali/conventionalcommits.org.git
+  parent: https://github.com/conventional-commits/conventionalcommits.org
+- origin: git@github.com:bohushvitali/polish-nlp-resources.git
+  parent: https://github.com/sdadas/polish-nlp-resources
+- origin: git@github.com:bohushvitali/rust-cookbook.git
+  parent: https://github.com/rust-lang-nursery/rust-cookbook
+- origin: git@github.com:bohushvitali/post-mortems.git
+  parent: https://github.com/danluu/post-mortems
+- origin: git@github.com:bohushvitali/aws-cdk-rfcs.git
+  parent: https://github.com/aws/aws-cdk-rfcs
+- origin: git@github.com:bohushvitali/nur-packages-template.git
+  parent: https://github.com/nix-community/nur-packages-template
+- origin: git@github.com:bohushvitali/nixpkgs-review.git
+  parent: https://github.com/Mic92/nixpkgs-review
+- origin: git@github.com:bohushvitali/nyx.git
+  parent: https://github.com/chaotic-cx/nyx
+- origin: git@github.com:bohushvitali/rust-rfcs.git
+  parent: https://github.com/rust-lang/rfcs
+- origin: git@github.com:bohushvitali/NUR.git
+  parent: https://github.com/nix-community/NUR
+- origin: git@github.com:bohushvitali/nix-rfcs.git
+  parent: https://github.com/NixOS/rfcs
+- origin: git@github.com:bohushvitali/awesome-rust.git
+  parent: https://github.com/rust-unofficial/awesome-rust
+- origin: git@github.com:bohushvitali/bevy-cheatbook.git
+  parent: https://github.com/bevy-cheatbook/bevy-cheatbook
+- origin: git@github.com:bohushvitali/openai-cookbook.git
+  parent: https://github.com/openai/openai-cookbook
+- origin: git@github.com:bohushvitali/Learn_Prompting.git
+  parent: https://github.com/trigaten/Learn_Prompting
+- origin: git@github.com:bohushvitali/Prompt-Engineering-Guide.git
+  parent: https://github.com/dair-ai/Prompt-Engineering-Guide
+- origin: git@github.com:bohushvitali/rustlings.git
+  parent: https://github.com/rust-lang/rustlings
+- origin: git@github.com:bohushvitali/docs.git
+  parent: https://github.com/github/docs
+- origin: git@github.com:bohushvitali/developer-roadmap.git
+  parent: https://github.com/kamranahmedse/developer-roadmap
+- origin: git@github.com:bohushvitali/30-seconds-of-code.git
+  parent: https://github.com/30-seconds/30-seconds-of-code
+- origin: git@github.com:bohushvitali/awesome.git
+  parent: https://github.com/sindresorhus/awesome
+- origin: git@github.com:bohushvitali/90DaysOfDevOps.git
+  parent: https://github.com/MichaelCade/90DaysOfDevOps
+- origin: git@github.com:bohushvitali/front-end-interview-handbook.git
+  parent: https://github.com/yangshun/front-end-interview-handbook
+- origin: git@github.com:bohushvitali/rust-patterns.git
+  parent: https://github.com/rust-unofficial/patterns
+- origin: git@github.com:bohushvitali/awesome-nix.git
+  parent: https://github.com/nix-community/awesome-nix
+- origin: git@github.com:bohushvitali/awesome-leptos.git
+  parent: https://github.com/leptos-rs/awesome-leptos
+- origin: git@github.com:bohushvitali/site.git
+  parent: https://github.com/learning-rust/site
+- origin: git@github.com:bohushvitali/tech-interview-handbook.git
+  parent: https://github.com/yangshun/tech-interview-handbook
+- origin: git@github.com:bohushvitali/Awesome-Prompt-Engineering.git
+  parent: https://github.com/promptslab/Awesome-Prompt-Engineering
+- origin: git@github.com:bohushvitali/awesome-decentralized-llm.git
+  parent: https://github.com/imaurer/awesome-decentralized-llm
+- origin: git@github.com:bohushvitali/terminusdb-docs.git
+  parent: https://github.com/terminusdb/terminusdb-docs
+- origin: git@github.com:bohushvitali/awesome-sustainability-jobs.git
+  parent: https://github.com/pogopaule/awesome-sustainability-jobs
+- origin: git@github.com:bohushvitali/awesome-nu.git
+  parent: https://github.com/nushell/awesome-nu
+- origin: git@github.com:bohushvitali/MoonZoon.git
+  parent: https://github.com/MoonZoon/MoonZoon
+- origin: git@github.com:bohushvitali/kerkour.com.git
+  parent: https://github.com/skerkour/kerkour.com
+- origin: git@github.com:bohushvitali/black-hat-rust.git
+  parent: https://github.com/skerkour/black-hat-rust
+- origin: git@github.com:bohushvitali/architecture-decision-record.git
+  parent: https://github.com/joelparkerhenderson/architecture-decision-record

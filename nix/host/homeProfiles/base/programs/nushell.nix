@@ -12,6 +12,9 @@
     use ${cell.packages.nu-scripts}/share/nu_scripts/custom-completions/tealdeer/tldr-completions.nu *
 
     use /home/nixos/system/main.nu *
+    use /home/nixos/system/nix/host/presets/nushell/scripts/downloads.nu *
+    use /home/nixos/system/nix/host/presets/nushell/scripts/dependencies.nu *
+    use /home/nixos/system/nix/host/presets/nushell/scripts/archive.nu *
   '';
 
   envFile = { source = inputs.self + "/nix/host/presets/nushell/env.nu"; };
