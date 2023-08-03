@@ -3,10 +3,28 @@ let
   inherit (inputs.std) lib;
   l = inputs.nixpkgs.lib // builtins;
   nixpkgs = inputs.nixpkgs.appendOverlays [ ];
+  local = with cell.packages; [ wgsl-analyzer ];
+  rust = with inputs.nixpkgs; [ cargo-spellcheck ];
+  python = with inputs.nixpkgs; [ poetry poetry2nix.cli python310 ];
+  golang = with inputs.nixpkgs; [
+    gnumake
+    go
+    gotools
+    gopls
+    go-outline
+    gocode
+    gopkgs
+    gocode-gomod
+    godef
+    golint
+    delve
+  ];
+  devops = with inputs.nixpkgs; [ terraform ];
 in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
   default = {
     name = "devshell";
-    packages = [ cell.packages.wgsl-analyzer nixpkgs.cargo-spellcheck ];
+    packages =
+      inputs.nixpkgs.lib.concatLists [ local rust python golang devops ];
     imports = [ inputs.std.std.devshellProfiles.default ];
     nixago = [
       ((lib.dev.mkNixago lib.cfg.conform) {
@@ -18,28 +36,17 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
     ];
     commands = [
       {
-        package = nixpkgs.jq;
-        category = "tools";
-      }
-      {
-        package = inputs.nixpkgs.nvfetcher;
+        package = nixpkgs.nvfetcher;
         category = "versioning";
       }
       {
-        package = inputs.nixpkgs.sops;
-        category = "secrets";
-      }
-      {
-        package = inputs.nixpkgs.age;
+        package = nixpkgs.sops;
         category = "secrets";
       }
       {
         package = inputs.cells.host.packages.terminusdb;
         category = "data";
       }
-      # archi
-      # structurizr
-      # enso
     ];
   };
 }

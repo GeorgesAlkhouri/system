@@ -1,1 +1,1 @@
-# nu-scripts
+readme

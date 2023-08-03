@@ -32,5 +32,19 @@ export def review [path: string, type = all] {
 
 export def generate [] {
   alias td = terminusdb
+  cd ([$env.HOME "system"] | path join)
+
+  open meta.yml
+  | get documentation
+  | transpose key val
+  | each {|i| ($i | get val) | save --force ($i | get key)}
+
   cd $env.HOME
+}
+
+export def cache [] {
+  cd ([$env.HOME "system"] | path join)
+  nix flake archive --json
+  | jq -r '.path,(.inputs|to_entries[].value.path)'
+  | cachix push cognitive-singularity
 }

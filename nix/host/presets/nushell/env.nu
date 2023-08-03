@@ -55,6 +55,6 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
 $env.GH_TOKEN = (open /home/nixos/.config/gh/gh_token)
-$env.TERMINUSDB_ACCESS_TOKEN = (open /home/nixos/.config/terminus/token)
+$env.TERMINUSDB_ACCESS_TOKEN = (open /home/nixos/.config/terminusdb/terminusdb_access_token)
 
 $env.EDITOR = hx

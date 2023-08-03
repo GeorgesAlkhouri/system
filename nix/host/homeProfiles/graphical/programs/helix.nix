@@ -16,6 +16,7 @@
     };
     keys = {
       normal = {
+        C-n = [ "extend_line" ":insert-output echo 'FILL_THIS'" ];
         "C-k" = ":buffer-previous";
         "C-j" = ":buffer-next";
         space = {
@@ -25,6 +26,9 @@
         };
         esc = [ "collapse_selection" "keep_primary_selection" ];
         ret = [ "open_below" "normal_mode" ];
+      };
+      insert = {
+        C-n = [ "normal_mode" "extend_line" ":insert-output echo 'FILL_THIS'" ];
       };
     };
     theme = "base16_transparent";

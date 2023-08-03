@@ -33,40 +33,48 @@ export def contribute [org = "cognitive-singularity", path = "contribute"] {
 
   let list = (open $meta | get $collection_name)
 
-  $list | each {|item|
+  $list | par-each {|item|
     let origin_url = ($item | get origin)
     let parent_url = ($item | get parent)
-
     let name = ($origin_url | split column "/" | get column2 | to text | path parse | get stem | str downcase)
+    let dist = ([$dist $name] | path join)
 
+    if (not ($dist | path exists)) {
+      git clone $origin_url $dist
+      cd $dist
+      git remote add upstream $parent_url
+    }
+  }
+
+  $list | par-each {|item|
+    let origin_url = ($item | get origin)
+    let parent_url = ($item | get parent)
+    let name = ($origin_url | split column "/" | get column2 | to text | path parse | get stem | str downcase)
     let dist = ([$dist $name] | path join)
 
     if ($dist | path exists) {
       cd $dist
 
-      git pull origin main
-      git fetch upstream
-      git switch upstream-sync
-      git merge (["upstream" (get_head $parent_url)] | path join)
-      git switch main
-      git merge upstream-sync
-      git push origin main
-    } else {
-      git clone $origin_url $dist
+      let branch_parent = (get_head $parent_url)
+      let branch_upstream = "upstream-sync"
+      let branch_target = "cognitive-singularity"
 
-      cd $dist
+      git fetch origin
 
-      git remote add upstream $parent_url
-      git fetch upstream
-      git switch -c upstream-sync
-      git merge (["upstream" (get_head $parent_url)] | path join)
-      git switch -c main
-      git merge upstream-sync
-      git push origin main
-      git branch -m master main
-      git push -u origin main
-      git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
-      git push origin --delete master
+      [$branch_upstream $branch_target] | each {|branch|
+        if (git branch --remote | find $branch | is-empty) { git switch --create $branch }
+      }
+
+      git switch $branch_parent
+      git merge (["upstream" $branch_parent] | path join)
+
+      git switch $branch_upstream
+      git merge (["upstream" $branch_parent] | path join)
+
+      git push origin --all
+      git push origin --tags
+
+      git merge (["upstream" $branch_parent] | path join)
     }
   }
 }
@@ -79,4 +87,8 @@ def get_head [parent: string] {
   | get column2
   | to text
   | str trim
+}
+
+export def discovery [] {
+  http get "https://api.ossinsight.io/public"
 }

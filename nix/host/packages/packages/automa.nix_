@@ -1,0 +1,19 @@
+{ sources, inputs, ... }:
+
+inputs.nixpkgs.mkYarnPackage {
+  inherit (sources.automa) pname version src;
+
+  buildPhase = ''
+    yarn install
+    yarn build
+  '';
+
+  installPhase = ''
+    runHook preInstall
+    mkdir -p $out/share/automa
+    mv ./build/* $out/share/automa
+    runHook postInstall
+  '';
+
+  distPhase = "true";
+}

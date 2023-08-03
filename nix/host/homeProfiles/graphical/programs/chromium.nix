@@ -1,4 +1,4 @@
-{ inputs }:
+{ inputs, cell }:
 let inherit (inputs.nixpkgs) lib;
 in {
   enable = true;
@@ -23,6 +23,15 @@ in {
       lib.concatStringsSep "," [
         "MediaEngagementBypassAutoplayPolicies"
         "PreloadMediaEngagementData"
+      ]
+    }"
+    "--load-extension=${
+      lib.concatStringsSep "," [
+        # "${cell.packages.bypass-paywalls-chrome}/share/bypass-paywalls-chrome"
+        # "${cell.packages.oled-chrome}/share/oled-chrome"
+        # "${cell.packages.isdcac}/share/isdcac"
+        # "${cell.packages.webscrapbook}/share/webscrapbook"
+        # "${cell.packages.automa}/share/automa"
       ]
     }"
   ];

@@ -1,10 +1,10 @@
 { sources, stdenvNoCC, ... }:
 stdenvNoCC.mkDerivation {
-  inherit (sources.isdcac) pname version src;
+  inherit (sources.oled-chrome) pname version src;
   installPhase = ''
     runHook preInstall
-    mkdir -p $out/share/isdcac
-    mv ./src/* $out/share/isdcac
+    mkdir -p $out/share/oled-chrome
+    mv ./* $out/share/oled-chrome
     runHook postInstall
   '';
 }

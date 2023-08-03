@@ -1,67 +1,112 @@
 [nushell]
 src.git = "https://github.com/cognitive-singularity/nushell"
+src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/nushell"
 
 [nu_scripts]
 src.git = "https://github.com/cognitive-singularity/nu_scripts"
+src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/nu_scripts"
-
-[tg-archive]
-src.git = "https://github.com/cognitive-singularity/tg-archive"
-fetch.github = "cognitive-singularity/tg-archive"
-
-[pywebscrapbook]
-src.git = "https://github.com/cognitive-singularity/PyWebScrapBook"
-fetch.github = "cognitive-singularity/PyWebScrapBook"
-
-[webscrapbook]
-src.git = "https://github.com/cognitive-singularity/webscrapbook"
-fetch.github = "cognitive-singularity/webscrapbook"
-
-[isdcac]
-src.git = "https://github.com/cognitive-singularity/I-Still-Dont-Care-About-Cookies"
-fetch.github = "cognitive-singularity/I-Still-Dont-Care-About-Cookies"
-
-[ublock]
-src.git = "https://github.com/cognitive-singularity/ublock"
-fetch.github = "cognitive-singularity/ublock"
-
-[bypass-paywall]
-src.git = "https://github.com/cognitive-singularity/bypass-paywalls-chrome"
-fetch.github = "cognitive-singularity/bypass-paywalls-chrome"
-
-[infy-scroll]
-src.git = "https://github.com/cognitive-singularity/infy-scroll"
-fetch.github = "cognitive-singularity/infy-scroll"
-
-[automa]
-src.git = "https://github.com/cognitive-singularity/automa"
-fetch.github = "cognitive-singularity/automa"
-
-[archive-page]
-src.git = "https://github.com/cognitive-singularity/archiveweb.page"
-fetch.github = "cognitive-singularity/archiveweb.page"
-
-[singlefile-lite]
-src.git = "https://github.com/cognitive-singularity/singlefile-lite"
-fetch.github = "cognitive-singularity/singlefile-lite"
-
-[goscrape]
-src.git = "https://github.com/cognitive-singularity/goscrape"
-fetch.github = "cognitive-singularity/goscrape"
 
 [terminusdb]
 src.git = "https://github.com/cognitive-singularity/terminusdb"
+src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/terminusdb"
+
+[terminusdb-semantic-indexer]
+src.git = "https://github.com/cognitive-singularity/terminusdb-semantic-indexer"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/terminusdb-semantic-indexer"
 
 [nu_plugin_from_parquet]
 src.git = "https://github.com/cognitive-singularity/nu_plugin_from_parquet"
+src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/nu_plugin_from_parquet"
 
 [nu_plugin_json_path]
 src.git = "https://github.com/cognitive-singularity/nu_plugin_json_path"
+src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/nu_plugin_json_path"
 
 [nu_plugin_regex]
 src.git = "https://github.com/cognitive-singularity/nu_plugin_regex"
+src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/nu_plugin_regex"
+
+[tg-archive]
+src.git = "https://github.com/cognitive-singularity/tg-archive"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/tg-archive"
+
+[pywebscrapbook]
+src.git = "https://github.com/cognitive-singularity/PyWebScrapBook"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/PyWebScrapBook"
+
+[webscrapbook]
+src.git = "https://github.com/cognitive-singularity/webscrapbook"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/webscrapbook"
+
+[isdcac]
+src.git = "https://github.com/cognitive-singularity/I-Still-Dont-Care-About-Cookies"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/I-Still-Dont-Care-About-Cookies"
+
+[ublock]
+src.git = "https://github.com/cognitive-singularity/ublock"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/ublock"
+
+[bypass-paywalls-chrome]
+src.git = "https://github.com/cognitive-singularity/bypass-paywalls-chrome"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/bypass-paywalls-chrome"
+
+[infy-scroll]
+src.git = "https://github.com/cognitive-singularity/infy-scroll"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/infy-scroll"
+
+[automa]
+src.git = "https://github.com/cognitive-singularity/automa"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/automa"
+
+[archive-page]
+src.git = "https://github.com/cognitive-singularity/archiveweb.page"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/archiveweb.page"
+
+[singlefile-lite]
+src.git = "https://github.com/cognitive-singularity/singlefile-lite"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/singlefile-lite"
+
+[oled-chrome]
+src.git = "https://github.com/cognitive-singularity/oled-chrome"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/oled-chrome"
+
+[goscrape]
+src.git = "https://github.com/cognitive-singularity/goscrape"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/goscrape"
+
+[enso-appimage]
+src.github = "enso-org/enso"
+src.prefix = "v"
+fetch.url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-linux-2023.2.1-nightly.2023.8.3.AppImage"
+
+[enso-engine]
+src.github = "enso-org/enso"
+fetch.url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-bundle-2023.2.1-nightly.2023.8.3-linux-amd64.tar.gz"
+
+[structurizr-cli]
+src.github = "structurizr/cli"
+src.prefix = "v"
+fetch.url = "https://github.com/structurizr/cli/releases/download/v$ver/structurizr-cli-$ver.zip"
+
+[local-ai]
+src.manual = "latest"
+fetch.url = "https://github.com/go-skynet/LocalAI/releases/latest/download/local-ai-avx-Linux-x86_64"
