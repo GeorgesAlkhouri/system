@@ -5,7 +5,7 @@ let
     inherit system;
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [ "openssl-1.1.1u" ];
+      permittedInsecurePackages = [ "openssl-1.1.1u" "openssl-1.1.1v" ];
     };
   };
   toolchain = inputs.fenix.packages.${system}.minimal.toolchain;

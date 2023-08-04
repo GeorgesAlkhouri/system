@@ -1,9 +1,9 @@
 {
-    "archive-page": {
+    "archiveweb-page": {
         "cargoLocks": null,
-        "date": "2023-07-26",
+        "date": "2023-08-04",
         "extract": null,
-        "name": "archive-page",
+        "name": "archiveweb-page",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -13,15 +13,15 @@
             "name": null,
             "owner": "cognitive-singularity",
             "repo": "archiveweb.page",
-            "rev": "94d15e94430ccc9ee4b96454cd357cf902a4d3fb",
-            "sha256": "sha256-LF+x6TbQyZuUiM+Wx4wpPdDSuuqz0cG0MSJX73niXfI=",
+            "rev": "2825343c9dcc3152fa6afdca17f3f1d1c18bcd16",
+            "sha256": "sha256-TD09YLJm8O2FaMrGQu+eGeeP6KTeaExgZuJr00LNnNU=",
             "type": "github"
         },
-        "version": "94d15e94430ccc9ee4b96454cd357cf902a4d3fb"
+        "version": "2825343c9dcc3152fa6afdca17f3f1d1c18bcd16"
     },
     "automa": {
         "cargoLocks": null,
-        "date": "2023-02-16",
+        "date": "2023-08-04",
         "extract": null,
         "name": "automa",
         "passthru": null,
@@ -33,15 +33,15 @@
             "name": null,
             "owner": "cognitive-singularity",
             "repo": "automa",
-            "rev": "b2e20a7a50cf47ec8bd5903a7059ece74a6dd571",
-            "sha256": "sha256-c9OlADjG/6LC/TQyToaq32bBN0JgKuCAnvBv/puKb2k=",
+            "rev": "14ba9aacd8f06842991bc57bd5a7e169d52fdd72",
+            "sha256": "sha256-7W4FhH+3RLskhHzlQxwHeVNKXeY6o7amNMCWv7fhink=",
             "type": "github"
         },
-        "version": "b2e20a7a50cf47ec8bd5903a7059ece74a6dd571"
+        "version": "14ba9aacd8f06842991bc57bd5a7e169d52fdd72"
     },
     "bypass-paywalls-chrome": {
         "cargoLocks": null,
-        "date": "2023-06-17",
+        "date": "2023-08-04",
         "extract": null,
         "name": "bypass-paywalls-chrome",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "cognitive-singularity",
             "repo": "bypass-paywalls-chrome",
-            "rev": "97b84f09512bf0d589f2d6c64c30a039cbd6d8b5",
-            "sha256": "sha256-nOxeB7ty6njHhhv3D8z2Kj+sG9JXTPIdi1OGWQI11ic=",
+            "rev": "6880eb968c1985b8bf0ffc1f92802ef464ea30c1",
+            "sha256": "sha256-GYF0hOi/veIApoL+fOG2tFm5lyfSM+obOCq7cBN9xwQ=",
             "type": "github"
         },
-        "version": "97b84f09512bf0d589f2d6c64c30a039cbd6d8b5"
+        "version": "6880eb968c1985b8bf0ffc1f92802ef464ea30c1"
     },
     "enso-appimage": {
         "cargoLocks": null,
@@ -111,7 +111,7 @@
     },
     "infy-scroll": {
         "cargoLocks": null,
-        "date": "2023-06-30",
+        "date": "2023-08-04",
         "extract": null,
         "name": "infy-scroll",
         "passthru": null,
@@ -123,11 +123,11 @@
             "name": null,
             "owner": "cognitive-singularity",
             "repo": "infy-scroll",
-            "rev": "965cf2bc681682fad9ed5736e3f8b8f9bd08ea85",
-            "sha256": "sha256-Wok3H5CAwThA9UF1OguHbUkUMO/uJeSS+ZuIY/1W1fE=",
+            "rev": "7d1d3df5c32966e930288210e3a4ef3e610d46dc",
+            "sha256": "sha256-LK28PFBJkjB2yWQAtxQsheaRTVzkQwD1euY+HoQGHCk=",
             "type": "github"
         },
-        "version": "965cf2bc681682fad9ed5736e3f8b8f9bd08ea85"
+        "version": "7d1d3df5c32966e930288210e3a4ef3e610d46dc"
     },
     "isdcac": {
         "cargoLocks": null,
@@ -379,6 +379,26 @@
         },
         "version": "02c5502586c64800a94424e7686efa9202f632b2"
     },
+    "terminusdb-tus": {
+        "cargoLocks": null,
+        "date": "2023-02-09",
+        "extract": null,
+        "name": "terminusdb-tus",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "terminusdb-tus",
+            "rev": "99fcefc8230590bc9c4e7bc764c603e7986c2b44",
+            "sha256": "sha256-v4Viwtyfe4v2z9R9C9vxULGGd6X9v1wM8X0OpLG9VBE=",
+            "type": "github"
+        },
+        "version": "99fcefc8230590bc9c4e7bc764c603e7986c2b44"
+    },
     "tg-archive": {
         "cargoLocks": null,
         "date": "2023-07-24",
@@ -399,9 +419,49 @@
         },
         "version": "f8e0cfbbc591405a570365d3af4497bd3125544d"
     },
+    "uassets-master": {
+        "cargoLocks": null,
+        "date": "2023-08-05",
+        "extract": null,
+        "name": "uassets-master",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "uBlockOrigin",
+            "repo": "uAssets",
+            "rev": "381f97eb90c0f252376b4eeaffe5139ac342d288",
+            "sha256": "sha256-U3cZjAtAELrAuqxy3xhTas5D74lCtMHZUGME1uRXKwU=",
+            "type": "github"
+        },
+        "version": "381f97eb90c0f252376b4eeaffe5139ac342d288"
+    },
+    "uassets-prod": {
+        "cargoLocks": null,
+        "date": "2023-08-04",
+        "extract": null,
+        "name": "uassets-prod",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "uBlockOrigin",
+            "repo": "uAssets",
+            "rev": "43d03c165a59d8e4909e30d5100600026f566a32",
+            "sha256": "sha256-HmsQnOVaGTeaxAzUsx0xG8A7EfH2MFUraKXoAB953Z0=",
+            "type": "github"
+        },
+        "version": "43d03c165a59d8e4909e30d5100600026f566a32"
+    },
     "ublock": {
         "cargoLocks": null,
-        "date": "2023-08-02",
+        "date": "2023-08-04",
         "extract": null,
         "name": "ublock",
         "passthru": null,
@@ -412,12 +472,12 @@
             "leaveDotGit": false,
             "name": null,
             "owner": "cognitive-singularity",
-            "repo": "ublock",
-            "rev": "9f91335ae565435507e8ec93e384122465c03fcd",
-            "sha256": "sha256-64MlL+QQIZEZ7Bq0yhnrVTa1jlwFcYMQyAOGqg8sJ5c=",
+            "repo": "uBlock",
+            "rev": "cb93f768f6113b4ed3a0d1c1f0bba6e6c159b385",
+            "sha256": "sha256-YNCB/mJ5tjgNGJPKSnpjHQR9SIH/LXBjZCH7F5I6mvU=",
             "type": "github"
         },
-        "version": "9f91335ae565435507e8ec93e384122465c03fcd"
+        "version": "cb93f768f6113b4ed3a0d1c1f0bba6e6c159b385"
     },
     "webscrapbook": {
         "cargoLocks": null,

@@ -26,6 +26,8 @@ let
     nixpkgs-fmt
     nodePackages.typescript-language-server
     nodePackages.yaml-language-server
+
+    nodePackages.npm-check-updates
     nurl
     p7zip
     python310Packages.python-lsp-server

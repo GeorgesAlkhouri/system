@@ -4,7 +4,7 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     runHook preInstall
     mkdir -p $out/share/infy-scroll
-    mv ./* $out/share/infy-scroll
+    mv ./src/base/* $out/share/infy-scroll
     runHook postInstall
   '';
 }

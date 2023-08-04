@@ -1,7 +1,3 @@
-[lint-staged]
-src.git = "https://github.com/okonet/lint-staged"
-fetch.github = "okonet/lint-staged"
-
 [wgsl_analyzer]
 src.manual = "latest"
 fetch.url = "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64"

@@ -101,8 +101,6 @@
     poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
     nix-init.url = "github:nix-community/nix-init";
     nix-init.inputs.nixpkgs.follows = "nixpkgs";
-    nushell.url = "github:cognitive-singularity/nushell";
-    nushell.inputs.nixpkgs.follows = "nixpkgs";
   };
   nixConfig = {
     extra-experimental-features = "nix-command flakes";

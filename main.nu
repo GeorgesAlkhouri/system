@@ -47,4 +47,18 @@ export def cache [] {
   nix flake archive --json
   | jq -r '.path,(.inputs|to_entries[].value.path)'
   | cachix push cognitive-singularity
+
+  # nix build --json
+  # | jq -r '.[].outputs | to_entries[].value'
+  # | cachix push cognitive-singularity
+
+  # nix develop --profile default -c "true"
+  # cachix push cognitive-singularity default
+}
+
+export def refetch [] {
+  ["host" "repo"] | each {|cell|
+    cd ([$env.HOME "system" "nix" $cell "packages"] | path join)
+    nvfetcher
+  }
 }

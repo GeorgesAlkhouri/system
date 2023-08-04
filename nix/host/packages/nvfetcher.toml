@@ -13,6 +13,11 @@ src.git = "https://github.com/cognitive-singularity/terminusdb"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/terminusdb"
 
+[terminusdb-tus]
+src.git = "https://github.com/cognitive-singularity/terminusdb-tus"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/terminusdb-tus"
+
 [terminusdb-semantic-indexer]
 src.git = "https://github.com/cognitive-singularity/terminusdb-semantic-indexer"
 src.branch = "cognitive-singularity"
@@ -54,9 +59,19 @@ src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/I-Still-Dont-Care-About-Cookies"
 
 [ublock]
-src.git = "https://github.com/cognitive-singularity/ublock"
+src.git = "https://github.com/cognitive-singularity/uBlock"
 src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/ublock"
+fetch.github = "cognitive-singularity/uBlock"
+
+[uassets-master]
+src.git = "https://github.com/uBlockOrigin/uAssets"
+src.branch = "master"
+fetch.github = "uBlockOrigin/uAssets"
+
+[uassets-prod]
+src.git = "https://github.com/uBlockOrigin/uAssets"
+src.branch = "gh-pages"
+fetch.github = "uBlockOrigin/uAssets"
 
 [bypass-paywalls-chrome]
 src.git = "https://github.com/cognitive-singularity/bypass-paywalls-chrome"
@@ -73,7 +88,7 @@ src.git = "https://github.com/cognitive-singularity/automa"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/automa"
 
-[archive-page]
+[archiveweb-page]
 src.git = "https://github.com/cognitive-singularity/archiveweb.page"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/archiveweb.page"

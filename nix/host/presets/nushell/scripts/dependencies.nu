@@ -46,7 +46,7 @@ export def contribute [org = "cognitive-singularity", path = "contribute"] {
     }
   }
 
-  $list | par-each {|item|
+  $list | each {|item|
     let origin_url = ($item | get origin)
     let parent_url = ($item | get parent)
     let name = ($origin_url | split column "/" | get column2 | to text | path parse | get stem | str downcase)
@@ -60,21 +60,20 @@ export def contribute [org = "cognitive-singularity", path = "contribute"] {
       let branch_target = "cognitive-singularity"
 
       git fetch origin
+      git fetch upstream
 
-      [$branch_upstream $branch_target] | each {|branch|
-        if (git branch --remote | find $branch | is-empty) { git switch --create $branch }
-      }
 
       git switch $branch_parent
       git merge (["upstream" $branch_parent] | path join)
 
-      git switch $branch_upstream
+      try { git switch $branch_upstream } catch { git switch --create $branch_upstream }
+
       git merge (["upstream" $branch_parent] | path join)
+
+      try { git switch $branch_target } catch { git switch --create $branch_target }
 
       git push origin --all
       git push origin --tags
-
-      git merge (["upstream" $branch_parent] | path join)
     }
   }
 }

@@ -27,11 +27,15 @@ in {
     }"
     "--load-extension=${
       lib.concatStringsSep "," [
-        # "${cell.packages.bypass-paywalls-chrome}/share/bypass-paywalls-chrome"
-        # "${cell.packages.oled-chrome}/share/oled-chrome"
-        # "${cell.packages.isdcac}/share/isdcac"
-        # "${cell.packages.webscrapbook}/share/webscrapbook"
-        # "${cell.packages.automa}/share/automa"
+        "${cell.packages.bypass-paywalls-chrome}/share/bypass-paywalls-chrome"
+        "${cell.packages.oled-chrome}/share/oled-chrome"
+        "${cell.packages.isdcac}/share/isdcac"
+        "${cell.packages.webscrapbook}/share/webscrapbook"
+        "${cell.packages.singlefile-lite}/share/singlefile-lite"
+        "${cell.packages.infy-scroll}/share/infy-scroll"
+        "${cell.packages.automa}/share/automa"
+        "${cell.packages.archiveweb-page}/share/archiveweb-page"
+        "${cell.packages.ublock}/share/ublock"
       ]
     }"
   ];
