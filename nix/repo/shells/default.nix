@@ -1,10 +1,16 @@
 { inputs, cell, }:
 let
-  inherit (inputs.std) lib;
+  inherit (inputs.std) std lib;
+  inherit (inputs.cells) app;
   l = inputs.nixpkgs.lib // builtins;
   nixpkgs = inputs.nixpkgs.appendOverlays [ ];
   local = with cell.packages; [ wgsl-analyzer ];
-  rust = with inputs.nixpkgs; [ cargo-spellcheck ];
+  rust = with inputs.nixpkgs; [
+    cargo-watch
+    cargo-edit
+    cargo-nextest
+    cargo-spellcheck
+  ];
   python = with inputs.nixpkgs; [ poetry poetry2nix.cli python310 ];
   golang = with inputs.nixpkgs; [
     gnumake
@@ -25,6 +31,7 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
     name = "devshell";
     packages =
       inputs.nixpkgs.lib.concatLists [ local rust python golang devops ];
+    env = [ ];
     imports = [ inputs.std.std.devshellProfiles.default ];
     nixago = [
       ((lib.dev.mkNixago lib.cfg.conform) {
@@ -37,16 +44,17 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
     commands = [
       {
         package = nixpkgs.nvfetcher;
-        category = "versioning";
-      }
-      {
-        package = nixpkgs.sops;
-        category = "secrets";
+        category = "repo";
       }
       {
         package = inputs.cells.host.packages.terminusdb;
         category = "data";
       }
+      {
+        package = inputs.nixpkgs.mdbook;
+        category = "docs";
+      }
     ];
   };
 }
+

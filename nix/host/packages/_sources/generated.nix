@@ -183,6 +183,18 @@
     };
     date = "2023-06-17";
   };
+  shell_gpt = {
+    pname = "shell_gpt";
+    version = "1c585664889e2cfb19ca1e13f0e8d621463ddef3";
+    src = fetchFromGitHub {
+      owner = "cognitive-singularity";
+      repo = "shell_gpt";
+      rev = "1c585664889e2cfb19ca1e13f0e8d621463ddef3";
+      fetchSubmodules = false;
+      sha256 = "sha256-+TapzZHzhZILsO1eNjGg7Lv4wlRyC2yenuuIU10DbTg=";
+    };
+    date = "2023-07-19";
+  };
   singlefile-lite = {
     pname = "singlefile-lite";
     version = "d838f5d95dd24d1a999124f33a8ccd1678159d58";

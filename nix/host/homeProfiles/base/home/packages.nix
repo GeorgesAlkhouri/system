@@ -26,7 +26,6 @@ let
     nixpkgs-fmt
     nodePackages.typescript-language-server
     nodePackages.yaml-language-server
-
     nodePackages.npm-check-updates
     nurl
     p7zip
@@ -42,6 +41,18 @@ let
     yt-dlp
   ];
   system = with inputs.nixpkgs; [ glxinfo ];
-  local = with cell.packages; [ goscrape ];
-in inputs.nixpkgs.lib.concatLists [ language-servers system local ]
+  local = with cell.packages; [
+    goscrape
+
+    local-ai
+    shell-gpt
+    tg-archive
+
+  ];
+in inputs.nixpkgs.lib.concatLists [
+  language-servers
+  system
+  local
+
+]
 

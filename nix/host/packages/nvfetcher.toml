@@ -122,6 +122,7 @@ src.github = "structurizr/cli"
 src.prefix = "v"
 fetch.url = "https://github.com/structurizr/cli/releases/download/v$ver/structurizr-cli-$ver.zip"
 
-[local-ai]
-src.manual = "latest"
-fetch.url = "https://github.com/go-skynet/LocalAI/releases/latest/download/local-ai-avx-Linux-x86_64"
+[shell_gpt]
+src.git = "https://github.com/cognitive-singularity/shell_gpt"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/shell_gpt"

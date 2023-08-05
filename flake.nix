@@ -26,13 +26,17 @@
                 (functions "lib")
                 (nixago "configs")
                 (devshells "shells")
+                (pkgs "rust")
               ];
             nixpkgsConfig = { allowUnfree = true; };
           };
           harvest = {
-
-            devShells = [ "repo" "shells" ];
-            packages = [ [ "repo" "packages" ] [ "host" "packages" ] ];
+            devShells = [ [ "repo" "shells" ] [ "view" "shells" ] ];
+            packages = [
+              [ "repo" "packages" ]
+              [ "host" "packages" ]
+              [ "view" "packages" ]
+            ];
           };
         };
         hive.collect = [ "nixosConfigurations" "homeConfigurations" ];
@@ -41,11 +45,47 @@
           default = flakeModules.hive;
         };
       });
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     nixpkgs-fork.url = "github:cognitive-singularity/nixpkgs";
+  };
+
+  inputs = {
+    std.url = "github:divnix/std";
+    std.inputs.nixpkgs.follows = "nixpkgs";
+    std.inputs.devshell.follows = "devshell";
+    std.inputs.nixago.follows = "nixago";
+    std.inputs.devshell.url = "github:numtide/devshell";
+    std.inputs.nixago.url = "github:nix-community/nixago";
+    devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
+    nixago.url = "github:nix-community/nixago";
+    nixago.inputs.nixpkgs.follows = "nixpkgs";
+    nixago.inputs.nixago-exts.follows = "";
+    hive.url = "github:divnix/hive";
+    hive.inputs.nixpkgs.follows = "nixpkgs";
+    hive.inputs.colmena.follows = "colmena";
+    hive.inputs.disko.follows = "disko";
+  };
+
+  inputs = {
+    crane.url = "github:ipetkov/crane";
+    crane.inputs.nixpkgs.follows = "nixpkgs";
+    fenix.url = "github:nix-community/fenix";
+    fenix.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  inputs = {
+    home.url = "github:nix-community/home-manager";
+    home-stable.url = "github:nix-community/home-manager/release-23.05";
+    home-fork.url = "github:cognitive-singularity/home-manager";
+    home.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  inputs = {
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nvfetcher.url = "github:berberman/nvfetcher";
@@ -53,9 +93,9 @@
     nvfetcher.inputs.flake-utils.follows = "flake-utils";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
     haumea.url = "github:nix-community/haumea";
     haumea.inputs.nixpkgs.follows = "nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
@@ -65,22 +105,8 @@
     devenv.url = "github:cachix/devenv";
     devenv.inputs.pre-commit-hooks.follows = "pre-commit-hooks";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
-    std.url = "github:divnix/std";
-    std.inputs.nixpkgs.follows = "nixpkgs";
-    std.inputs.devshell.url = "github:numtide/devshell";
-    std.inputs.nixago.url = "github:nix-community/nixago";
     colmena.url = "github:zhaofengli/colmena";
     colmena.inputs.flake-utils.follows = "flake-utils";
-    hive.url = "github:divnix/hive";
-    hive.inputs.nixpkgs.follows = "nixpkgs";
-    hive.inputs.colmena.follows = "colmena";
-    hive.inputs.disko.follows = "disko";
-    home.url = "github:nix-community/home-manager";
-    home-stable.url = "github:nix-community/home-manager/release-23.05";
-    home-fork.url = "github:cognitive-singularity/home-manager";
-    home.inputs.nixpkgs.follows = "nixpkgs";
-    darwin.url = "github:LnL7/nix-darwin/master";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     nix2container.url = "github:nlewo/nix2container";
@@ -90,11 +116,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-    systems.url = "github:nix-systems/default";
-    fenix.url = "github:nix-community/fenix";
-    fenix.inputs.nixpkgs.follows = "nixpkgs";
-    crane.url = "github:ipetkov/crane";
-    crane.inputs.nixpkgs.follows = "nixpkgs";
+    systems.url = "github:nix-systems/x86_64-linux";
     dream2nix.url = "github:nix-community/dream2nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
     poetry2nix.url = "github:nix-community/poetry2nix";
@@ -102,6 +124,9 @@
     nix-init.url = "github:nix-community/nix-init";
     nix-init.inputs.nixpkgs.follows = "nixpkgs";
   };
+
+  inputs = { kubenix.url = "github:hall/kubenix"; };
+
   nixConfig = {
     extra-experimental-features = "nix-command flakes";
     extra-substituters = [

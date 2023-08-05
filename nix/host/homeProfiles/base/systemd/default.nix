@@ -1,13 +1,15 @@
 { inputs, cell }: {
   user = {
     services = {
-      configs = {
-        Install.WantedBy = [ "default.target" ];
-        Service.ExecStart =
-          "${inputs.nixpkgs.dufs}/bin/dufs --allow-all --port 5000";
-        Service.WorkingDirectory =
-          "${cell.homeProfiles.base.home.homeDirectory}/shared";
-        Unit.Description = "Archive";
+      fs-server-archive = {
+        Unit = { Description = "Archive File Server"; };
+        Service = {
+          ExecStart = "${inputs.nixpkgs.dufs}/bin/dufs --allow-all --port 5000";
+          WorkingDirectory =
+            "${cell.homeProfiles.base.home.homeDirectory}/shared";
+          Restart = "on-failure";
+        };
+        Install = { WantedBy = [ "default.target" ]; };
       };
     };
     startServices = "sd-switch";
