@@ -1,5 +1,20 @@
 .std
+
+# Nix artifacts
 result
+
+# Added by cargo
+/target
+
+# Secrets
+.env
+
+# Terraform artifacts
+.terraform/
+terraform*
+
+# Graphviz artifacts
+graph.svg
 
 # prj-spec dirs
 # <https://github.com/numtide/prj-spec>
@@ -14,6 +29,3 @@ result
 /lefthook.yml
 /.editorconfig
 /treefmt.toml
-
-# Added by cargo
-/target

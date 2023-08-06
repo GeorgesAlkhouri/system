@@ -1,9 +1,8 @@
 #!/usr/bin/env nu
 
 def main [command: string] {
-  if ($command == "rebuild") {
-    rebuild
-  }
+  if ($command == "monitor") { monitor }
+  if ($command == "rebuild") { rebuild }
 }
 
 export def monitor [] {
@@ -15,7 +14,7 @@ export def rebuild [] {
   let path = ([$env.HOME "system"] | path join)
   cd $path
   git add .
-  sudo nixos-rebuild switch --impure --flake $"($path)#host-default" --show-trace
+  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace
 }
 
 export def upload [message: string] {
@@ -48,17 +47,21 @@ export def cache [] {
   | jq -r '.path,(.inputs|to_entries[].value.path)'
   | cachix push cognitive-singularity
 
-  # nix build --json
-  # | jq -r '.[].outputs | to_entries[].value'
-  # | cachix push cognitive-singularity
+  nix build --json
+  | jq -r '.[].outputs | to_entries[].value'
+  | cachix push cognitive-singularity
 
-  # nix develop --profile default -c "true"
-  # cachix push cognitive-singularity default
+  nix develop --profile default -c "true"
+  cachix push cognitive-singularity default
 }
 
 export def refetch [] {
-  ["host" "repo"] | each {|cell|
+  ["repository" "workstation"] | each {|cell|
     cd ([$env.HOME "system" "nix" $cell "packages"] | path join)
     nvfetcher
   }
+}
+
+export def cluster [] {
+  run-external "flux" "bootstrap" "github" "--components-extra=image-reflector-controller,image-automation-controller" $"--owner=($env.GITHUB_USER)" $"--repository=($env.GITHUB_REPO)" "--branch=main" "--path=./k8s/prod" "--personal" "--read-write-key"
 }

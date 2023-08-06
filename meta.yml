@@ -1,3 +1,75 @@
+documentation:
+  README.md: |-
+      <div align="center">
+        <img src="artwork/logo.svg" width="250" />
+        <h1>Cognitive Singularity</h1>
+        <p>Enable Complex Collective Thinking</span>
+      </div>
+
+      ---
+
+      [![ci](https://github.com/cognitive-singularity/system/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/cognitive-singularity/system/actions/workflows/ci.yaml)
+      > "The complexity of the problems facing mankind is growing faster than our ability to solve them" - Doug Engelbart
+  adr/README.md: |-
+      readme
+  docs/README.md: |-
+      readme
+  nix/host/Readme.md: |-
+      readme
+  nix/host/colmenaConfigurations/Readme.md: |-
+      readme
+  nix/host/colmenaConfigurations/default.md: |-
+      readme
+  nix/host/homeConfigurations/Readme.md: |-
+      readme
+  nix/host/homeConfigurations/default.md: |-
+      readme
+  nix/host/homeProfiles/Readme.md: |-
+      readme
+  nix/host/homeProfiles/base.md: |-
+      readme
+  nix/host/homeProfiles/graphical.md: |-
+      readme
+  nix/host/nixosConfigurations/Readme.md: |-
+      readme
+  nix/host/nixosConfigurations/default.md: |-
+      readme
+  nix/host/nixosProfiles/Readme.md: |-
+      readme
+  nix/host/nixosProfiles/base.md: |-
+      readme
+  nix/host/packages/Readme.md: |-
+      readme
+  nix/host/packages/nu-scripts.md: |-
+      readme
+  nix/repo/Readme.md: |-
+      readme
+  nix/repo/configs/Readme.md: |-
+      readme
+  nix/repo/configs/default.md: |-
+      readme
+  nix/repo/configs/editorconfig.md: |-
+      readme
+  nix/repo/configs/lefthook.md: |-
+      readme
+  nix/repo/configs/treefmt.md: |-
+      readme
+  nix/repo/packages/Readme.md: |-
+      readme
+  nix/repo/packages/default.md: |-
+      readme
+  nix/repo/packages/wgsl-analyzer.md: |-
+      readme
+  nix/repo/shells/Readme.md: |-
+      readme
+  nix/repo/shells/default.md: |-
+      readme
+  nix/site/Readme.md: |-
+      readme
+  nix/view/Readme.md: |-
+      readme
+  tests/README.md: |-
+      readme
 syntaxes:
 - https://git.sr.ht/~yotam/tree-sitter-smali
 - https://github.com/6cdh/tree-sitter-racket
@@ -124,84 +196,21 @@ syntaxes:
 - https://github.com/yuja/tree-sitter-qmljs
 - https://github.com/zwpaper/tree-sitter-beancount
 models:
-- https://huggingface.co/TheBloke/Llama-2-7B-GGML/resolve/main/llama-2-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Airoboros-L2-70B-GPT4-m2.0-GGML/resolve/main/airoboros-l2-70b-gpt4-m2.0.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/Airoboros-L2-70B-GPT4-m2.0-GGML/resolve/main/airoboros-l2-70b-gpt4-m2.0.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/CodeUp-Llama-2-13B-Chat-HF-GGML/resolve/main/codeup-llama-2-13b-chat-hf.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/CodeUp-Llama-2-13B-Chat-HF-GGML/resolve/main/codeup-llama-2-13b-chat-hf.ggmlv3.q8_0.bin
 - https://huggingface.co/TheBloke/Llama-2-13B-GGML/resolve/main/llama-2-13b.ggmlv3.q8_0.bin
 - https://huggingface.co/TheBloke/Llama-2-70B-GGML/resolve/main/llama-2-70b.ggmlv3.q8_0.z01
 - https://huggingface.co/TheBloke/Llama-2-70B-GGML/resolve/main/llama-2-70b.ggmlv3.q8_0.zip
-- https://huggingface.co/TheBloke/StableBeluga-7B-GGML/resolve/main/stablebeluga-7b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/Llama-2-70B-OASST-1-200-GGML/resolve/main/llama-2-70b-oasst-1-200.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/Llama-2-70B-OASST-1-200-GGML/resolve/main/llama-2-70b-oasst-1-200.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/Llama-2-7B-GGML/resolve/main/llama-2-7b.ggmlv3.q8_0.bin
 - https://huggingface.co/TheBloke/StableBeluga-13B-GGML/resolve/main/stablebeluga-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/StableBeluga-7B-GGML/resolve/main/stablebeluga-7b.ggmlv3.q8_0.bin
 - https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/resolve/main/stablebeluga2-70b.ggmlv3.q8_0.z01
 - https://huggingface.co/TheBloke/StableBeluga2-70B-GGML/resolve/main/stablebeluga2-70b.ggmlv3.q8_0.zip
-- https://huggingface.co/TheBloke/CodeUp-Llama-2-13B-Chat-HF-GGML/resolve/main/codeup-llama-2-13b-chat-hf.ggmlv3.q8_0.bin
-documentation:
-  README.md: |-
-      <div align="center">
-        <img src="artwork/logo.svg" width="250" />
-        <h1>Cognitive Singularity</h1>
-        <p>Enable Complex Collective Thinking</span>
-      </div>
-
-      ---
-
-      [![ci](https://github.com/cognitive-singularity/system/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/cognitive-singularity/system/actions/workflows/ci.yaml)
-      > "The complexity of the problems facing mankind is growing faster than our ability to solve them" - Doug Engelbart
-  adr/README.md: |-
-      readme
-  docs/README.md: |-
-      readme
-  nix/host/Readme.md: |-
-      readme
-  nix/host/colmenaConfigurations/Readme.md: |-
-      readme
-  nix/host/colmenaConfigurations/default.md: |-
-      readme
-  nix/host/homeConfigurations/Readme.md: |-
-      readme
-  nix/host/homeConfigurations/default.md: |-
-      readme
-  nix/host/homeProfiles/Readme.md: |-
-      readme
-  nix/host/homeProfiles/base.md: |-
-      readme
-  nix/host/homeProfiles/graphical.md: |-
-      readme
-  nix/host/nixosConfigurations/Readme.md: |-
-      readme
-  nix/host/nixosConfigurations/default.md: |-
-      readme
-  nix/host/nixosProfiles/Readme.md: |-
-      readme
-  nix/host/nixosProfiles/base.md: |-
-      readme
-  nix/host/packages/Readme.md: |-
-      readme
-  nix/host/packages/nu-scripts.md: |-
-      readme
-  nix/repo/Readme.md: |-
-      readme
-  nix/repo/configs/Readme.md: |-
-      readme
-  nix/repo/configs/default.md: |-
-      readme
-  nix/repo/configs/editorconfig.md: |-
-      readme
-  nix/repo/configs/lefthook.md: |-
-      readme
-  nix/repo/configs/treefmt.md: |-
-      readme
-  nix/repo/packages/Readme.md: |-
-      readme
-  nix/repo/packages/default.md: |-
-      readme
-  nix/repo/packages/wgsl-analyzer.md: |-
-      readme
-  nix/repo/shells/Readme.md: |-
-      readme
-  nix/repo/shells/default.md: |-
-      readme
-  nix/site/Readme.md: |-
-      readme
-  nix/view/Readme.md: |-
-      readme
-  tests/README.md: |-
-      readme
+- https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/resolve/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.z01
+- https://huggingface.co/TheBloke/Upstage-Llama-2-70B-instruct-v2-GGML/resolve/main/upstage-llama-2-70b-instruct-v2.ggmlv3.q8_0.zip
+- https://huggingface.co/TheBloke/WizardLM-1.0-Uncensored-Llama2-13B-GGML/resolve/main/wizardlm-1.0-uncensored-llama2-13b.ggmlv3.q8_0.bin
+- https://huggingface.co/TheBloke/WizardLM-1.0-Uncensored-Llama2-13B-GGML/resolve/main/wizardlm-1.0-uncensored-llama2-13b.ggmlv3.q8_0.bin
