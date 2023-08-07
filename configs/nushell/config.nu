@@ -1,8 +1,7 @@
-use /home/nixos/system/main.nu *
-use /home/nixos/system/configs/nushell/scripts/downloads.nu *
-use /home/nixos/system/configs/nushell/scripts/dependencies.nu *
+use /home/nixos/system/start.nu *
 use /home/nixos/system/configs/nushell/scripts/archive.nu *
-use /home/nixos/system/configs/nushell/scripts/references.nu *
+use /home/nixos/system/configs/nushell/scripts/dependencies.nu *
+use /home/nixos/system/configs/nushell/scripts/processing.nu *
 
 $env.config = {
   show_banner: false

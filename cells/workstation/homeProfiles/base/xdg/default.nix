@@ -26,7 +26,7 @@
         Type = "Application";
         Name = "Monitor";
         Exec =
-          "alacritty --working-directory ${cell.homeProfiles.base.home.homeDirectory}/system --class monitor --command nu main.nu monitor";
+          "alacritty --working-directory ${cell.homeProfiles.base.home.homeDirectory}/system --class monitor --command nu start.nu monitor";
       };
     };
 

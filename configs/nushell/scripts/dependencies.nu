@@ -1,3 +1,9 @@
+alias c = contribute
+alias d = discovery
+alias m = multigrep
+alias r = review
+alias t = traverse
+
 export def contribute [org = "cognitive-singularity", path = "contribute"] {
   let meta = ([$env.HOME $path "meta.yml"] | path join)
   let dist = ([$env.HOME $path] | path join)
@@ -90,4 +96,83 @@ def get_head [parent: string] {
 
 export def discovery [] {
   http get "https://api.ossinsight.io/public"
+}
+
+def reg [type: string, query: string] {
+  rg --type $type $query --files-with-matches
+  | lines
+  | path parse
+  | get parent
+  | uniq
+  | split column "/"
+  | get column1
+  | uniq    
+}
+
+export def multigrep [type: string, query1 = "", query2 = "", query3 = ""] {
+  cd ([$env.HOME "references"] | path join)
+
+  let repos = (fd --hidden ".git$" | lines | path parse | get parent | split column "/" | get column1)
+
+  let found = [(reg $type $query1) (reg $type $query2) (reg $type $query3)]
+
+  let list = ($repos | each {|i| $found | all {|e| (not ($e | find $i | is-empty)) } | if ($in == true) { $i }})
+
+  $list | sort | uniq
+}
+
+export def-env traverse [dir = "contribute"] {
+  cd ([$env.HOME $dir] | path join)
+
+  if ($env | get COUNTER | is-empty) {
+    $env.COUNTER = 0
+  }
+
+  if (ls | get ($env.COUNTER | into int) | is-empty) {
+      $env.COUNTER = ""
+      traverse
+  }
+
+  ls | get ($env.COUNTER | into int) | get name | review $in
+
+  $env.COUNTER  = (($env.COUNTER | into int)  + 1)
+}
+
+export def review [path: string, type = all] {
+  cd $path
+  rg --files --sort path --type $type --hidden | lines | where {|i| $i !~ ".git/"} | hx $in
+}
+
+export def syntaxes [] {
+  let list = $in
+  let path = ([$env.HOME ".config" "tree-sitter" "syntaxes"] | path join)
+
+  mkdir $path
+
+  $list | par-each {|url|
+    let name = ($url | url parse | get path | split column "/" | get column3 | to text)
+    let dist = ([$path $name] | path join | str downcase)
+
+    if ($dist | path exists) {
+      cd $dist
+      git pull
+    } else {
+      git clone $url $dist
+    }
+  }
+}
+
+export def models [] {
+  let list = $in
+  let path = ([$env.HOME "models"] | path join)
+
+  mkdir $path
+
+  $list | par-each {|item|
+    let name = ($item | path parse | [($in | get stem) ($in | get extension)] | str join ".")
+    let dist = ([$path $name] | path join | str downcase)
+    if (not ($dist | path exists)) {
+      http get $item | save $dist
+    }
+  }
 }
