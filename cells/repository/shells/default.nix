@@ -3,6 +3,7 @@
 let
   inherit (inputs) cells;
   inherit (inputs.std) lib;
+  inherit (inputs.cells) experience;
 
   l = inputs.nixpkgs.lib // builtins;
 
@@ -63,12 +64,10 @@ let
     terraform
   ];
 
-  build = with pkgs; [ pkg-config openssl libclang ];
+  build = with pkgs; [ pkg-config ];
 
   libraries = with pkgs; [
     alsa-lib
-    fontconfig
-    freetype
     libclang.lib
     libxkbcommon
     openssl
@@ -143,6 +142,10 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
         value = "${cell.rust.toolchain}/lib/rustlib/src/rust/library";
       }
       {
+        name = "RUST_BACKTRACE";
+        value = "1";
+      }
+      {
         name = "LD_LIBRARY_PATH";
         value = LD_LIBRARY_PATH;
       }
@@ -172,10 +175,6 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
       }
       {
         name = "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD";
-        value = "1";
-      }
-      {
-        name = "RUST_BACKTRACE";
         value = "1";
       }
       {
@@ -267,6 +266,21 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
         command = "cargo-audit audit";
         help = pkgs.cargo-audit.meta.description;
       }
+      {
+        category = "development";
+        name = "experience";
+        command = "cargo run --bin experience";
+      }
+      {
+        category = "development";
+        name = "documentation";
+        command = ''
+          RUSTFLAGS=""
+          LD_LIBRARY_PATH=""
+          trunk serve --open $PRJ_ROOT/sources/documentation/index.html
+        '';
+      }
+
     ] ++ rustCmds;
   };
 }

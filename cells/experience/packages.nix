@@ -16,27 +16,25 @@ let
 
   libraries = with pkgs; [
     alsa-lib
+    libxkbcommon
     udev
+    vulkan-loader
+    wayland
     xorg.libX11
     xorg.libXcursor
     xorg.libXi
     xorg.libXrandr
-    openssl
-    vulkan-loader
-    wayland
-    libxkbcommon
   ];
 
 in {
   default = crane.buildPackage {
     inherit (crateNameFromCargoToml) pname version;
 
-    nativeBuildInputs = with pkgs; [ cmake pkgconfig ] ++ libraries;
+    nativeBuildInputs = with pkgs; [ cmake pkg-config ] ++ libraries;
 
     src = std.incl self [
-      "${self}/Cargo.lock"
-      "${self}/Cargo.toml"
       "${self}/sources/${name}/Cargo.toml"
+      "${self}/sources/${name}/Cargo.lock"
       "${self}/sources/${name}/src"
     ];
   };
