@@ -3,74 +3,17 @@
 let
   inherit (inputs) cells;
   inherit (inputs.std) lib;
-  inherit (inputs.cells) experience;
 
   l = inputs.nixpkgs.lib // builtins;
 
   pkgs = inputs.nixpkgs.appendOverlays [ ];
-
-  packages = with cell.packages; [ wgsl-analyzer ];
-
-  tools = with pkgs; [ sqlx-cli jq graphviz ];
-
-  rust = with pkgs; [
-    cargo-audit
-    cargo-outdated
-    cargo-watch
-    cargo-edit
-    cargo-udeps
-    cargo-nextest
-    cargo-spellcheck
-    cargo-leptos
-    cargo-generate
-  ];
-
-  wasm = with pkgs; [
-    wasm-pack
-    trunk
-    pkg-config
-    binaryen
-    nodejs
-    nodePackages.tailwindcss
-    protobuf
-  ];
-
-  python = with pkgs; [ poetry poetry2nix.cli python310 ];
-
-  golang = with pkgs; [
-    delve
-    gnumake
-    go
-    go-outline
-    gocode
-    gocode-gomod
-    godef
-    golint
-    gopkgs
-    gopls
-    gotools
-  ];
-
-  infra = with pkgs; [
-    cloudflared
-    doctl
-    fluxcd
-    kubectl
-    kubectx
-    kubernetes-helm
-    flyctl
-    awscli2
-    nodePackages.wrangler
-    terraform
-  ];
-
-  build = with pkgs; [ pkg-config ];
 
   libraries = with pkgs; [
     alsa-lib
     libclang.lib
     libxkbcommon
     openssl
+    protobuf
     udev
     vulkan-loader
     wayland
@@ -111,8 +54,7 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
   default = {
     name = "devshell";
 
-    packages =
-      l.concatLists [ build infra golang python tools rust packages wasm ];
+    packages = with pkgs; [ pkg-config ];
 
     language.rust = {
       packageSet = cell.rust;
@@ -269,7 +211,8 @@ in l.mapAttrs (_: inputs.std.lib.dev.mkShell) {
       {
         category = "development";
         name = "experience";
-        command = "cargo run --bin experience";
+        command =
+          "cargo run --bin experience --manifest-path $PRJ_ROOT/sources/experience/Cargo.toml";
       }
       {
         category = "development";

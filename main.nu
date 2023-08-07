@@ -63,5 +63,12 @@ export def refetch [] {
 }
 
 export def cluster [] {
-  run-external "flux" "bootstrap" "github" "--components-extra=image-reflector-controller,image-automation-controller" $"--owner=($env.GITHUB_USER)" $"--repository=($env.GITHUB_REPO)" "--branch=main" "--path=./k8s/prod" "--personal" "--read-write-key"
+
+# export CLUSTER_NAME=test && \
+# k3d cluster create $CLUSTER_NAME --image=registry.gitlab.com/vainkop1/k3s-gpu:v1.21.2-k3s1 --gpus=all && \
+# k3d kubeconfig write $CLUSTER_NAME && \
+# export KUBECONFIG=$HOME/.k3d/kubeconfig-$CLUSTER_NAME.yaml
+
+
+  # run-external "flux" "bootstrap" "github" "--components-extra=image-reflector-controller,image-automation-controller" $"--owner=($env.GITHUB_USER)" $"--repository=($env.GITHUB_REPO)" "--branch=main" "--path=./k8s/prod" "--personal" "--read-write-key"
 }

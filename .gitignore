@@ -1,10 +1,10 @@
 .std
 
 # Nix artifacts
-result*
+result
 
 # Added by cargo
-/target
+target
 
 # Secrets
 .env

@@ -22,10 +22,6 @@ in {
 
     nativeBuildInputs = with pkgs; [ cmake pkg-config ] ++ libraries;
 
-    src = std.incl self [
-      "${self}/sources/${name}/Cargo.toml"
-      "${self}/sources/${name}/Cargo.lock"
-      "${self}/sources/${name}/src"
-    ];
+    src = crane.cleanCargoSource (crane.path "${self}/sources/${name}");
   };
 }

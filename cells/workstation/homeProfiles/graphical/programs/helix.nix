@@ -24,14 +24,18 @@
     keys = {
       normal = {
         C-n = [ "extend_line" ":insert-output echo 'FILL_THIS'" ];
-        "C-k" = ":buffer-previous";
-        "C-j" = ":buffer-next";
+        C-k = ":buffer-previous";
+        C-j = ":buffer-next";
+        C-l = [ ":pipe sort | uniq" ];
+
         space = {
           space = "file_picker";
           q = ":q";
           ret = ":w";
         };
+
         esc = [ "collapse_selection" "keep_primary_selection" ];
+
         ret = [ "open_below" "normal_mode" ];
       };
 
