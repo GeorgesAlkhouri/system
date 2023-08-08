@@ -61,7 +61,7 @@ export def contribute [org = "cognitive-singularity", path = "contribute"] {
     if ($dist | path exists) {
       cd $dist
 
-      let branch_parent = (get_head $parent_url)
+      let branch_parent = (get-head $parent_url)
       let branch_upstream = "upstream-sync"
       let branch_target = "cognitive-singularity"
 
@@ -84,7 +84,7 @@ export def contribute [org = "cognitive-singularity", path = "contribute"] {
   }
 }
 
-def get_head [parent: string] {
+def get-head [parent: string] {
   git remote show $parent
   | find 'HEAD branch'
   | ansi strip
@@ -94,19 +94,24 @@ def get_head [parent: string] {
   | str trim
 }
 
-export def discovery [] {
+export def discovery [query] {
   http get "https://api.ossinsight.io/public"
+  gh search repos $query
 }
 
-def reg [type: string, query: string] {
-  rg --type $type $query --files-with-matches
-  | lines
-  | path parse
-  | get parent
-  | uniq
-  | split column "/"
-  | get column1
-  | uniq    
+def find-match [type: string, query: string] {
+  if ($query | is-empty) {
+    []    
+  } else {
+    rg --type $type $query --files-with-matches
+    | lines
+    | path parse
+    | get parent
+    | uniq
+    | split column "/"
+    | get column1
+    | uniq    
+  }
 }
 
 export def multigrep [type: string, query1 = "", query2 = "", query3 = ""] {
@@ -114,9 +119,11 @@ export def multigrep [type: string, query1 = "", query2 = "", query3 = ""] {
 
   let repos = (fd --hidden ".git$" | lines | path parse | get parent | split column "/" | get column1)
 
-  let found = [(reg $type $query1) (reg $type $query2) (reg $type $query3)]
+  let found = [(find-match $type $query1) (find-match $type $query2) (find-match $type $query3)]
 
-  let list = ($repos | each {|i| $found | all {|e| (not ($e | find $i | is-empty)) } | if ($in == true) { $i }})
+  let filtered = ($found | where {|i| (not ($i | is-empty))})
+
+  let list = ($repos | each {|i| $filtered | all {|e| (not ($e | find $i | is-empty)) } | if ($in == true) { $i }})
 
   $list | sort | uniq
 }

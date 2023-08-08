@@ -3,7 +3,7 @@
 
   settings = {
     font = {
-      normal = { family = "Iosevka Nerd Font"; };
+      normal = { family = "Iosevka Term Nerd Font"; };
 
       size = 12;
 
