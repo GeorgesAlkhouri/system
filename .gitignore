@@ -33,3 +33,5 @@ graph.svg
 # Apps 
 /sources/documentation/dist
 
+# Terminusdb Data
+/storage/db
