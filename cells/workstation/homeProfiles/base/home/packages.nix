@@ -7,10 +7,11 @@ let
   packages = with cell.packages;
     with inputs.cells.experience.packages;
     with inputs.cells.repository.packages; [
+      terminusdb
       goscrape
       tg-archive
       wgsl-analyzer
-      wrapped
+      # wrapped
     ];
 
   tools = with pkgs; [
@@ -41,6 +42,7 @@ let
     flyctl
     gnumake
     go
+    onefetch
     go-outline
     gocode
     gocode-gomod
@@ -101,6 +103,7 @@ let
     vscode-langservers-extracted
     wasm-pack
     watchexec
+    nvfetcher
     wget
     zarf
   ];

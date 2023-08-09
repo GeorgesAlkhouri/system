@@ -5,5 +5,5 @@ stdenvNoCC.mkDerivation {
 
   phases = [ "installPhase" ];
 
-  installPhase = "install -m755 -D $src $out/bin/wgsl_analyzer ";
+  installPhase = "install -m755 -D $src $out/bin/wgsl_analyzer";
 }

@@ -1,7 +1,7 @@
 { inputs, cell, }:
 
 let
-  inherit (inputs) std self cells;
+  inherit (inputs) self cells;
   inherit (inputs.nixpkgs) system;
 
   pkgs = import inputs.nixpkgs { inherit system; };

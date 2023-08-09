@@ -13,6 +13,10 @@ src.git = "https://github.com/cognitive-singularity/terminusdb"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/terminusdb"
 
+[terminusdb-dashboard]
+src.manual = "latest"
+fetch.url = "https://github.com/terminusdb/terminusdb-dashboard/releases/latest/download/release.tar.gz"
+
 [terminusdb-tus]
 src.git = "https://github.com/cognitive-singularity/terminusdb-tus"
 src.branch = "cognitive-singularity"

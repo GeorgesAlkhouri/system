@@ -7,17 +7,13 @@ def main [command: string] {
 
 export def monitor [] {
   cd ([$env.HOME "system"] | path join)
-
   watchexec --exts=nix nu start.nu rebuild
 }
 
 export def rebuild [] {
   let path = ([$env.HOME "system"] | path join)
-
   cd $path
-
   git add .
-
   sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace
 }
 
@@ -30,15 +26,6 @@ export def upload [message: string] {
   git add .
   git commit --message $message
   git push
-}
-
-export def generate [] {
-  let list = $in
-  cd ([$env.HOME "system"] | path join)
-
-  $list
-  | transpose key val
-  | each {|i| ($i | get val) | save --force ($i | get key)}
 }
 
 export def cache [] {
@@ -58,10 +45,7 @@ export def cache [] {
 
 export def refetch [] {
   ["repository" "workstation"] | each {|cell|
-    cd ([$env.HOME "system" "nix" $cell "packages"] | path join)
-
+    cd ([$env.HOME "system" "cells" $cell "packages"] | path join)
     nvfetcher
   }
 }
-
-export def cluster [] { }

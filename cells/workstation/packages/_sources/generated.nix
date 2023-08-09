@@ -90,15 +90,6 @@
     };
     date = "2023-07-05";
   };
-  local-ai = {
-    pname = "local-ai";
-    version = "latest";
-    src = fetchurl {
-      url =
-        "https://github.com/go-skynet/LocalAI/releases/latest/download/local-ai-avx-Linux-x86_64";
-      sha256 = "sha256-/OHXHvv5QWr+D0z4KlgV+PX6o64z3Ui+78MuLpS9RAM=";
-    };
-  };
   nu_plugin_from_parquet = {
     pname = "nu_plugin_from_parquet";
     version = "ca90a110cfafe2313d75ead6e29757fd06758fb6";
@@ -218,27 +209,36 @@
   };
   terminusdb = {
     pname = "terminusdb";
-    version = "ff3981e7d833527b6c077424aed21f7e3abe82d3";
+    version = "27f22f2f3f5a995bec7151b04b19cbdd04a7933f";
     src = fetchFromGitHub {
       owner = "cognitive-singularity";
       repo = "terminusdb";
-      rev = "ff3981e7d833527b6c077424aed21f7e3abe82d3";
+      rev = "27f22f2f3f5a995bec7151b04b19cbdd04a7933f";
       fetchSubmodules = false;
-      sha256 = "sha256-UFt7h7+eBg8LSjWvNcQulpjkhPANlS26/uT2xR3FG4o=";
+      sha256 = "sha256-4ck3JGGOaqE+9H9ZLJyGNSsPBKY/SPRVjcD35inotQg=";
     };
-    date = "2023-08-03";
+    date = "2023-08-09";
+  };
+  terminusdb-dashboard = {
+    pname = "terminusdb-dashboard";
+    version = "latest";
+    src = fetchurl {
+      url =
+        "https://github.com/terminusdb/terminusdb-dashboard/releases/latest/download/release.tar.gz";
+      sha256 = "sha256-3npWz5sB16Vmx+cV/h1mq8mbTfLSvAdiaYs+8DJSNKU=";
+    };
   };
   terminusdb-semantic-indexer = {
     pname = "terminusdb-semantic-indexer";
-    version = "02c5502586c64800a94424e7686efa9202f632b2";
+    version = "164483a7b3a2caeb55a519b8c2c9bcc917f38739";
     src = fetchFromGitHub {
       owner = "cognitive-singularity";
       repo = "terminusdb-semantic-indexer";
-      rev = "02c5502586c64800a94424e7686efa9202f632b2";
+      rev = "164483a7b3a2caeb55a519b8c2c9bcc917f38739";
       fetchSubmodules = false;
-      sha256 = "sha256-65+2/NLR/PeYCDqOJMDQo4gyVP0dQ95deIPqHclm/N8=";
+      sha256 = "sha256-cdYadjgvH/uPPlRmJo9BYnQ/8Wc7CoyvUkYFCFj+nCU=";
     };
-    date = "2023-08-01";
+    date = "2023-08-06";
   };
   terminusdb-tus = {
     pname = "terminusdb-tus";
@@ -266,27 +266,27 @@
   };
   uassets-master = {
     pname = "uassets-master";
-    version = "381f97eb90c0f252376b4eeaffe5139ac342d288";
+    version = "43124386da1984885157bb9342e3426386b6b10c";
     src = fetchFromGitHub {
       owner = "uBlockOrigin";
       repo = "uAssets";
-      rev = "381f97eb90c0f252376b4eeaffe5139ac342d288";
+      rev = "43124386da1984885157bb9342e3426386b6b10c";
       fetchSubmodules = false;
-      sha256 = "sha256-U3cZjAtAELrAuqxy3xhTas5D74lCtMHZUGME1uRXKwU=";
+      sha256 = "sha256-DBC4IP5fjVpKdnBgx7S+AfvuCTORCKoiL45Q1LnbHd8=";
     };
-    date = "2023-08-05";
+    date = "2023-08-09";
   };
   uassets-prod = {
     pname = "uassets-prod";
-    version = "43d03c165a59d8e4909e30d5100600026f566a32";
+    version = "902c706e14a1f2ded393e20b3318997e4d4234b0";
     src = fetchFromGitHub {
       owner = "uBlockOrigin";
       repo = "uAssets";
-      rev = "43d03c165a59d8e4909e30d5100600026f566a32";
+      rev = "902c706e14a1f2ded393e20b3318997e4d4234b0";
       fetchSubmodules = false;
-      sha256 = "sha256-HmsQnOVaGTeaxAzUsx0xG8A7EfH2MFUraKXoAB953Z0=";
+      sha256 = "sha256-fMMPKMje6d5/Y/Z+X9D2sy4YH4wDXE+teGpv7X0CdE4=";
     };
-    date = "2023-08-04";
+    date = "2023-08-09";
   };
   ublock = {
     pname = "ublock";

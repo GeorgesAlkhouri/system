@@ -1,5 +1,5 @@
-{ llvmPackages, sources, inputs, makeRustPlatform, fetchzip, stdenv, makeWrapper
-, system, fetchFromGitHub, lib, ... }:
+{ llvmPackages, fetchzip, sources, inputs, makeRustPlatform, stdenv, makeWrapper
+, system, lib, ... }:
 
 let
   pkgs-stable = import inputs.nixpkgs-stable {
@@ -7,7 +7,7 @@ let
 
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [ "openssl-1.1.1u" "openssl-1.1.1v" ];
+      permittedInsecurePackages = [ "openssl-1.1.1v" ];
     };
   };
 
@@ -18,24 +18,6 @@ let
     rustc = toolchain;
   };
 
-  DASHBOARD_VERSION = "0.0.10";
-
-  TUS_VERSION = "0.0.14";
-
-  tus = fetchFromGitHub {
-    owner = "terminusdb";
-    repo = "tus";
-    rev = "v${TUS_VERSION}";
-    sha256 = "sha256-v4Viwtyfe4v2z9R9C9vxULGGd6X9v1wM8X0OpLG9VBE=";
-  };
-
-  dashboard = fetchzip {
-    url =
-      "https://github.com/terminusdb/terminusdb-dashboard/releases/download/v${DASHBOARD_VERSION}/release.tar.gz";
-    sha256 = "sha256-1dZSrBZe/CfclVQLnMu+ql6ZXpxhgDqWjvMqmbgtQ/U=";
-    stripRoot = false;
-  };
-
   swiProlog_withlibs = (pkgs-stable.swiProlog.overrideAttrs
     (finalAttrs: previousAttrs: {
       PKG_CONFIG_PATH =
@@ -43,11 +25,13 @@ let
 
       buildInputs = previousAttrs.buildInputs;
     })).override {
-      extraPacks = map (dep-path: "'file://${dep-path}'") [ tus ];
+      extraPacks =
+        map (dep-path: "'file://${dep-path}'") [ sources.terminusdb-tus.src ];
     };
 
+  dashboard = sources.terminusdb-dashboard.src;
+
 in stdenv.mkDerivation rec {
-  inherit dashboard;
   inherit (sources.terminusdb) pname version src;
 
   cargoDeps = rustPlatform.importCargoLock {
@@ -73,7 +57,6 @@ in stdenv.mkDerivation rec {
   ];
 
   LIBCLANG_PATH = "${llvmPackages.libclang.lib}/lib";
-
   TERMINUSDB_DASHBOARD_PATH = "${placeholder "out"}/dashboard";
 
   installPhase = ''
