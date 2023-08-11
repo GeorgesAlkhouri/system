@@ -1,22 +1,25 @@
-{ inputs, cell }:
-
-let
+{
+  inputs,
+  cell,
+}: let
   inherit (inputs.nixpkgs) system;
-  pkgs = import inputs.nixpkgs { inherit system; };
+
+  pkgs = import inputs.nixpkgs {inherit system;};
 
   packages = with cell.packages;
-    with inputs.cells.experience.packages;
-    with inputs.cells.repository.packages; [
-      terminusdb
-      goscrape
-      tg-archive
-      wgsl-analyzer
-      # wrapped
-    ];
+  with inputs.cells.experience.packages;
+  with inputs.cells.repository.packages; [
+    terminusdb
+    goscrape
+    tg-archive
+    wgsl-analyzer
+    # wrapped
+  ];
 
   tools = with pkgs; [
     act
     ansible
+    pkg-config
     ansible-doctor
     ansible-lint
     archi
@@ -103,10 +106,12 @@ let
     vscode-langservers-extracted
     wasm-pack
     watchexec
+    yt-dlp
+    ffmpeg
+    tesseract
     nvfetcher
     wget
     zarf
   ];
-
-in pkgs.lib.concatLists [ packages tools ]
-
+in
+  pkgs.lib.concatLists [packages tools]

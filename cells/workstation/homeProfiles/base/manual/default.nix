@@ -1,7 +1,7 @@
 {
-  manpages = { enable = false; };
+  manpages = {enable = false;};
 
-  html = { enable = false; };
+  html = {enable = false;};
 
-  json = { enable = false; };
+  json = {enable = false;};
 }

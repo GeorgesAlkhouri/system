@@ -1,68 +1,69 @@
 {
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; }
+    inputs.flake-parts.lib.mkFlake {inherit inputs;}
+    ({flake-parts-lib, ...}: let
+      inherit (flake-parts-lib) importApply;
 
-    ({ flake-parts-lib, ... }:
-      let
-        inherit (flake-parts-lib) importApply;
+      flakeModules.hive =
+        importApply ./hive-flake-module.nix {inherit (inputs) hive;};
+    in {
+      debug = true;
 
-        flakeModules.hive =
-          importApply ./hive-flake-module.nix { inherit (inputs) hive; };
+      imports = [inputs.std.flakeModule flakeModules.hive];
 
-      in {
-        debug = true;
+      systems = import inputs.systems;
 
-        imports = [ inputs.std.flakeModule flakeModules.hive ];
+      perSystem = {
+        config,
+        system,
+        ...
+      }: {};
 
-        systems = import inputs.systems;
+      std = {
+        grow = {
+          cellsFrom = ./cells;
 
-        perSystem = { config, system, ... }: { };
+          cellBlocks = with inputs.hive.blockTypes;
+          with inputs.std.blockTypes; [
+            nixosConfigurations
+            homeConfigurations
+            colmenaConfigurations
 
-        std = {
-          grow = {
-            cellsFrom = ./cells;
+            (functions "nixosProfiles")
+            (functions "homeProfiles")
+            (functions "lib")
 
-            cellBlocks = with inputs.hive.blockTypes;
-              with inputs.std.blockTypes; [
-                nixosConfigurations
-                homeConfigurations
-                colmenaConfigurations
+            (runnables "entrypoints")
 
-                (functions "nixosProfiles")
-                (functions "homeProfiles")
-                (functions "lib")
+            (installables "packages")
 
-                (runnables "entrypoints")
+            (nixago "configs")
+            (devshells "shells")
 
-                (installables "packages")
+            (pkgs "rust")
+          ];
 
-                (nixago "configs")
-                (devshells "shells")
-
-                (pkgs "rust")
-              ];
-
-            nixpkgsConfig = { allowUnfree = true; };
-          };
-
-          harvest = {
-            devShells = [[ "repository" "shells" ]];
-
-            packages = [
-              [ "documentation" "packages" ]
-              [ "experience" "packages" ]
-              [ "repository" "packages" ]
-              [ "workstation" "packages" ]
-            ];
-          };
+          nixpkgsConfig = {allowUnfree = true;};
         };
-        hive.collect = [ "nixosConfigurations" "homeConfigurations" ];
 
-        flake = {
-          colmenaHive = inputs.hive.collect inputs.self "colmenaConfigurations";
-          default = flakeModules.hive;
+        harvest = {
+          devShells = [["repository" "shells"]];
+
+          packages = [
+            ["documentation" "packages"]
+            ["experience" "packages"]
+            ["repository" "packages"]
+            ["workstation" "packages"]
+          ];
         };
-      });
+      };
+      hive.collect = ["nixosConfigurations" "homeConfigurations"];
+
+      flake = {
+        colmenaHive = inputs.hive.collect inputs.self "colmenaConfigurations";
+        default = flakeModules.hive;
+      };
+    });
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -165,12 +166,29 @@
     advisory-db.url = "github:rustsec/advisory-db";
     advisory-db.flake = false;
 
+    helix.url = "github:helix-editor/helix";
+    helix.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-std.url = "github:chessai/nix-std";
   };
 
-  inputs = { kubenix.url = "github:hall/kubenix"; };
+  inputs = {
+    nickel-nix.url = "github:nickel-lang/nickel-nix";
 
-  inputs = { nickel-nix.url = "github:nickel-lang/nickel-nix"; };
+    tf-ncl.url = "github:tweag/tf-ncl";
+    tf-ncl.inputs.nixpkgs.follows = "nixpkgs";
+    tf-ncl.inputs.topiary.follows = "";
+    nickel.follows = "tf-ncl/nickel";
+
+    terranix.url = "github:terranix/terranix";
+    terranix.inputs.nixpkgs.follows = "nixpkgs";
+    terranix.inputs.terranix-examples.follows = "";
+
+    terraform-providers.url = "github:numtide/nixpkgs-terraform-providers-bin";
+    terraform-providers.inputs.nixpkgs.follows = "nixpkgs";
+
+    kubenix.url = "github:hall/kubenix";
+  };
 
   nixConfig = {
     extra-experimental-features = "nix-command flakes";

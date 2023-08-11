@@ -1,5 +1,8 @@
-{ sources, python3Packages, ... }:
-
+{
+  sources,
+  python3Packages,
+  ...
+}:
 python3Packages.buildPythonApplication {
   inherit (sources.tg-archive) pname version src;
 

@@ -1,5 +1,16 @@
 {
-  sudo = { wheelNeedsPassword = false; };
+  sudo = {wheelNeedsPassword = false;};
 
-  rtkit = { enable = true; };
+  rtkit = {enable = true;};
+
+  pam = {
+    loginLimits = [
+      {
+        domain = "*";
+        type = "soft";
+        item = "nofile";
+        value = "262144";
+      }
+    ];
+  };
 }

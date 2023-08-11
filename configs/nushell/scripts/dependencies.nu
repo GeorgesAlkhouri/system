@@ -87,3 +87,59 @@ def get-head [parent: string] {
   | to text
   | str trim
 }
+
+export def-env traverse [] {
+  let list = $in
+  let dir = (pwd)
+
+  if ($env | get --ignore-errors "COUNTER" | is-empty) {
+    $env.COUNTER = 0
+  }
+
+  if ($list | get ($env.COUNTER | into int) | is-empty) {
+      $env.COUNTER = ""
+      traverse
+  }
+
+  let name = ($list | get ($env.COUNTER | into int))
+
+  $env.COUNTER  = (($env.COUNTER | into int)  + 1)
+
+  ls $dir | find $name | get name | ansi strip | to text
+}
+
+export def preview [type = all] {
+  cd $in
+  ls -la
+}
+
+export def review [type = all] {
+  cd $in
+  rg --files --sort path --type $type --hidden | lines | hx $in
+}
+
+export def multigrep [type: string, query1 = "", query2 = "", query3 = ""] {
+  cd ([$env.HOME "references"] | path join)
+
+  let repos = (glob */.git | lines | path parse | get parent | path parse | get stem)
+  let found = [(find-match $type $query1) (find-match $type $query2) (find-match $type $query3)]
+  let filtered = ($found | where {|i| (not ($i | is-empty))})
+  let list = ($repos | each {|i| $filtered | all {|e| (not ($e | find $i | is-empty)) } | if ($in == true) { $i }})
+
+  $list | sort | uniq
+}
+
+def find-match [type: string, query: string] {
+  if ($query | is-empty) {
+    []    
+  } else {
+    rg --type $type $query --files-with-matches
+    | lines
+    | path parse
+    | get parent
+    | uniq
+    | split column "/"
+    | get column1
+    | uniq    
+  }
+}

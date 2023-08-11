@@ -1,5 +1,8 @@
-{ sources, buildNpmPackage, ... }:
-
+{
+  sources,
+  buildNpmPackage,
+  ...
+}:
 buildNpmPackage {
   inherit (sources.automa) pname version src;
 

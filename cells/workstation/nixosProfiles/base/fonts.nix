@@ -1,7 +1,5 @@
-{ inputs }:
+{inputs}: {
+  fontDir = {enable = true;};
 
-{
-  fontDir = { enable = true; };
-
-  packages = [ inputs.nixpkgs.nerdfonts ];
+  packages = with inputs.nixpkgs; [(nerdfonts.override {fonts = ["Iosevka" "IosevkaTerm"];})];
 }

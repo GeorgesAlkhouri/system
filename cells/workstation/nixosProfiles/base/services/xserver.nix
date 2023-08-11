@@ -11,12 +11,12 @@
 
     defaultSession = "none+leftwm";
 
-    lightdm = { enable = true; };
+    lightdm = {enable = true;};
   };
 
   layout = "us";
 
-  windowManager = { leftwm = { enable = true; }; };
+  windowManager = {leftwm = {enable = true;};};
 
-  videoDrivers = [ "nvidia" ];
+  videoDrivers = ["nvidia"];
 }

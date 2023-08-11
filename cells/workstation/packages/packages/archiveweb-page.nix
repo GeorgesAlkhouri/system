@@ -1,13 +1,17 @@
-{ sources, buildNpmPackage, inputs, ... }:
-
+{
+  sources,
+  buildNpmPackage,
+  inputs,
+  ...
+}:
 buildNpmPackage {
   inherit (sources.archiveweb-page) pname version src;
 
   npmDepsHash = "sha256-4LhQCxyDow41KoflGUGX00syx8h8rkqGRmw47vawQhk=";
 
-  buildInputs = with inputs.nixpkgs; [ nodePackages.node-gyp-build ];
+  buildInputs = with inputs.nixpkgs; [nodePackages.node-gyp-build];
 
-  npmFlags = [ "--legacy-peer-deps" ];
+  npmFlags = ["--legacy-peer-deps"];
 
   makeCacheWritable = true;
 

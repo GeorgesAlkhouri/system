@@ -1,0 +1,71 @@
+35;44;17M35;43;18M35;41;18M35;39;18M35;36;19M35;32;20M35;29;20M35;26;21M35;22;21M35;19;22M35;16;23M35;12;24M35;8;25M35;5;25M35;3;26M35;1;28M35;4;29M35;7;29M35;10;29M35;12;30M35;14;30M35;15;30M35;16;30M35;18;30M35;19;30M35;22;30M35;25;31M35;27;31M35;29;31M35;31;31M35;32;31M35;33;31M35;34;31M35;34;32M35;35;32M35;35;33M35;34;33M35;34;34M35;33;34M35;32;34M35;31;35M35;30;35M35;29;35M35;27;35M35;25;35M35;22;35M35;20;36M35;17;36M35;15;36M35;13;36M35;12;35M35;12;34M35;12;32M35;13;31M35;14;30M35;14;29M35;15;29M35;15;28M35;16;28M35;17;27M35;19;26M35;20;26M35;21;25M35;22;25M35;23;24M35;24;24M35;25;24M35;26;24M35;27;24M35;27;23M35;28;23M35;29;23M35;30;23M35;31;23M35;32;23M35;33;24M35;33;25M35;34;25M35;34;26M35;34;27M35;33;27M35;32;27M35;31;27M35;30;27M35;29;27M35;28;27M35;27;27M35;26;27M35;25;27M35;25;26M35;24;26M35;23;25M35;23;24M35;24;24M35;25;24M35;26;24M35;27;23M35;28;23M35;30;23M35;32;23M35;33;23M35;35;23M35;37;23M35;39;23M35;40;23M35;42;23M35;43;23M35;44;23M35;45;23M35;46;24M35;46;25M35;47;26M35;47;27M35;46;28M35;46;29M35;45;29M35;45;30M35;44;30M35;43;30M35;42;31M35;41;31M35;40;31M35;39;31M35;38;31M35;37;31M35;36;31M35;35;31M35;34;31M35;33;31M35;32;30M35;31;30M35;31;29M35;30;28M35;30;27M35;31;27M35;31;26M35;32;26M35;33;26M35;34;25M35;35;25M35;36;25M35;39;24M35;41;24M35;44;24M35;47;23M35;50;23M35;55;23M35;57;23M35;60;22M35;61;22M35;63;22M35;64;22M35;65;22M35;65;23M35;66;23M35;67;23M35;67;24M35;67;25M35;68;25M35;68;26M35;67;26M35;67;27M35;66;27M35;65;28M35;64;28M35;63;28M35;62;28M35;61;28M35;60;28M35;59;28M35;58;28M35;57;28M35;56;27M35;55;27M35;54;27M35;53;27M35;53;26M35;52;26M35;52;25M35;52;24M35;53;24M35;54;24M35;55;24M35;56;24M35;57;24M35;58;24M35;59;24M35;60;24M35;61;24M35;61;25M35;62;25M35;62;26M35;62;27M35;61;27M35;61;28M{ inputs, cell }:
+
+{
+  enable = true;
+
+  settings = {
+    editor = {
+      auto-info = false;
+      auto-save = true;
+      auto-format = true;
+
+      cursor-shape = {
+        insert = "bar";
+        normal = "block";
+        select = "underline";
+      };
+      line-number = "relative";
+
+      lsp = { display-messages = true; };
+
+      soft-wrap = { enable = true; };
+    };
+
+    keys = {
+      normal = {
+        C-n = [ "extend_line" ":insert-output echo 'FILL_THIS'" ];
+        C-k = ":buffer-previous";
+        C-j = ":buffer-next";
+        C-l = [ ":pipe sort | uniq" ];
+
+        space = {
+          space = "file_picker";
+          q = ":q";
+          ret = ":w";
+        };
+
+        esc = [ "collapse_selection" "keep_primary_selection" ];
+
+        ret = [ "open_below" "normal_mode" ];
+      };
+
+      insert = {
+        C-n = [ "normal_mode" "extend_line" ":insert-output echo 'FILL_THIS'" ];
+      };
+    };
+
+    theme = "base16_transparent";
+  };
+
+  languages = {
+    typescript-language-server = with inputs.nixpkgs.nodePackages; {
+      command = "${typescript-language-server}/bin/typescript-language-server";
+      args = [
+        "--stdio"
+        "--tsserver-path=${typescript}/lib/node_modules/typescript/lib"
+      ];
+    };
+
+    language = [
+      {
+        name = "nix";
+        formatter = { command = "nixfmt"; };
+        auto-format = true;
+      }
+      {
+        name = "rust";
+        auto-format = true;
+      }
+    ];
+  };
+}

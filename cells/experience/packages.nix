@@ -1,10 +1,11 @@
-{ inputs, cell, }:
-
-let
+{
+  inputs,
+  cell,
+}: let
   inherit (inputs) self cells;
   inherit (inputs.nixpkgs) system;
 
-  pkgs = import inputs.nixpkgs { inherit system; };
+  pkgs = import inputs.nixpkgs {inherit system;};
 
   crane = inputs.crane.lib.overrideToolchain cells.repository.rust.toolchain;
 
@@ -14,9 +15,11 @@ let
     cargoToml = "${self}/sources/${name}/Cargo.toml";
   };
 
-  libraries = with pkgs; [
+  dependencies = with pkgs; [
     alsa-lib
+    cmake
     libxkbcommon
+    pkg-config
     udev
     vulkan-loader
     wayland
@@ -25,12 +28,11 @@ let
     xorg.libXi
     xorg.libXrandr
   ];
-
 in {
   default = crane.buildPackage {
     inherit (crateNameFromCargoToml) pname version;
 
-    nativeBuildInputs = with pkgs; [ cmake pkg-config ] ++ libraries;
+    nativeBuildInputs = dependencies;
 
     src = crane.cleanCargoSource (crane.path "${self}/sources/${name}");
   };
@@ -38,13 +40,13 @@ in {
   wrapped = pkgs.symlinkJoin {
     inherit name;
 
-    paths = [ cell.packages.default ];
+    paths = [cell.packages.default];
 
-    buildInputs = [ pkgs.makeWrapper ];
+    buildInputs = [pkgs.makeWrapper];
 
     postBuild = ''
       wrapProgram $out/bin/experience \
-        --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath libraries}"
+        --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath dependencies}"
     '';
   };
 }

@@ -14,7 +14,7 @@ export def rebuild [] {
   let path = ([$env.HOME "system"] | path join)
   cd $path
   git add .
-  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace
+  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace --max-jobs 1 
 }
 
 export def upload [message: string] {
@@ -48,4 +48,10 @@ export def refetch [] {
     cd ([$env.HOME "system" "cells" $cell "packages"] | path join)
     nvfetcher
   }
+}
+
+export def cleanup [] {
+  rm -fr ~/.local/share/Trash/*
+  nix-collect-garbage -d
+  sudo nix-collect-garbage -d
 }

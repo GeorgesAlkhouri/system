@@ -25,6 +25,7 @@ graph.svg
 .run
 
 # nixago: ignore-linked-files
+/adrgen.config.yml
 /.conform.yaml
 /lefthook.yml
 /.editorconfig

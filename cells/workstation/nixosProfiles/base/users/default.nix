@@ -1,14 +1,13 @@
-{ inputs }: {
-
+{inputs}: {
   users = {
     nixos = {
       isNormalUser = true;
 
       description = "nixos";
 
-      extraGroups = [ "wheel" "docker" ];
+      extraGroups = ["wheel" "docker"];
 
-      openssh = { authorizedKeys = { keys = [ ]; }; };
+      openssh = {authorizedKeys = {keys = [];};};
 
       shell = inputs.nixpkgs.nushellFull;
     };

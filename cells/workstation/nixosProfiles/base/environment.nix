@@ -1,5 +1,3 @@
-{ inputs }:
-
-{
-  systemPackages = with inputs.nixpkgs; [ xclip ];
+{inputs}: {
+  systemPackages = with inputs.nixpkgs; [xclip];
 }

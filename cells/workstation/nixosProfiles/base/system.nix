@@ -1,1 +1,1 @@
-{ stateVersion = "23.05"; }
+{stateVersion = "23.05";}

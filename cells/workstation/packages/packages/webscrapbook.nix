@@ -1,5 +1,8 @@
-{ sources, stdenvNoCC, ... }:
-
+{
+  sources,
+  stdenvNoCC,
+  ...
+}:
 stdenvNoCC.mkDerivation {
   inherit (sources.webscrapbook) pname version src;
 

@@ -1,7 +1,10 @@
-{ inputs, cell }: {
+{
+  inputs,
+  cell,
+}: {
   enable = true;
 
-  configFile = { source = inputs.self + "/configs/nushell/config.nu"; };
+  configFile = {source = inputs.self + "/configs/nushell/config.nu";};
 
   extraConfig = ''
     register ${cell.packages.nu-plugin-formats}/bin/nu_plugin_formats;
@@ -18,7 +21,7 @@
     use ${cell.packages.nu-scripts}/share/nu_scripts/custom-completions/tealdeer/tldr-completions.nu *
   '';
 
-  envFile = { source = inputs.self + "/configs/nushell/env.nu"; };
+  envFile = {source = inputs.self + "/configs/nushell/env.nu";};
 
-  loginFile = { source = inputs.self + "/configs/nushell/login.nu"; };
+  loginFile = {source = inputs.self + "/configs/nushell/login.nu";};
 }

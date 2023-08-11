@@ -1,88 +1,33 @@
-{ inputs, cell, }: {
+{
+  inputs,
+  cell,
+}: let
+  inherit (inputs) nixpkgs;
+  inherit (inputs.std) lib;
+in {
+  adrgen = lib.dev.mkNixago lib.cfg.adrgen {data = import ./adrgen.nix;};
 
-  editorconfig = {
-    data = {
-      root = true;
-
-      "*" = {
-        end_of_line = "lf";
-        insert_final_newline = true;
-        trim_trailing_whitespace = true;
-        charset = "utf-8";
-        indent_style = "space";
-        indent_size = 2;
-      };
-
-      "*.{diff,patch}" = {
-        end_of_line = "unset";
-        insert_final_newline = "unset";
-        trim_trailing_whitespace = "unset";
-        indent_size = "unset";
-      };
-
-      "*.md" = {
-        max_line_length = "off";
-        trim_trailing_whitespace = false;
-      };
-
-      "{LICENSES/**,LICENSE}" = {
-        end_of_line = "unset";
-        insert_final_newline = "unset";
-        trim_trailing_whitespace = "unset";
-        charset = "unset";
-        indent_style = "unset";
-        indent_size = "unset";
-      };
-    };
+  editorconfig = lib.dev.mkNixago lib.cfg.editorconfig {
+    data = import ./editorconfig.nix;
+    hook.mode = "copy";
   };
 
-  treefmt = {
-    packages =
-      [ inputs.nixpkgs.nixfmt inputs.nixpkgs.shfmt inputs.nixpkgs.taplo ];
+  conform = lib.dev.mkNixago lib.cfg.conform {data = import ./conform.nix;};
 
-    data = {
-      formatter = {
-        nix = {
-          command = "nixfmt";
-          includes = [ "*.nix" ];
-        };
+  lefthook =
+    lib.dev.mkNixago lib.cfg.lefthook {data = import ./lefthook.nix;};
 
-        toml = {
-          command = "taplo";
-          options = [ "format" ];
-          includes = [ "*.toml" ];
-        };
-
-        shell = {
-          command = "shfmt";
-          options = [ "-i" "2" "-s" "-w" ];
-          includes = [ "*.sh" ];
-        };
-      };
-    };
+  mdbook = lib.dev.mkNixago lib.cfg.mdbook {
+    data = import ./mdbook.nix;
+    hook.mode = "copy";
   };
 
-  lefthook = {
-    data = {
-      commit-msg = {
-        commands = {
-          conform = {
-            run = ''
-              [[ "$(head -n 1 {1})" =~ ^WIP(:.*)?$|^wip(:.*)?$|fixup\!.*|squash\!.* ]] ||
-              conform enforce --commit-msg-file {1}'';
-            skip = [ "merge" "rebase" ];
-          };
-        };
-      };
+  treefmt = lib.dev.mkNixago lib.cfg.treefmt {
+    data = import ./treefmt.nix;
+    packages = [nixpkgs.shfmt nixpkgs.taplo nixpkgs.nixfmt nixpkgs.shfmt nixpkgs.go];
+  };
 
-      pre-commit = {
-        commands = {
-          treefmt = {
-            run = "treefmt --fail-on-change {staged_files}";
-            skip = [ "merge" "rebase" ];
-          };
-        };
-      };
-    };
+  githubsettings = lib.dev.mkNixago lib.cfg.githubsettings {
+    data = import ./githubsettings.nix;
   };
 }
