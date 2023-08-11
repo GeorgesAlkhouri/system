@@ -3,7 +3,7 @@
 
   settings = {
     font = {
-      normal = {family = "Iosevka Term Nerd Font";};
+      normal = { family = "Iosevka Term Nerd Font"; };
 
       size = 12;
 
@@ -13,10 +13,10 @@
       };
     };
 
-    window = {opacity = 0;};
+    window = { opacity = 0; };
 
-    mouse = {hide_when_typing = true;};
+    mouse = { hide_when_typing = true; };
 
-    scrolling = {history = 100000;};
+    scrolling = { history = 100000; };
   };
 }

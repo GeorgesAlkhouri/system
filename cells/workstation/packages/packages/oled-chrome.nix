@@ -1,8 +1,4 @@
-{
-  sources,
-  stdenvNoCC,
-  ...
-}:
+{ sources, stdenvNoCC, ... }:
 stdenvNoCC.mkDerivation {
   inherit (sources.oled-chrome) pname version src;
 

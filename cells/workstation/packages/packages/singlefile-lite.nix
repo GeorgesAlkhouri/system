@@ -1,8 +1,4 @@
-{
-  sources,
-  buildNpmPackage,
-  ...
-}:
+{ sources, buildNpmPackage, ... }:
 buildNpmPackage {
   inherit (sources.singlefile-lite) pname version src;
 

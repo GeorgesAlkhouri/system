@@ -1,13 +1,11 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell, }:
+let
   inherit (inputs) self cells;
   inherit (inputs.nixpkgs) system;
 
-  pkgs = import inputs.nixpkgs {inherit system;};
+  pkgs = import inputs.nixpkgs { inherit system; };
 
-  crane = inputs.crane.lib.overrideToolchain cells.repository.rust.toolchain;
+  crane = inputs.crane.lib.overrideToolchain cells.environment.rust.toolchain;
 
   name = "experience";
 
@@ -40,9 +38,9 @@ in {
   wrapped = pkgs.symlinkJoin {
     inherit name;
 
-    paths = [cell.packages.default];
+    paths = [ cell.packages.default ];
 
-    buildInputs = [pkgs.makeWrapper];
+    buildInputs = [ pkgs.makeWrapper ];
 
     postBuild = ''
       wrapProgram $out/bin/experience \

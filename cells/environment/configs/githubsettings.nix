@@ -102,12 +102,14 @@ let
       };
       "2" = {
         name = ":muscle: Effort: 3";
-        description = "This issue is of medium complexity or only partly well understood";
+        description =
+          "This issue is of medium complexity or only partly well understood";
         color = colors.yellow;
       };
       "5" = {
         name = ":muscle: Effort: 5";
-        description = "This issue is of high complexity or just not yet well understood";
+        description =
+          "This issue is of high complexity or just not yet well understood";
         color = colors.red;
       };
     };
@@ -115,12 +117,8 @@ let
 
   l = builtins;
 in {
-  labels =
-    []
-    ++ (l.attrValues labels.statuses)
-    ++ (l.attrValues labels.types)
-    ++ (l.attrValues labels.priorities)
-    ++ (l.attrValues labels.effort);
+  labels = [ ] ++ (l.attrValues labels.statuses) ++ (l.attrValues labels.types)
+    ++ (l.attrValues labels.priorities) ++ (l.attrValues labels.effort);
 
   data = {
     repository = {

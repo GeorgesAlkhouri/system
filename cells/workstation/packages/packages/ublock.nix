@@ -1,14 +1,8 @@
-{
-  stdenv,
-  sources,
-  inputs,
-  cell,
-  ...
-}:
+{ stdenv, sources, inputs, cell, ... }:
 stdenv.mkDerivation {
   inherit (sources.ublock) pname version src;
 
-  buildInputs = with inputs.nixpkgs; [zip python3 git];
+  buildInputs = with inputs.nixpkgs; [ zip python3 git ];
 
   PYTHON = "${inputs.nixpkgs.python3}/bin/python";
 

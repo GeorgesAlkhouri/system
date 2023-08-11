@@ -1,0 +1,26 @@
+{
+  formatter = {
+    nix = {
+      command = "nixfmt";
+      includes = [ "*.nix" ];
+    };
+
+    toml = {
+      command = "taplo";
+      options = [ "format" ];
+      includes = [ "*.toml" ];
+    };
+
+    go = {
+      command = "gofmt";
+      options = [ "-w" ];
+      includes = [ "*.go" ];
+    };
+
+    shell = {
+      command = "shfmt";
+      options = [ "-i" "2" "-s" "-w" ];
+      includes = [ "*.sh" ];
+    };
+  };
+}

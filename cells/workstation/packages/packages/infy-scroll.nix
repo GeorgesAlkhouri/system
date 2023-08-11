@@ -1,8 +1,4 @@
-{
-  sources,
-  stdenvNoCC,
-  ...
-}:
+{ sources, stdenvNoCC, ... }:
 stdenvNoCC.mkDerivation {
   inherit (sources.infy-scroll) pname version src;
 

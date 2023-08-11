@@ -1,8 +1,5 @@
-{
-  inputs,
-  cell,
-}: let
-  inherit (inputs.nixpkgs) lib;
+{ inputs, cell, }:
+let inherit (inputs.nixpkgs) lib;
 in {
   enable = true;
 
@@ -21,7 +18,7 @@ in {
     "--enable-parallel-downloading"
     "--url about:blank"
     "--enable-features=${
-      lib.concatStringsSep "," ["OverlayScrollbar" "VaapiVideoDecoder"]
+      lib.concatStringsSep "," [ "OverlayScrollbar" "VaapiVideoDecoder" ]
     }"
     "--disable-features=${
       lib.concatStringsSep "," [

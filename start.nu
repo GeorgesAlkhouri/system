@@ -17,12 +17,16 @@ export def rebuild [] {
   sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace --max-jobs 1 
 }
 
-export def upload [message: string] {
+export def check [] {
   cd ([$env.HOME "system"] | path join)
 
   nix flake check --show-trace
   nix develop --no-update-lock-file --command treefmt
-  
+}
+
+export def upload [message: string] {
+  cd ([$env.HOME "system"] | path join)
+
   git add .
   git commit --message $message
   git push

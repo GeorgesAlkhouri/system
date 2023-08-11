@@ -1,8 +1,4 @@
-{
-  sources,
-  stdenv,
-  ...
-}:
+{ sources, stdenv, ... }:
 stdenv.mkDerivation {
   inherit (sources.uassets-prod) pname version src;
 

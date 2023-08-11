@@ -1,8 +1,4 @@
-{
-  sources,
-  python3Packages,
-  ...
-}:
+{ sources, python3Packages, ... }:
 python3Packages.buildPythonApplication {
   inherit (sources.pywebscrapbook) pname version src;
 

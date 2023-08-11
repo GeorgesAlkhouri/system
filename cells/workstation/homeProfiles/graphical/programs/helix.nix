@@ -1,7 +1,4 @@
-{
-  inputs,
-  cell,
-}: {
+{ inputs, cell, }: {
   enable = true;
   package = inputs.helix.packages.${inputs.nixpkgs.system}.default;
   settings = {
@@ -17,17 +14,17 @@
       };
       line-number = "relative";
 
-      lsp = {display-messages = true;};
+      lsp = { display-messages = true; };
 
-      soft-wrap = {enable = true;};
+      soft-wrap = { enable = true; };
     };
 
     keys = {
       normal = {
-        C-n = ["extend_line" ":insert-output echo 'FILL_THIS'"];
+        C-n = [ "extend_line" ":insert-output echo 'FILL_THIS'" ];
         C-k = ":buffer-previous";
         C-j = ":buffer-next";
-        C-l = [":pipe sort | uniq"];
+        C-l = [ ":pipe sort | uniq" ];
 
         space = {
           space = "file_picker";
@@ -36,13 +33,13 @@
           ret = ":w";
         };
 
-        esc = ["collapse_selection" "keep_primary_selection"];
+        esc = [ "collapse_selection" "keep_primary_selection" ];
 
-        ret = ["open_below" "normal_mode"];
+        ret = [ "open_below" "normal_mode" ];
       };
 
       insert = {
-        C-n = ["normal_mode" "extend_line" ":insert-output echo 'FILL_THIS'"];
+        C-n = [ "normal_mode" "extend_line" ":insert-output echo 'FILL_THIS'" ];
       };
     };
 
@@ -61,7 +58,7 @@
     language = [
       {
         name = "nix";
-        formatter = {command = "nixfmt";};
+        formatter = { command = "nixfmt"; };
         auto-format = true;
       }
       {

@@ -1,21 +1,17 @@
-{
-  config,
-  lib,
-  modulesPath,
-  ...
-}: {
-  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
+{ config, lib, modulesPath, ... }: {
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot = {
     initrd = {
-      availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+      availableKernelModules =
+        [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
     };
 
-    initrd = {kernelModules = [];};
+    initrd = { kernelModules = [ ]; };
 
-    kernelModules = ["kvm-amd" "ceph"];
+    kernelModules = [ "kvm-amd" "ceph" ];
 
-    extraModulePackages = [];
+    extraModulePackages = [ ];
   };
 
   fileSystems."/" = {
@@ -28,11 +24,11 @@
     fsType = "vfat";
   };
 
-  swapDevices = [];
+  swapDevices = [ ];
 
-  networking = {useDHCP = lib.mkDefault true;};
+  networking = { useDHCP = lib.mkDefault true; };
 
-  nixpkgs = {hostPlatform = lib.mkDefault "x86_64-linux";};
+  nixpkgs = { hostPlatform = lib.mkDefault "x86_64-linux"; };
 
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;

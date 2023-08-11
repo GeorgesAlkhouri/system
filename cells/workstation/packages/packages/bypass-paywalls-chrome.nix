@@ -1,8 +1,4 @@
-{
-  sources,
-  stdenvNoCC,
-  ...
-}:
+{ sources, stdenvNoCC, ... }:
 stdenvNoCC.mkDerivation {
   inherit (sources.bypass-paywalls-chrome) pname version src;
 

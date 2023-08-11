@@ -1,7 +1,7 @@
 {
-  pulseaudio = {enable = false;};
+  pulseaudio = { enable = false; };
 
-  nvidia = {modesetting = {enable = true;};};
+  nvidia = { modesetting = { enable = true; }; };
 
   opengl = {
     enable = true;

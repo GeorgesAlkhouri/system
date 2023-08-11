@@ -1,7 +1,5 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell, }:
+let
   username = "nixos";
 
   homeDirRoot = "/home";

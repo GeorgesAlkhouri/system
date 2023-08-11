@@ -1,8 +1,4 @@
-{
-  sources,
-  stdenvNoCC,
-  ...
-}:
+{ sources, stdenvNoCC, ... }:
 stdenvNoCC.mkDerivation {
   inherit (sources.nu_scripts) pname version src;
 

@@ -1,9 +1,4 @@
-{
-  sources,
-  python3,
-  nix-update-script,
-  ...
-}:
+{ sources, python3, nix-update-script, ... }:
 python3.pkgs.buildPythonApplication {
   inherit (sources.shell_gpt) pname version src;
 
@@ -24,9 +19,9 @@ python3.pkgs.buildPythonApplication {
     hatchling
   ];
 
-  pythonRelaxDeps = ["requests" "rich" "distro" "typer"];
+  pythonRelaxDeps = [ "requests" "rich" "distro" "typer" ];
 
-  passthru.updateScript = nix-update-script {};
+  passthru.updateScript = nix-update-script { };
 
   doCheck = false;
 }

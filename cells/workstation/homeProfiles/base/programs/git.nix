@@ -1,16 +1,16 @@
 {
   enable = true;
 
-  lfs = {enable = true;};
+  lfs = { enable = true; };
 
   extraConfig = {
-    push = {autoSetupRemote = true;};
-    commit = {verbose = true;};
-    fetch = {prune = true;};
-    http = {sslVerify = true;};
-    init = {defaultBranch = "main";};
-    pull = {rebase = true;};
-    push = {followTags = true;};
+    push = { autoSetupRemote = true; };
+    commit = { verbose = true; };
+    fetch = { prune = true; };
+    http = { sslVerify = true; };
+    init = { defaultBranch = "main"; };
+    pull = { rebase = true; };
+    push = { followTags = true; };
   };
 
   aliases = {
@@ -27,7 +27,7 @@
     };
   };
 
-  difftastic = {enable = true;};
+  difftastic = { enable = true; };
 
-  includes = [{path = "~/.gitconfig";}];
+  includes = [{ path = "~/.gitconfig"; }];
 }

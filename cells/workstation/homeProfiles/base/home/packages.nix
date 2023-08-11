@@ -1,20 +1,18 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs, cell, }:
+let
   inherit (inputs.nixpkgs) system;
 
-  pkgs = import inputs.nixpkgs {inherit system;};
+  pkgs = import inputs.nixpkgs { inherit system; };
 
   packages = with cell.packages;
-  with inputs.cells.experience.packages;
-  with inputs.cells.repository.packages; [
-    terminusdb
-    goscrape
-    tg-archive
-    wgsl-analyzer
-    # wrapped
-  ];
+    with inputs.cells.experience.packages;
+    with inputs.cells.environment.packages; [
+      terminusdb
+      goscrape
+      tg-archive
+      wgsl-analyzer
+      # wrapped
+    ];
 
   tools = with pkgs; [
     act
@@ -113,5 +111,4 @@
     wget
     zarf
   ];
-in
-  pkgs.lib.concatLists [packages tools]
+in pkgs.lib.concatLists [ packages tools ]

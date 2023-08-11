@@ -1,69 +1,65 @@
 {
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;}
-    ({flake-parts-lib, ...}: let
-      inherit (flake-parts-lib) importApply;
+    inputs.flake-parts.lib.mkFlake { inherit inputs; }
 
-      flakeModules.hive =
-        importApply ./hive-flake-module.nix {inherit (inputs) hive;};
-    in {
-      debug = true;
+    ({ flake-parts-lib, ... }:
+      let
+        inherit (flake-parts-lib) importApply;
 
-      imports = [inputs.std.flakeModule flakeModules.hive];
+        flakeModules.hive =
+          importApply ./hive-flake-module.nix { inherit (inputs) hive; };
+      in {
+        debug = true;
 
-      systems = import inputs.systems;
+        imports = [ inputs.std.flakeModule flakeModules.hive ];
 
-      perSystem = {
-        config,
-        system,
-        ...
-      }: {};
+        systems = import inputs.systems;
 
-      std = {
-        grow = {
-          cellsFrom = ./cells;
+        perSystem = { config, system, ... }: { };
 
-          cellBlocks = with inputs.hive.blockTypes;
-          with inputs.std.blockTypes; [
-            nixosConfigurations
-            homeConfigurations
-            colmenaConfigurations
+        std = {
+          grow = {
+            cellsFrom = ./cells;
 
-            (functions "nixosProfiles")
-            (functions "homeProfiles")
-            (functions "lib")
+            cellBlocks = with inputs.hive.blockTypes;
+              with inputs.std.blockTypes; [
+                nixosConfigurations
+                homeConfigurations
+                colmenaConfigurations
 
-            (runnables "entrypoints")
+                (functions "nixosProfiles")
+                (functions "homeProfiles")
+                (functions "lib")
 
-            (installables "packages")
+                (runnables "entrypoints")
 
-            (nixago "configs")
-            (devshells "shells")
+                (installables "packages")
 
-            (pkgs "rust")
-          ];
+                (nixago "configs")
+                (devshells "shells")
 
-          nixpkgsConfig = {allowUnfree = true;};
+                (pkgs "rust")
+              ];
+          };
+
+          harvest = {
+            devShells = [[ "environment" "shells" ]];
+
+            packages = [
+              [ "documentation" "packages" ]
+              [ "experience" "packages" ]
+              [ "environment" "packages" ]
+              [ "workstation" "packages" ]
+            ];
+          };
         };
+        hive.collect = [ "nixosConfigurations" "homeConfigurations" ];
 
-        harvest = {
-          devShells = [["repository" "shells"]];
-
-          packages = [
-            ["documentation" "packages"]
-            ["experience" "packages"]
-            ["repository" "packages"]
-            ["workstation" "packages"]
-          ];
+        flake = {
+          colmenaHive = inputs.hive.collect inputs.self "colmenaConfigurations";
+          default = flakeModules.hive;
         };
-      };
-      hive.collect = ["nixosConfigurations" "homeConfigurations"];
-
-      flake = {
-        colmenaHive = inputs.hive.collect inputs.self "colmenaConfigurations";
-        default = flakeModules.hive;
-      };
-    });
+      });
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
