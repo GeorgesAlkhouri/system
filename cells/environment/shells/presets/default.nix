@@ -144,5 +144,12 @@ in {
         trunk serve --open $PRJ_ROOT/sources/documentation/index.html
       '';
     }
+    {
+      category = "environments";
+      name = "env-cuda";
+      command = ''
+        nix develop .#cuda --command nu
+      '';
+    }
   ] ++ rustCmds;
 }
