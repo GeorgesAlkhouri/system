@@ -88,29 +88,22 @@ def get-head [parent: string] {
   | str trim
 }
 
-export def-env traverse [] {
+export def-env traverse [dir = "references"] {
   let list = $in
-  let dir = (pwd)
 
   if ($env | get --ignore-errors "COUNTER" | is-empty) {
     $env.COUNTER = 0
   }
 
-  if ($list | get ($env.COUNTER | into int) | is-empty) {
-      $env.COUNTER = ""
-      traverse
+  if ($list | get --ignore-errors ($env.COUNTER | into int) | is-empty) {
+    $env.COUNTER = 0
   }
 
   let name = ($list | get ($env.COUNTER | into int))
 
   $env.COUNTER  = (($env.COUNTER | into int)  + 1)
 
-  ls $dir | find $name | get name | ansi strip | to text
-}
-
-export def preview [type = all] {
-  cd $in
-  ls -la
+  ls $dir | find $name | get name | ansi strip | to text | cd $in
 }
 
 export def review [type = all] {

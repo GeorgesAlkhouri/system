@@ -1,21 +1,25 @@
 { inputs, cell, }:
+
 let
-  inherit (inputs.std) std;
-  inherit (inputs) nixpkgs;
-  inherit (inputs) cells;
+  inherit (inputs) cells nixpkgs;
 
   l = inputs.nixpkgs.lib // builtins;
 
-  pkgs = inputs.nixpkgs.appendOverlays [ ];
+  pkgs = import inputs.nixpkgs { inherit (inputs.nixpkgs) system; };
 
-  build = with pkgs; [ pkgconfig mold gcc ];
+  build = with pkgs; [ cmake gcc gnumake mold pkgconfig ];
 
   runtime = with pkgs; [
     alsa-lib
+    glibc
+    glibc.out
     libtorch-bin
     libxkbcommon
+    openblas
     openssl
+    stdenv.cc
     stdenv.cc.cc
+    stdenv.cc.cc.lib
     udev
     vulkan-loader
     wayland
@@ -23,6 +27,7 @@ let
     xorg.libXcursor
     xorg.libXi
     xorg.libXrandr
+    zlib
   ];
 
   packages = build ++ runtime;
@@ -37,10 +42,18 @@ let
       paths = [ libtorch-bin.dev libtorch-bin.out ];
     };
 
+  NIX_LIBGCC_S_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+
+  NIX_GLIBC_PATH = "${pkgs.glibc.out}/lib";
+
 in {
   inherit packages;
 
   name = "devshell";
+
+  motd = l.mkForce ''
+    Entered development environment.
+  '';
 
   imports = [
     inputs.std.std.devshellProfiles.default
@@ -75,6 +88,14 @@ in {
     {
       name = "LIBTORCH";
       value = LIBTORCH;
+    }
+    {
+      name = "NIX_LIBGCC_S_PATH";
+      value = NIX_LIBGCC_S_PATH;
+    }
+    {
+      name = "NIX_GLIBC_PATH";
+      value = NIX_GLIBC_PATH;
     }
     {
       name = "RUSTFLAGS";
@@ -146,7 +167,7 @@ in {
     }
     {
       category = "environments";
-      name = "env-cuda";
+      name = "cuda-env";
       command = ''
         nix develop .#cuda --command nu
       '';

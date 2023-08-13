@@ -126,7 +126,32 @@ src.github = "structurizr/cli"
 src.prefix = "v"
 fetch.url = "https://github.com/structurizr/cli/releases/download/v$ver/structurizr-cli-$ver.zip"
 
-[shell_gpt]
-src.git = "https://github.com/cognitive-singularity/shell_gpt"
+[whisper-cpp]
+src.git = "https://github.com/cognitive-singularity/whisper.cpp"
 src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/shell_gpt"
+fetch.github = "cognitive-singularity/whisper.cpp"
+
+[llama-cpp]
+src.git = "https://github.com/cognitive-singularity/llama.cpp"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/llama.cpp"
+
+[coqui-tts]
+src.git = "https://github.com/cognitive-singularity/tts"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/tts"
+
+# [tortoise-tts-fastest]
+# src.git = "https://github.com/cognitive-singularity/tortoise-tts-fastest"
+# src.branch = "cognitive-singularity"
+# fetch.github = "cognitive-singularity/tortoise-tts-fastest"
+
+# [tortoise-tts]
+# src.git = "https://github.com/cognitive-singularity/tortoise-tts"
+# src.branch = "cognitive-singularity"
+# fetch.github = "cognitive-singularity/tortoise-tts"
+
+# [rotary-embedding-torch]
+# src.git = "https://github.com/cognitive-singularity/rotary-embedding-torch"
+# src.branch = "cognitive-singularity"
+# fetch.github = "cognitive-singularity/rotary-embedding-torch"

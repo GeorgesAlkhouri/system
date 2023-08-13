@@ -59,6 +59,26 @@
         },
         "version": "6880eb968c1985b8bf0ffc1f92802ef464ea30c1"
     },
+    "coqui-tts": {
+        "cargoLocks": null,
+        "date": "2023-08-13",
+        "extract": null,
+        "name": "coqui-tts",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "tts",
+            "rev": "c4e5effab9f2e9d23528442ed9646ad7a46e1266",
+            "sha256": "sha256-mMretEZ2UJhVczbpmPMVvhImJ1FVuNBs/v8yEvdafks=",
+            "type": "github"
+        },
+        "version": "c4e5effab9f2e9d23528442ed9646ad7a46e1266"
+    },
     "enso-appimage": {
         "cargoLocks": null,
         "date": null,
@@ -148,6 +168,26 @@
             "type": "github"
         },
         "version": "88484fdc60a6bb5f0792f858203a588737351727"
+    },
+    "llama-cpp": {
+        "cargoLocks": null,
+        "date": "2023-08-13",
+        "extract": null,
+        "name": "llama-cpp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "llama.cpp",
+            "rev": "1013be266a93c439d0441bea8a53f64bd6486dbb",
+            "sha256": "sha256-FnLdnWF64jlivQCjk3JE0AXOhap3QI2hN0soISr8dzc=",
+            "type": "github"
+        },
+        "version": "1013be266a93c439d0441bea8a53f64bd6486dbb"
     },
     "nu_plugin_from_parquet": {
         "cargoLocks": null,
@@ -289,26 +329,6 @@
         },
         "version": "7e5068a8254328dada4bca25130ed84eb80ddadd"
     },
-    "shell_gpt": {
-        "cargoLocks": null,
-        "date": "2023-07-19",
-        "extract": null,
-        "name": "shell_gpt",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "cognitive-singularity",
-            "repo": "shell_gpt",
-            "rev": "1c585664889e2cfb19ca1e13f0e8d621463ddef3",
-            "sha256": "sha256-+TapzZHzhZILsO1eNjGg7Lv4wlRyC2yenuuIU10DbTg=",
-            "type": "github"
-        },
-        "version": "1c585664889e2cfb19ca1e13f0e8d621463ddef3"
-    },
     "singlefile-lite": {
         "cargoLocks": null,
         "date": "2023-08-03",
@@ -338,11 +358,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-2TysmauuhyvTmKeG6X4yisRJGVIJGkqOHSCy5QZyU/A=",
+            "sha256": "sha256-xCwytQ3tsssR05YKklfiuCC768x8RE/Q4UexuJYUFAY=",
             "type": "url",
-            "url": "https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli-1.33.0.zip"
+            "url": "https://github.com/structurizr/cli/releases/download/v1.33.1/structurizr-cli-1.33.1.zip"
         },
-        "version": "1.33.0"
+        "version": "1.33.1"
     },
     "terminusdb": {
         "cargoLocks": null,
@@ -381,7 +401,7 @@
     },
     "terminusdb-semantic-indexer": {
         "cargoLocks": null,
-        "date": "2023-08-06",
+        "date": "2023-08-10",
         "extract": null,
         "name": "terminusdb-semantic-indexer",
         "passthru": null,
@@ -393,11 +413,11 @@
             "name": null,
             "owner": "cognitive-singularity",
             "repo": "terminusdb-semantic-indexer",
-            "rev": "164483a7b3a2caeb55a519b8c2c9bcc917f38739",
-            "sha256": "sha256-cdYadjgvH/uPPlRmJo9BYnQ/8Wc7CoyvUkYFCFj+nCU=",
+            "rev": "1071b599387cbfed6b0e742b23fe8ed38ee857f1",
+            "sha256": "sha256-lR3BT45R/PQ5EMfwhwcc5LFcFZwyhQjZGnLmc11/2Z8=",
             "type": "github"
         },
-        "version": "164483a7b3a2caeb55a519b8c2c9bcc917f38739"
+        "version": "1071b599387cbfed6b0e742b23fe8ed38ee857f1"
     },
     "terminusdb-tus": {
         "cargoLocks": null,
@@ -441,7 +461,7 @@
     },
     "uassets-master": {
         "cargoLocks": null,
-        "date": "2023-08-10",
+        "date": "2023-08-13",
         "extract": null,
         "name": "uassets-master",
         "passthru": null,
@@ -453,15 +473,15 @@
             "name": null,
             "owner": "uBlockOrigin",
             "repo": "uAssets",
-            "rev": "510e91ef3a14fd71e22a9660073ba17e3c5e9f78",
-            "sha256": "sha256-5OjLDG3sw3HK+1kXoxY8BRC6ahZMHdKlCPjs9PxPVps=",
+            "rev": "234fd9a512e468924af6d803bfc86188ca0a5ab9",
+            "sha256": "sha256-30eNHdgK9yRUTtVMgijKNuRxRdO9Sq+OGOYLy0qrA6s=",
             "type": "github"
         },
-        "version": "510e91ef3a14fd71e22a9660073ba17e3c5e9f78"
+        "version": "234fd9a512e468924af6d803bfc86188ca0a5ab9"
     },
     "uassets-prod": {
         "cargoLocks": null,
-        "date": "2023-08-10",
+        "date": "2023-08-13",
         "extract": null,
         "name": "uassets-prod",
         "passthru": null,
@@ -473,11 +493,11 @@
             "name": null,
             "owner": "uBlockOrigin",
             "repo": "uAssets",
-            "rev": "add6912da38c46808ee2f279fc3b46578fcca5d1",
-            "sha256": "sha256-csE0a285Ibh6lFb83vPLPaVViRrwM2tGTbS+Lw0Z0FQ=",
+            "rev": "38d0c79ce26683db2304cf975d101e5d2b6549ba",
+            "sha256": "sha256-5WPYXpRSfW49EfnT8cIqYdTX464J+BVHdHqtrAHQTkM=",
             "type": "github"
         },
-        "version": "add6912da38c46808ee2f279fc3b46578fcca5d1"
+        "version": "38d0c79ce26683db2304cf975d101e5d2b6549ba"
     },
     "ublock": {
         "cargoLocks": null,
@@ -518,5 +538,25 @@
             "type": "github"
         },
         "version": "c573fff2edb50885d966eeaa91df6cdef83e2fbb"
+    },
+    "whisper-cpp": {
+        "cargoLocks": null,
+        "date": "2023-08-03",
+        "extract": null,
+        "name": "whisper-cpp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "whisper.cpp",
+            "rev": "b948361956739efcf634e3a0ff35a67ed11be61a",
+            "sha256": "sha256-0jPfCp6Sy7iCe2ONSUaeB/5y6khDpP60yTiCu7h3VPY=",
+            "type": "github"
+        },
+        "version": "b948361956739efcf634e3a0ff35a67ed11be61a"
     }
 }

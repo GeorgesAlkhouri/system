@@ -6,7 +6,11 @@
       pkgs = import inputs.nixpkgs {
         inherit (inputs.nixpkgs) system;
 
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+          cudaSupport = true;
+          cudaVersion = "12";
+        };
       };
 
       home = inputs.home;

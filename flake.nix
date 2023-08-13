@@ -66,6 +66,8 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     nixpkgs-fork.url = "github:cognitive-singularity/nixpkgs";
+    nixpkgs-unfree.url = "github:numtide/nixpkgs-unfree";
+    nixpkgs-unfree.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   inputs = {
@@ -162,10 +164,47 @@
     advisory-db.url = "github:rustsec/advisory-db";
     advisory-db.flake = false;
 
+    nix-std.url = "github:chessai/nix-std";
+
     helix.url = "github:helix-editor/helix";
     helix.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-std.url = "github:chessai/nix-std";
+    llama-cpp.url = "github:ggerganov/llama.cpp";
+    llama-cpp.inputs.nixpkgs.follows = "nixpkgs";
+
+    llama-cpp-cuda.url =
+      "github:cognitive-singularity/llama.cpp/cognitive-singularity";
+    llama-cpp-cuda.inputs.nixpkgs.follows = "nixpkgs";
+
+    typst.url = "github:typst/typst";
+    typst.inputs.nixpkgs.follows = "nixpkgs";
+
+    typst-lsp.url = "github:nvarner/typst-lsp";
+    typst-lsp.inputs.nixpkgs.follows = "nixpkgs";
+
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    rust-overlay.inputs.flake-utils.follows = "flake-utils";
+
+    nickel.url = "github:tweag/nickel";
+    nickel.inputs.nixpkgs.follows = "nixpkgs";
+    nickel.inputs.rust-overlay.follows = "rust-overlay";
+    nickel.inputs.flake-utils.follows = "flake-utils";
+
+    nil.url = "github:oxalica/nil";
+    nil.inputs.nixpkgs.follows = "nixpkgs";
+    nil.inputs.rust-overlay.follows = "rust-overlay";
+    nil.inputs.flake-utils.follows = "flake-utils";
+
+    topiary.url = "github:tweag/topiary";
+    topiary.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixd.url = "github:nix-community/nixd";
+    nixd.inputs.nixpkgs.follows = "nixpkgs";
+
+    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
+    ml-pkgs.inputs.utils.follows = "flake-utils";
   };
 
   inputs = {
@@ -173,8 +212,6 @@
 
     tf-ncl.url = "github:tweag/tf-ncl";
     tf-ncl.inputs.nixpkgs.follows = "nixpkgs";
-    tf-ncl.inputs.topiary.follows = "";
-    nickel.follows = "tf-ncl/nickel";
 
     terranix.url = "github:terranix/terranix";
     terranix.inputs.nixpkgs.follows = "nixpkgs";
@@ -191,13 +228,19 @@
 
     extra-substituters = [
       "https://nix-community.cachix.org"
+      "https://numtide.cachix.org"
       "https://nickel-nix.cachix.org"
+      "https://cache.divnix.com"
+      "https://helix.cachix.org"
       "https://cognitive-singularity.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
       "nickel-nix.cachix.org-1:/Ziozgt3g0CfGwGS795wyjRa9ArE89s3tbz31S6xxFM="
+      "cache.divnix.com:sx7ojBrBUtdNmAMzNhiucTX+pqLzNTs4ISNb5qhh5OI="
+      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "cognitive-singularity.cachix.org-1:grkAm+geNEakMShqNnEnVsEbK3m4reSNpPf8Rxza3Xw="
     ];
   };

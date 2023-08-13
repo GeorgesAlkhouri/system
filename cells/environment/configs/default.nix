@@ -23,7 +23,7 @@ in {
   treefmt = lib.dev.mkNixago lib.cfg.treefmt {
     data = import ./treefmt.nix;
     packages =
-      [ nixpkgs.shfmt nixpkgs.taplo nixpkgs.nixfmt nixpkgs.shfmt nixpkgs.go ];
+      [ nixpkgs.shfmt nixpkgs.topiary nixpkgs.nixfmt nixpkgs.shfmt nixpkgs.go ];
   };
 
   githubsettings = lib.dev.mkNixago lib.cfg.githubsettings {

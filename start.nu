@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-def main [command: string] {
+def main [command = "monitor"] {
   if ($command == "monitor") { monitor }
   if ($command == "rebuild") { rebuild }
 }
@@ -12,9 +12,11 @@ export def monitor [] {
 
 export def rebuild [] {
   let path = ([$env.HOME "system"] | path join)
+
   cd $path
   git add .
-  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace --max-jobs 1 
+
+  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace
 }
 
 export def check [] {
@@ -48,7 +50,7 @@ export def cache [] {
 }
 
 export def refetch [] {
-  ["repository" "workstation"] | each {|cell|
+  ["workstation" "environment"] | each {|cell|
     cd ([$env.HOME "system" "cells" $cell "packages"] | path join)
     nvfetcher
   }
