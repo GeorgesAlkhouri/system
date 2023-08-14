@@ -59,26 +59,6 @@
         },
         "version": "6880eb968c1985b8bf0ffc1f92802ef464ea30c1"
     },
-    "coqui-tts": {
-        "cargoLocks": null,
-        "date": "2023-08-13",
-        "extract": null,
-        "name": "coqui-tts",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "cognitive-singularity",
-            "repo": "tts",
-            "rev": "c4e5effab9f2e9d23528442ed9646ad7a46e1266",
-            "sha256": "sha256-mMretEZ2UJhVczbpmPMVvhImJ1FVuNBs/v8yEvdafks=",
-            "type": "github"
-        },
-        "version": "c4e5effab9f2e9d23528442ed9646ad7a46e1266"
-    },
     "enso-appimage": {
         "cargoLocks": null,
         "date": null,
@@ -459,9 +439,29 @@
         },
         "version": "f8e0cfbbc591405a570365d3af4497bd3125544d"
     },
+    "tortoise-tts": {
+        "cargoLocks": null,
+        "date": "2023-07-30",
+        "extract": null,
+        "name": "tortoise-tts",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "tortoise-tts",
+            "rev": "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd",
+            "sha256": "sha256-JR8oNCsGpAtUWJSFZEGoEf1x0MhEJKsbITDZ1WB0+lg=",
+            "type": "github"
+        },
+        "version": "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd"
+    },
     "uassets-master": {
         "cargoLocks": null,
-        "date": "2023-08-13",
+        "date": "2023-08-14",
         "extract": null,
         "name": "uassets-master",
         "passthru": null,
@@ -473,15 +473,15 @@
             "name": null,
             "owner": "uBlockOrigin",
             "repo": "uAssets",
-            "rev": "234fd9a512e468924af6d803bfc86188ca0a5ab9",
-            "sha256": "sha256-30eNHdgK9yRUTtVMgijKNuRxRdO9Sq+OGOYLy0qrA6s=",
+            "rev": "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507",
+            "sha256": "sha256-i1y7gdbrqQ/83KFl4ZkwAoOOS0vCuZ5Akel9MqJvRDo=",
             "type": "github"
         },
-        "version": "234fd9a512e468924af6d803bfc86188ca0a5ab9"
+        "version": "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507"
     },
     "uassets-prod": {
         "cargoLocks": null,
-        "date": "2023-08-13",
+        "date": "2023-08-14",
         "extract": null,
         "name": "uassets-prod",
         "passthru": null,
@@ -493,11 +493,11 @@
             "name": null,
             "owner": "uBlockOrigin",
             "repo": "uAssets",
-            "rev": "38d0c79ce26683db2304cf975d101e5d2b6549ba",
-            "sha256": "sha256-5WPYXpRSfW49EfnT8cIqYdTX464J+BVHdHqtrAHQTkM=",
+            "rev": "d162d0c3db6bae690a000db098e1431cc00622ec",
+            "sha256": "sha256-DRiio0V1pWWT1WOJC9F0cKkd+Gqw+iOTY5zSR9NE1SY=",
             "type": "github"
         },
-        "version": "38d0c79ce26683db2304cf975d101e5d2b6549ba"
+        "version": "d162d0c3db6bae690a000db098e1431cc00622ec"
     },
     "ublock": {
         "cargoLocks": null,

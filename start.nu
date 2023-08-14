@@ -16,7 +16,7 @@ export def rebuild [] {
   cd $path
   git add .
 
-  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default" --show-trace
+  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default"
 }
 
 export def check [] {

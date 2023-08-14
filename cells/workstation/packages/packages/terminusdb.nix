@@ -1,46 +1,28 @@
-{ llvmPackages, sources, inputs, makeRustPlatform, stdenv, makeWrapper, system
-, lib, ... }:
+{ llvmPackages, sources, inputs, makeRustPlatform, stdenv, makeWrapper, system, lib, ... }:
 let
   pkgs-stable = import inputs.nixpkgs-stable {
     inherit system;
-
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [ "openssl-1.1.1v" ];
-    };
+    config = { permittedInsecurePackages = [ "openssl-1.1.1v" ]; };
   };
-
   toolchain = inputs.fenix.packages.${system}.minimal.toolchain;
-
   rustPlatform = makeRustPlatform {
     cargo = toolchain;
     rustc = toolchain;
   };
-
-  swiProlog_withlibs = (pkgs-stable.swiProlog.overrideAttrs
-    (finalAttrs: previousAttrs: {
-      PKG_CONFIG_PATH =
-        lib.makeSearchPath "lib/pkgconfig" previousAttrs.buildInputs;
-
-      buildInputs = previousAttrs.buildInputs;
-    })).override {
-      extraPacks =
-        map (dep-path: "'file://${dep-path}'") [ sources.terminusdb-tus.src ];
-    };
+  swiProlog_withlibs = (pkgs-stable.swiProlog.overrideAttrs (finalAttrs: previousAttrs: {
+    PKG_CONFIG_PATH = lib.makeSearchPath "lib/pkgconfig" previousAttrs.buildInputs;
+    buildInputs = previousAttrs.buildInputs;
+  })).override { extraPacks = map (dep-path: "'file://${dep-path}'") [ sources.terminusdb-tus.src ]; };
 in stdenv.mkDerivation rec {
   inherit (sources.terminusdb) pname version src;
-
   cargoDeps = rustPlatform.importCargoLock {
     lockFile = "${src}/src/rust/Cargo.lock";
     outputHashes = {
       "juniper-0.15.10" = "sha256-TjoT6ELio8BaIOO4frQYUa0FWXNnsjlDmuDKZcIyEa8=";
-      "terminusdb-grpc-labelstore-client-0.1.0" =
-        "sha256-OfxSnvWpFWwd1N2o9FwXVQ0VMBEqKa7mjtFoJSmPuFk=";
+      "terminusdb-grpc-labelstore-client-0.1.0" = "sha256-OfxSnvWpFWwd1N2o9FwXVQ0VMBEqKa7mjtFoJSmPuFk=";
     };
   };
-
   cargoRoot = "src/rust";
-
   buildInputs = with inputs.nixpkgs; [
     (with rustPlatform; [ cargoSetupHook cargo rustc rustc.llvmPackages.clang ])
     gmp
@@ -51,13 +33,10 @@ in stdenv.mkDerivation rec {
     protobuf
     swiProlog_withlibs
   ];
-
   LIBCLANG_PATH = "${llvmPackages.libclang.lib}/lib";
-
   installPhase = ''
     mkdir -p $out/bin
     cp terminusdb $out/bin/
   '';
-
   dontStrip = true;
 }

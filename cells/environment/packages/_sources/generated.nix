@@ -4,8 +4,7 @@
     pname = "wgsl_analyzer";
     version = "latest";
     src = fetchurl {
-      url =
-        "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64";
+      url = "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64";
       sha256 = "sha256-HvQfvfvXcgkfk3Ly47eam0PpaIOQaMEZp6dqVnQgrAY=";
     };
   };

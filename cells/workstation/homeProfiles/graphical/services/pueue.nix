@@ -1,6 +1,5 @@
 {
   enable = true;
-
   settings = {
     client = {
       dark_mode = false;
@@ -12,7 +11,6 @@
       status_datetime_format = "%Y-%m-%d %H:%M:%S";
       status_time_format = "%H:%M:%S";
     };
-
     daemon = {
       callback = null;
       callback_log_lines = 10;
@@ -20,7 +18,6 @@
       pause_group_on_failure = false;
       default_parallel_tasks = 2;
     };
-
     shared = {
       daemon_cert = null;
       daemon_key = null;

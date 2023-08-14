@@ -1,17 +1,10 @@
-{ inputs, cell, }: {
+{ inputs, cell }: {
   default = {
     bee = {
       inherit (inputs.nixpkgs) system;
-
       pkgs = import inputs.nixpkgs { inherit (inputs.nixpkgs) system; };
-
-      home = inputs.home;
+      home = inputs.home-manager;
     };
-
-    imports = with cell.homeProfiles; [
-      inputs.sops-nix.homeManagerModules.sops
-      base
-      graphical
-    ];
+    imports = with cell.homeProfiles; [ inputs.sops-nix.homeManagerModules.sops base graphical ];
   };
 }

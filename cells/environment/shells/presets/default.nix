@@ -1,65 +1,33 @@
-{ inputs, cell, }:
-
+{ inputs, cell }:
 let
   inherit (inputs) cells nixpkgs;
-
   l = inputs.nixpkgs.lib // builtins;
-
   pkgs = import inputs.nixpkgs { inherit (inputs.nixpkgs) system; };
-
-  build = with pkgs; [ cmake gcc gnumake mold pkgconfig ];
-
-  runtime = with pkgs; [
-    alsa-lib
-    glibc
-    glibc.out
-    libtorch-bin
-    libxkbcommon
-    openblas
-    openssl
-    stdenv.cc
-    stdenv.cc.cc
-    stdenv.cc.cc.lib
-    udev
-    vulkan-loader
-    wayland
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXi
-    xorg.libXrandr
-    zlib
+  build = [ pkgs.cmake pkgs.gcc pkgs.gnumake pkgs.mold pkgs.pkgconfig ];
+  runtime = [
+    pkgs.alsa-lib
+    pkgs.glibc
+    pkgs.glibc.out
+    pkgs.libtorch-bin
+    pkgs.libxkbcommon
+    pkgs.openblas
+    pkgs.openssl
+    pkgs.stdenv.cc
+    pkgs.stdenv.cc.cc
+    pkgs.stdenv.cc.cc.lib
+    pkgs.udev
+    pkgs.vulkan-loader
+    pkgs.wayland
+    pkgs.xorg.libX11
+    pkgs.xorg.libXcursor
+    pkgs.xorg.libXi
+    pkgs.xorg.libXrandr
+    pkgs.zlib
   ];
-
-  packages = build ++ runtime;
-
-  PKG_CONFIG_PATH = l.makeSearchPathOutput "dev" "lib/pkgconfig" packages;
-
-  LD_LIBRARY_PATH = l.makeLibraryPath packages;
-
-  LIBTORCH = with pkgs;
-    symlinkJoin {
-      name = "torch-join";
-      paths = [ libtorch-bin.dev libtorch-bin.out ];
-    };
-
-  NIX_LIBGCC_S_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-
-  NIX_GLIBC_PATH = "${pkgs.glibc.out}/lib";
-
 in {
-  inherit packages;
-
-  name = "devshell";
-
-  motd = l.mkForce ''
-    Entered development environment.
-  '';
-
-  imports = [
-    inputs.std.std.devshellProfiles.default
-    "${inputs.std.inputs.devshell}/extra/language/rust.nix"
-  ];
-
+  name = "environment";
+  imports = [ inputs.std.std.devshellProfiles.default "${inputs.std.inputs.devshell}/extra/language/rust.nix" ];
+  packages = build ++ runtime;
   env = [
     {
       name = "DEVSHELL_NO_MOTD";
@@ -79,39 +47,33 @@ in {
     }
     {
       name = "PKG_CONFIG_PATH";
-      value = PKG_CONFIG_PATH;
+      value = l.makeSearchPathOutput "dev" "lib/pkgconfig" (build ++ runtime);
     }
     {
       name = "LD_LIBRARY_PATH";
-      value = LD_LIBRARY_PATH;
+      value = l.makeLibraryPath (build ++ runtime);
     }
     {
       name = "LIBTORCH";
-      value = LIBTORCH;
+      value = pkgs.symlinkJoin {
+        name = "torch-join";
+        paths = [ pkgs.libtorch-bin.dev pkgs.libtorch-bin.out ];
+      };
     }
     {
       name = "NIX_LIBGCC_S_PATH";
-      value = NIX_LIBGCC_S_PATH;
+      value = "${pkgs.stdenv.cc.cc.lib}/lib";
     }
     {
       name = "NIX_GLIBC_PATH";
-      value = NIX_GLIBC_PATH;
+      value = "${pkgs.glibc.out}/lib";
     }
     {
       name = "RUSTFLAGS";
       value = "-C link-arg=-fuse-ld=mold";
     }
   ];
-
-  nixago = [
-    cell.configs.conform
-    cell.configs.adrgen
-    cell.configs.editorconfig
-    cell.configs.lefthook
-    cell.configs.treefmt
-    cell.configs.githubsettings
-  ];
-
+  nixago = [ cell.configs.conform cell.configs.adrgen cell.configs.editorconfig cell.configs.lefthook cell.configs.treefmt cell.configs.githubsettings ];
   language = {
     rust = {
       packageSet = cell.rust;
@@ -119,7 +81,6 @@ in {
       tools = [ "toolchain" ];
     };
   };
-
   devshell.startup.link-cargo-home = {
     deps = [ ];
     text = ''
@@ -127,7 +88,6 @@ in {
       ln -snf -t $PRJ_DATA_DIR/cargo $(ls -d ${cell.rust.toolchain}/*)
     '';
   };
-
   commands = let
     rustCmds = l.map (name: {
       inherit name;
@@ -147,30 +107,22 @@ in {
     {
       category = "applications";
       name = "experience";
-      command = ''
-        cargo run --manifest-path $PRJ_ROOT/sources/experience/Cargo.toml;
-      '';
+      command = "cargo run --manifest-path $PRJ_ROOT/sources/experience/Cargo.toml; ";
     }
     {
       category = "applications";
       name = "processor";
-      command = ''
-        cargo run --manifest-path $PRJ_ROOT/sources/processor/Cargo.toml;
-      '';
+      command = "cargo run --manifest-path $PRJ_ROOT/sources/processor/Cargo.toml; ";
     }
     {
       category = "applications";
       name = "documentation";
-      command = ''
-        trunk serve --open $PRJ_ROOT/sources/documentation/index.html
-      '';
+      command = "trunk serve --open $PRJ_ROOT/sources/documentation/index.html ";
     }
     {
       category = "environments";
       name = "cuda-env";
-      command = ''
-        nix develop .#cuda --command nu
-      '';
+      command = "nix develop .#cuda --command nu ";
     }
   ] ++ rustCmds;
 }

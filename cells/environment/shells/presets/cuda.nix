@@ -1,77 +1,35 @@
-{ inputs, cell, }:
-
+{ inputs, cell }:
 let
   inherit (inputs) nixpkgs;
-
   l = inputs.nixpkgs.lib // builtins;
-
   pkgs = import inputs.nixpkgs {
     inherit (inputs.nixpkgs) system;
-
     config = {
       allowUnfree = true;
       cudaSupport = true;
     };
   };
-
-  build = with pkgs; [ cmake gcc gnumake mold pkgconfig ];
-
-  runtime = with pkgs; [
-    alsa-lib
-    cudaPackages_12.cudatoolkit
-    cudaPackages_12.cudatoolkit.lib
-    glibc
-    glibc.out
-    libtorch-bin
-    libxkbcommon
-    linuxPackages_6_1.nvidia_x11
-    openblas
-    openssl
-    stdenv.cc
-    stdenv.cc.cc
-    stdenv.cc.cc.lib
-    udev
-    vulkan-loader
-    wayland
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXi
-    xorg.libXrandr
-    zlib
+  build = [ pkgs.cmake pkgs.gcc pkgs.gnumake pkgs.mold pkgs.pkgconfig ];
+  runtime = [
+    pkgs.cudaPackages.cudatoolkit
+    pkgs.cudaPackages.cudatoolkit.lib
+    pkgs.glibc
+    pkgs.glibc.out
+    pkgs.libtorch-bin
+    pkgs.libxkbcommon
+    pkgs.linuxPackages_latest.nvidia_x11
+    pkgs.openblas
+    pkgs.openssl
+    pkgs.stdenv.cc
+    pkgs.stdenv.cc.cc
+    pkgs.stdenv.cc.cc.lib
+    pkgs.udev
+    pkgs.zlib
   ];
-
-  packages = build ++ runtime;
-
-  PKG_CONFIG_PATH = l.makeSearchPathOutput "dev" "lib/pkgconfig" packages;
-
-  LD_LIBRARY_PATH = l.makeLibraryPath packages;
-
-  LIBTORCH = with pkgs;
-    symlinkJoin {
-      name = "torch-join";
-      paths = [ libtorch-bin.dev libtorch-bin.out ];
-    };
-
-  NIX_LIBGCC_S_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-
-  NIX_GLIBC_PATH = "${pkgs.glibc.out}/lib";
-
-  CUDA_PATH = pkgs.cudaPackages_12.cudatoolkit;
-
-  EXTRA_LDFLAGS = "-L${pkgs.linuxPackages_6_1.nvidia_x11}/lib";
-
-  EXTRA_CCFLAGS = "-I/usr/include";
-
 in {
-  inherit packages;
-
   name = "cude environment";
-
-  imports = [
-    inputs.std.std.devshellProfiles.default
-    "${inputs.std.inputs.devshell}/extra/language/rust.nix"
-  ];
-
+  imports = [ inputs.std.std.devshellProfiles.default "${inputs.std.inputs.devshell}/extra/language/rust.nix" ];
+  packages = build ++ runtime;
   env = [
     {
       name = "DEVSHELL_NO_MOTD";
@@ -91,51 +49,45 @@ in {
     }
     {
       name = "PKG_CONFIG_PATH";
-      value = PKG_CONFIG_PATH;
+      value = l.makeSearchPathOutput "dev" "lib/pkgconfig" (build ++ runtime);
     }
     {
       name = "LD_LIBRARY_PATH";
-      value = LD_LIBRARY_PATH;
+      value = l.makeLibraryPath (build ++ runtime);
     }
     {
       name = "LIBTORCH";
-      value = LIBTORCH;
+      value = pkgs.symlinkJoin {
+        name = "torch-join";
+        paths = [ pkgs.libtorch-bin.dev pkgs.libtorch-bin.out ];
+      };
     }
     {
       name = "NIX_LIBGCC_S_PATH";
-      value = NIX_LIBGCC_S_PATH;
+      value = "${pkgs.stdenv.cc.cc.lib}/lib";
     }
     {
       name = "NIX_GLIBC_PATH";
-      value = NIX_GLIBC_PATH;
+      value = "${pkgs.glibc.out}/lib";
     }
     {
       name = "CUDA_PATH";
-      value = CUDA_PATH;
+      value = pkgs.cudaPackages.cudatoolkit;
     }
     {
       name = "EXTRA_LDFLAGS";
-      value = EXTRA_LDFLAGS;
+      value = "-L${pkgs.linuxPackages_latest.nvidia_x11}/lib";
     }
     {
       name = "EXTRA_CCFLAGS";
-      value = EXTRA_CCFLAGS;
+      value = "-I/usr/include";
     }
     {
       name = "RUSTFLAGS";
       value = "-C link-arg=-fuse-ld=mold";
     }
   ];
-
-  nixago = [
-    cell.configs.conform
-    cell.configs.adrgen
-    cell.configs.editorconfig
-    cell.configs.lefthook
-    cell.configs.treefmt
-    cell.configs.githubsettings
-  ];
-
+  nixago = [ cell.configs.conform cell.configs.adrgen cell.configs.editorconfig cell.configs.lefthook cell.configs.treefmt cell.configs.githubsettings ];
   language = {
     rust = {
       packageSet = cell.rust;
@@ -143,7 +95,6 @@ in {
       tools = [ "toolchain" ];
     };
   };
-
   devshell.startup.link-cargo-home = {
     deps = [ ];
     text = ''
@@ -151,7 +102,6 @@ in {
       ln -snf -t $PRJ_DATA_DIR/cargo $(ls -d ${cell.rust.toolchain}/*)
     '';
   };
-
   commands = let
     rustCmds = l.map (name: {
       inherit name;

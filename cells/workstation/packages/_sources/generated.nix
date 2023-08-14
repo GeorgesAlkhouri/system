@@ -36,24 +36,11 @@
     };
     date = "2023-08-04";
   };
-  coqui-tts = {
-    pname = "coqui-tts";
-    version = "c4e5effab9f2e9d23528442ed9646ad7a46e1266";
-    src = fetchFromGitHub {
-      owner = "cognitive-singularity";
-      repo = "tts";
-      rev = "c4e5effab9f2e9d23528442ed9646ad7a46e1266";
-      fetchSubmodules = false;
-      sha256 = "sha256-mMretEZ2UJhVczbpmPMVvhImJ1FVuNBs/v8yEvdafks=";
-    };
-    date = "2023-08-13";
-  };
   enso-appimage = {
     pname = "enso-appimage";
     version = "2023.2.1-nightly.2023.8.2";
     src = fetchurl {
-      url =
-        "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-linux-2023.2.1-nightly.2023.8.3.AppImage";
+      url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-linux-2023.2.1-nightly.2023.8.3.AppImage";
       sha256 = "sha256-r/va4pYGl/OGpBolM3EUInqGLbkt7LD9PmqZdO24Q38=";
     };
   };
@@ -61,8 +48,7 @@
     pname = "enso-engine";
     version = "2023.2.1-nightly.2023.8.2";
     src = fetchurl {
-      url =
-        "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-bundle-2023.2.1-nightly.2023.8.3-linux-amd64.tar.gz";
+      url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-bundle-2023.2.1-nightly.2023.8.3-linux-amd64.tar.gz";
       sha256 = "sha256-Z5GNzrO83UkBL3NiUOyuxLq/d0Wxeg+GoUneokTCkx4=";
     };
   };
@@ -214,8 +200,7 @@
     pname = "structurizr-cli";
     version = "1.33.1";
     src = fetchurl {
-      url =
-        "https://github.com/structurizr/cli/releases/download/v1.33.1/structurizr-cli-1.33.1.zip";
+      url = "https://github.com/structurizr/cli/releases/download/v1.33.1/structurizr-cli-1.33.1.zip";
       sha256 = "sha256-xCwytQ3tsssR05YKklfiuCC768x8RE/Q4UexuJYUFAY=";
     };
   };
@@ -235,8 +220,7 @@
     pname = "terminusdb-dashboard";
     version = "stable";
     src = fetchurl {
-      url =
-        "https://github.com/terminusdb/terminusdb-dashboard/releases/download/v0.0.10/release.tar.gz";
+      url = "https://github.com/terminusdb/terminusdb-dashboard/releases/download/v0.0.10/release.tar.gz";
       sha256 = "sha256-DKg4zwd8mG9GeeYSs3JmR6cPiUDj3J0l87x7cgCxYr8=";
     };
   };
@@ -276,29 +260,41 @@
     };
     date = "2023-07-24";
   };
+  tortoise-tts = {
+    pname = "tortoise-tts";
+    version = "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd";
+    src = fetchFromGitHub {
+      owner = "cognitive-singularity";
+      repo = "tortoise-tts";
+      rev = "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd";
+      fetchSubmodules = false;
+      sha256 = "sha256-JR8oNCsGpAtUWJSFZEGoEf1x0MhEJKsbITDZ1WB0+lg=";
+    };
+    date = "2023-07-30";
+  };
   uassets-master = {
     pname = "uassets-master";
-    version = "234fd9a512e468924af6d803bfc86188ca0a5ab9";
+    version = "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507";
     src = fetchFromGitHub {
       owner = "uBlockOrigin";
       repo = "uAssets";
-      rev = "234fd9a512e468924af6d803bfc86188ca0a5ab9";
+      rev = "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507";
       fetchSubmodules = false;
-      sha256 = "sha256-30eNHdgK9yRUTtVMgijKNuRxRdO9Sq+OGOYLy0qrA6s=";
+      sha256 = "sha256-i1y7gdbrqQ/83KFl4ZkwAoOOS0vCuZ5Akel9MqJvRDo=";
     };
-    date = "2023-08-13";
+    date = "2023-08-14";
   };
   uassets-prod = {
     pname = "uassets-prod";
-    version = "38d0c79ce26683db2304cf975d101e5d2b6549ba";
+    version = "d162d0c3db6bae690a000db098e1431cc00622ec";
     src = fetchFromGitHub {
       owner = "uBlockOrigin";
       repo = "uAssets";
-      rev = "38d0c79ce26683db2304cf975d101e5d2b6549ba";
+      rev = "d162d0c3db6bae690a000db098e1431cc00622ec";
       fetchSubmodules = false;
-      sha256 = "sha256-5WPYXpRSfW49EfnT8cIqYdTX464J+BVHdHqtrAHQTkM=";
+      sha256 = "sha256-DRiio0V1pWWT1WOJC9F0cKkd+Gqw+iOTY5zSR9NE1SY=";
     };
-    date = "2023-08-13";
+    date = "2023-08-14";
   };
   ublock = {
     pname = "ublock";

@@ -8,6 +8,21 @@ src.git = "https://github.com/cognitive-singularity/nu_scripts"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/nu_scripts"
 
+[nu_plugin_from_parquet]
+src.git = "https://github.com/cognitive-singularity/nu_plugin_from_parquet"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/nu_plugin_from_parquet"
+
+[nu_plugin_json_path]
+src.git = "https://github.com/cognitive-singularity/nu_plugin_json_path"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/nu_plugin_json_path"
+
+[nu_plugin_regex]
+src.git = "https://github.com/cognitive-singularity/nu_plugin_regex"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/nu_plugin_regex"
+
 [terminusdb]
 src.git = "https://github.com/cognitive-singularity/terminusdb"
 src.branch = "cognitive-singularity"
@@ -26,21 +41,6 @@ fetch.github = "cognitive-singularity/terminusdb-tus"
 src.git = "https://github.com/cognitive-singularity/terminusdb-semantic-indexer"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/terminusdb-semantic-indexer"
-
-[nu_plugin_from_parquet]
-src.git = "https://github.com/cognitive-singularity/nu_plugin_from_parquet"
-src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/nu_plugin_from_parquet"
-
-[nu_plugin_json_path]
-src.git = "https://github.com/cognitive-singularity/nu_plugin_json_path"
-src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/nu_plugin_json_path"
-
-[nu_plugin_regex]
-src.git = "https://github.com/cognitive-singularity/nu_plugin_regex"
-src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/nu_plugin_regex"
 
 [tg-archive]
 src.git = "https://github.com/cognitive-singularity/tg-archive"
@@ -112,6 +112,21 @@ src.git = "https://github.com/cognitive-singularity/goscrape"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/goscrape"
 
+[whisper-cpp]
+src.git = "https://github.com/cognitive-singularity/whisper.cpp"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/whisper.cpp"
+
+[llama-cpp]
+src.git = "https://github.com/cognitive-singularity/llama.cpp"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/llama.cpp"
+
+[tortoise-tts]
+src.git = "https://github.com/cognitive-singularity/tortoise-tts"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/tortoise-tts"
+
 [enso-appimage]
 src.github = "enso-org/enso"
 src.prefix = "v"
@@ -125,33 +140,3 @@ fetch.url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly
 src.github = "structurizr/cli"
 src.prefix = "v"
 fetch.url = "https://github.com/structurizr/cli/releases/download/v$ver/structurizr-cli-$ver.zip"
-
-[whisper-cpp]
-src.git = "https://github.com/cognitive-singularity/whisper.cpp"
-src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/whisper.cpp"
-
-[llama-cpp]
-src.git = "https://github.com/cognitive-singularity/llama.cpp"
-src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/llama.cpp"
-
-[coqui-tts]
-src.git = "https://github.com/cognitive-singularity/tts"
-src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/tts"
-
-# [tortoise-tts-fastest]
-# src.git = "https://github.com/cognitive-singularity/tortoise-tts-fastest"
-# src.branch = "cognitive-singularity"
-# fetch.github = "cognitive-singularity/tortoise-tts-fastest"
-
-# [tortoise-tts]
-# src.git = "https://github.com/cognitive-singularity/tortoise-tts"
-# src.branch = "cognitive-singularity"
-# fetch.github = "cognitive-singularity/tortoise-tts"
-
-# [rotary-embedding-torch]
-# src.git = "https://github.com/cognitive-singularity/rotary-embedding-torch"
-# src.branch = "cognitive-singularity"
-# fetch.github = "cognitive-singularity/rotary-embedding-torch"

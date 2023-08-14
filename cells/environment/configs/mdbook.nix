@@ -6,7 +6,5 @@
     title = "Documentation";
   };
   build = { build-dir = "docs/book"; };
-  preprocessor = {
-    kroki-preprocessor = { command = "mdbook-kroki-preprocessor"; };
-  };
+  preprocessor = { kroki-preprocessor = { command = "mdbook-kroki-preprocessor"; }; };
 }

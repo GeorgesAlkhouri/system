@@ -3,13 +3,10 @@
 let
   inherit (hive) collect;
   inherit (lib) mkIf genAttrs mkOption literalExpression;
-
   std-opt = options.std;
   opt = options.hive;
   cfg = config.hive;
 in {
-  _file = ./hive-flake-module.nix;
-
   options = {
     hive = {
       collect = mkOption {
@@ -18,11 +15,8 @@ in {
       };
     };
   };
-
   config = {
-    flake = mkIf (opt.collect.isDefined && std-opt.grow.isDefined)
-      (genAttrs cfg.collect (n: collect inputs.self n));
-
+    flake = mkIf (opt.collect.isDefined && std-opt.grow.isDefined) (genAttrs cfg.collect (n: collect inputs.self n));
     perInput = system: flake: { hives = flake.${system} or { }; };
   };
 }

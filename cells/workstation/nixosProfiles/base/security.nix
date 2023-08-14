@@ -1,8 +1,6 @@
 {
   sudo = { wheelNeedsPassword = false; };
-
   rtkit = { enable = true; };
-
   pam = {
     loginLimits = [{
       domain = "*";
