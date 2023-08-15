@@ -122,10 +122,15 @@ src.git = "https://github.com/cognitive-singularity/llama.cpp"
 src.branch = "cognitive-singularity"
 fetch.github = "cognitive-singularity/llama.cpp"
 
-[tortoise-tts]
-src.git = "https://github.com/cognitive-singularity/tortoise-tts"
+[tortoise-tts-fastest]
+src.git = "https://github.com/cognitive-singularity/tortoise-tts-fastest"
 src.branch = "cognitive-singularity"
-fetch.github = "cognitive-singularity/tortoise-tts"
+fetch.github = "cognitive-singularity/tortoise-tts-fastest"
+
+[rotary-embedding-torch]
+src.git = "https://github.com/cognitive-singularity/rotary-embedding-torch"
+src.branch = "cognitive-singularity"
+fetch.github = "cognitive-singularity/rotary-embedding-torch"
 
 [enso-appimage]
 src.github = "enso-org/enso"
@@ -140,3 +145,7 @@ fetch.url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly
 src.github = "structurizr/cli"
 src.prefix = "v"
 fetch.url = "https://github.com/structurizr/cli/releases/download/v$ver/structurizr-cli-$ver.zip"
+
+[wgsl_analyzer]
+src.manual = "latest"
+fetch.url = "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64"

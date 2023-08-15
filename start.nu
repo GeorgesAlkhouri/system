@@ -16,7 +16,7 @@ export def rebuild [] {
   cd $path
   git add .
 
-  sudo nixos-rebuild switch --impure --flake $"($path)#workstation-default"
+  sudo nixos-rebuild switch --impure --fast --flake $"($path)#workstation-default"
 }
 
 export def check [] {
@@ -47,10 +47,13 @@ export def cache [] {
 
   nix develop --profile default -c "true"
   cachix push cognitive-singularity default
+
+  nix develop --profile cude-env -c "true"
+  cachix push cognitive-singularity default
 }
 
 export def refetch [] {
-  ["workstation" "environment"] | each {|cell|
+  ["workstation"] | each {|cell|
     cd ([$env.HOME "system" "cells" $cell "packages"] | path join)
     nvfetcher
   }

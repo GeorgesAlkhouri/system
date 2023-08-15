@@ -1,7 +1,7 @@
 {
     "archiveweb-page": {
         "cargoLocks": null,
-        "date": "2023-08-04",
+        "date": "2023-08-14",
         "extract": null,
         "name": "archiveweb-page",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "cognitive-singularity",
             "repo": "archiveweb.page",
-            "rev": "2825343c9dcc3152fa6afdca17f3f1d1c18bcd16",
-            "sha256": "sha256-TD09YLJm8O2FaMrGQu+eGeeP6KTeaExgZuJr00LNnNU=",
+            "rev": "3ecbbda9bbb9a1f5b2bd65b95675d81b69b4f3eb",
+            "sha256": "sha256-77kFB/Thzp9pYt5rlgEnTkVqRaPIsQfCkgM3bYt8hXk=",
             "type": "github"
         },
-        "version": "2825343c9dcc3152fa6afdca17f3f1d1c18bcd16"
+        "version": "3ecbbda9bbb9a1f5b2bd65b95675d81b69b4f3eb"
     },
     "automa": {
         "cargoLocks": null,
@@ -309,6 +309,26 @@
         },
         "version": "7e5068a8254328dada4bca25130ed84eb80ddadd"
     },
+    "rotary-embedding-torch": {
+        "cargoLocks": null,
+        "date": "2023-08-08",
+        "extract": null,
+        "name": "rotary-embedding-torch",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cognitive-singularity",
+            "repo": "rotary-embedding-torch",
+            "rev": "f6de08cd77c951fc984af9f0869e766860653923",
+            "sha256": "sha256-+yyQHySujlDoANyNwtn0bW1QFJFYz+NxOXjvemF624I=",
+            "type": "github"
+        },
+        "version": "f6de08cd77c951fc984af9f0869e766860653923"
+    },
     "singlefile-lite": {
         "cargoLocks": null,
         "date": "2023-08-03",
@@ -439,11 +459,11 @@
         },
         "version": "f8e0cfbbc591405a570365d3af4497bd3125544d"
     },
-    "tortoise-tts": {
+    "tortoise-tts-fastest": {
         "cargoLocks": null,
-        "date": "2023-07-30",
+        "date": "2023-08-11",
         "extract": null,
-        "name": "tortoise-tts",
+        "name": "tortoise-tts-fastest",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -452,16 +472,16 @@
             "leaveDotGit": false,
             "name": null,
             "owner": "cognitive-singularity",
-            "repo": "tortoise-tts",
-            "rev": "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd",
-            "sha256": "sha256-JR8oNCsGpAtUWJSFZEGoEf1x0MhEJKsbITDZ1WB0+lg=",
+            "repo": "tortoise-tts-fastest",
+            "rev": "868de96c99299dd44cb7a3de66be9eb14356ce4b",
+            "sha256": "sha256-/v80gt++f7vfpmpg8OsiGT4yDpokBLyW2iZkveKcWI4=",
             "type": "github"
         },
-        "version": "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd"
+        "version": "868de96c99299dd44cb7a3de66be9eb14356ce4b"
     },
     "uassets-master": {
         "cargoLocks": null,
-        "date": "2023-08-14",
+        "date": "2023-08-15",
         "extract": null,
         "name": "uassets-master",
         "passthru": null,
@@ -473,15 +493,15 @@
             "name": null,
             "owner": "uBlockOrigin",
             "repo": "uAssets",
-            "rev": "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507",
-            "sha256": "sha256-i1y7gdbrqQ/83KFl4ZkwAoOOS0vCuZ5Akel9MqJvRDo=",
+            "rev": "f941f6e88068e08e511c4866bbe6e977bec29ecd",
+            "sha256": "sha256-4IkzsUK5BO4Sa8a71ZqXGmSXvMKaYs55iV+G23yY2nY=",
             "type": "github"
         },
-        "version": "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507"
+        "version": "f941f6e88068e08e511c4866bbe6e977bec29ecd"
     },
     "uassets-prod": {
         "cargoLocks": null,
-        "date": "2023-08-14",
+        "date": "2023-08-15",
         "extract": null,
         "name": "uassets-prod",
         "passthru": null,
@@ -493,11 +513,11 @@
             "name": null,
             "owner": "uBlockOrigin",
             "repo": "uAssets",
-            "rev": "d162d0c3db6bae690a000db098e1431cc00622ec",
-            "sha256": "sha256-DRiio0V1pWWT1WOJC9F0cKkd+Gqw+iOTY5zSR9NE1SY=",
+            "rev": "ab30f7a88dc8d17f0e582c3eada5d660462f0a13",
+            "sha256": "sha256-AHlrRMiwCtsDJ/qWkzTjBrKvfeH2GH/cYO+Zc8+oNbQ=",
             "type": "github"
         },
-        "version": "d162d0c3db6bae690a000db098e1431cc00622ec"
+        "version": "ab30f7a88dc8d17f0e582c3eada5d660462f0a13"
     },
     "ublock": {
         "cargoLocks": null,
@@ -538,6 +558,21 @@
             "type": "github"
         },
         "version": "c573fff2edb50885d966eeaa91df6cdef83e2fbb"
+    },
+    "wgsl_analyzer": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "wgsl_analyzer",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-HvQfvfvXcgkfk3Ly47eam0PpaIOQaMEZp6dqVnQgrAY=",
+            "type": "url",
+            "url": "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64"
+        },
+        "version": "latest"
     },
     "whisper-cpp": {
         "cargoLocks": null,

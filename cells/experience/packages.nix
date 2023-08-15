@@ -5,11 +5,12 @@ let
   name = "experience";
   pkgs = import inputs.nixpkgs { inherit system; };
   crane = inputs.crane.lib.overrideToolchain cells.environment.rust.toolchain;
-  crateNameFromCargoToml = crane.crateNameFromCargoToml { cargoToml = "${self}/sources/${name}/Cargo.toml"; };
-  dependencies = [
+  crateNameFromCargoToml = crane.crateNameFromCargoToml {
+    cargoToml = "${self}/sources/${name}/Cargo.toml";
+  };
+  build = [ pkgs.cmake pkgs.pkgconfig ];
+  runtime = [
     pkgs.alsa-lib
-    pkgs.cmake
-    pkgs.libxkbcommon
     pkgs.pkg-config
     pkgs.udev
     pkgs.vulkan-loader
@@ -22,15 +23,17 @@ let
 in {
   default = crane.buildPackage {
     inherit (crateNameFromCargoToml) pname version;
-    nativeBuildInputs = dependencies;
+    nativeBuildInputs = build ++ runtime;
     src = crane.cleanCargoSource (crane.path "${self}/sources/${name}");
   };
-  wrapped = pkgs.symlinkJoin {
+  experience = pkgs.symlinkJoin {
     inherit name;
     paths = [ cell.packages.default ];
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
-      wrapProgram $out/bin/experience --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath dependencies}"
+      wrapProgram $out/bin/experience --prefix LD_LIBRARY_PATH : "${
+        pkgs.lib.makeLibraryPath runtime
+      }"
     '';
   };
 }

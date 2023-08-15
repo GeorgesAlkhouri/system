@@ -26,7 +26,10 @@ let
   ];
 in {
   name = "environment";
-  imports = [ inputs.std.std.devshellProfiles.default "${inputs.std.inputs.devshell}/extra/language/rust.nix" ];
+  imports = [
+    inputs.std.std.devshellProfiles.default
+    "${inputs.std.inputs.devshell}/extra/language/rust.nix"
+  ];
   packages = build ++ runtime;
   env = [
     {
@@ -73,7 +76,14 @@ in {
       value = "-C link-arg=-fuse-ld=mold";
     }
   ];
-  nixago = [ cell.configs.conform cell.configs.adrgen cell.configs.editorconfig cell.configs.lefthook cell.configs.treefmt cell.configs.githubsettings ];
+  nixago = [
+    cell.configs.conform
+    cell.configs.adrgen
+    cell.configs.editorconfig
+    cell.configs.lefthook
+    cell.configs.treefmt
+    cell.configs.githubsettings
+  ];
   language = {
     rust = {
       packageSet = cell.rust;
@@ -107,17 +117,20 @@ in {
     {
       category = "applications";
       name = "experience";
-      command = "cargo run --manifest-path $PRJ_ROOT/sources/experience/Cargo.toml; ";
+      command =
+        "cargo run --manifest-path $PRJ_ROOT/sources/experience/Cargo.toml; ";
     }
     {
       category = "applications";
       name = "processor";
-      command = "cargo run --manifest-path $PRJ_ROOT/sources/processor/Cargo.toml; ";
+      command =
+        "cargo run --manifest-path $PRJ_ROOT/sources/processor/Cargo.toml; ";
     }
     {
       category = "applications";
       name = "documentation";
-      command = "trunk serve --open $PRJ_ROOT/sources/documentation/index.html ";
+      command =
+        "trunk serve --open $PRJ_ROOT/sources/documentation/index.html ";
     }
     {
       category = "environments";

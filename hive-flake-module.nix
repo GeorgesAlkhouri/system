@@ -16,7 +16,8 @@ in {
     };
   };
   config = {
-    flake = mkIf (opt.collect.isDefined && std-opt.grow.isDefined) (genAttrs cfg.collect (n: collect inputs.self n));
+    flake = mkIf (opt.collect.isDefined && std-opt.grow.isDefined)
+      (genAttrs cfg.collect (n: collect inputs.self n));
     perInput = system: flake: { hives = flake.${system} or { }; };
   };
 }

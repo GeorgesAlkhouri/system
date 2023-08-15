@@ -2,7 +2,7 @@
   formatter = {
     nix = {
       command = "nixfmt";
-      options = [ "--width" "160" ];
+      options = [ ];
       includes = [ "*.nix" ];
     };
     toml = {

@@ -2,15 +2,15 @@
 { fetchgit, fetchurl, fetchFromGitHub, dockerTools }: {
   archiveweb-page = {
     pname = "archiveweb-page";
-    version = "2825343c9dcc3152fa6afdca17f3f1d1c18bcd16";
+    version = "3ecbbda9bbb9a1f5b2bd65b95675d81b69b4f3eb";
     src = fetchFromGitHub {
       owner = "cognitive-singularity";
       repo = "archiveweb.page";
-      rev = "2825343c9dcc3152fa6afdca17f3f1d1c18bcd16";
+      rev = "3ecbbda9bbb9a1f5b2bd65b95675d81b69b4f3eb";
       fetchSubmodules = false;
-      sha256 = "sha256-TD09YLJm8O2FaMrGQu+eGeeP6KTeaExgZuJr00LNnNU=";
+      sha256 = "sha256-77kFB/Thzp9pYt5rlgEnTkVqRaPIsQfCkgM3bYt8hXk=";
     };
-    date = "2023-08-04";
+    date = "2023-08-14";
   };
   automa = {
     pname = "automa";
@@ -40,7 +40,8 @@
     pname = "enso-appimage";
     version = "2023.2.1-nightly.2023.8.2";
     src = fetchurl {
-      url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-linux-2023.2.1-nightly.2023.8.3.AppImage";
+      url =
+        "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-linux-2023.2.1-nightly.2023.8.3.AppImage";
       sha256 = "sha256-r/va4pYGl/OGpBolM3EUInqGLbkt7LD9PmqZdO24Q38=";
     };
   };
@@ -48,7 +49,8 @@
     pname = "enso-engine";
     version = "2023.2.1-nightly.2023.8.2";
     src = fetchurl {
-      url = "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-bundle-2023.2.1-nightly.2023.8.3-linux-amd64.tar.gz";
+      url =
+        "https://github.com/enso-org/enso/releases/download/2023.2.1-nightly.2023.8.3/enso-bundle-2023.2.1-nightly.2023.8.3-linux-amd64.tar.gz";
       sha256 = "sha256-Z5GNzrO83UkBL3NiUOyuxLq/d0Wxeg+GoUneokTCkx4=";
     };
   };
@@ -184,6 +186,18 @@
     };
     date = "2023-06-17";
   };
+  rotary-embedding-torch = {
+    pname = "rotary-embedding-torch";
+    version = "f6de08cd77c951fc984af9f0869e766860653923";
+    src = fetchFromGitHub {
+      owner = "cognitive-singularity";
+      repo = "rotary-embedding-torch";
+      rev = "f6de08cd77c951fc984af9f0869e766860653923";
+      fetchSubmodules = false;
+      sha256 = "sha256-+yyQHySujlDoANyNwtn0bW1QFJFYz+NxOXjvemF624I=";
+    };
+    date = "2023-08-08";
+  };
   singlefile-lite = {
     pname = "singlefile-lite";
     version = "d838f5d95dd24d1a999124f33a8ccd1678159d58";
@@ -200,7 +214,8 @@
     pname = "structurizr-cli";
     version = "1.33.1";
     src = fetchurl {
-      url = "https://github.com/structurizr/cli/releases/download/v1.33.1/structurizr-cli-1.33.1.zip";
+      url =
+        "https://github.com/structurizr/cli/releases/download/v1.33.1/structurizr-cli-1.33.1.zip";
       sha256 = "sha256-xCwytQ3tsssR05YKklfiuCC768x8RE/Q4UexuJYUFAY=";
     };
   };
@@ -220,7 +235,8 @@
     pname = "terminusdb-dashboard";
     version = "stable";
     src = fetchurl {
-      url = "https://github.com/terminusdb/terminusdb-dashboard/releases/download/v0.0.10/release.tar.gz";
+      url =
+        "https://github.com/terminusdb/terminusdb-dashboard/releases/download/v0.0.10/release.tar.gz";
       sha256 = "sha256-DKg4zwd8mG9GeeYSs3JmR6cPiUDj3J0l87x7cgCxYr8=";
     };
   };
@@ -260,41 +276,41 @@
     };
     date = "2023-07-24";
   };
-  tortoise-tts = {
-    pname = "tortoise-tts";
-    version = "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd";
+  tortoise-tts-fastest = {
+    pname = "tortoise-tts-fastest";
+    version = "868de96c99299dd44cb7a3de66be9eb14356ce4b";
     src = fetchFromGitHub {
       owner = "cognitive-singularity";
-      repo = "tortoise-tts";
-      rev = "3c4d9c51316cd2421cc2dea11ac3a7a2d3394acd";
+      repo = "tortoise-tts-fastest";
+      rev = "868de96c99299dd44cb7a3de66be9eb14356ce4b";
       fetchSubmodules = false;
-      sha256 = "sha256-JR8oNCsGpAtUWJSFZEGoEf1x0MhEJKsbITDZ1WB0+lg=";
+      sha256 = "sha256-/v80gt++f7vfpmpg8OsiGT4yDpokBLyW2iZkveKcWI4=";
     };
-    date = "2023-07-30";
+    date = "2023-08-11";
   };
   uassets-master = {
     pname = "uassets-master";
-    version = "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507";
+    version = "f941f6e88068e08e511c4866bbe6e977bec29ecd";
     src = fetchFromGitHub {
       owner = "uBlockOrigin";
       repo = "uAssets";
-      rev = "5f3c75a3b5a8e3181376d5a4cd57ef8089f47507";
+      rev = "f941f6e88068e08e511c4866bbe6e977bec29ecd";
       fetchSubmodules = false;
-      sha256 = "sha256-i1y7gdbrqQ/83KFl4ZkwAoOOS0vCuZ5Akel9MqJvRDo=";
+      sha256 = "sha256-4IkzsUK5BO4Sa8a71ZqXGmSXvMKaYs55iV+G23yY2nY=";
     };
-    date = "2023-08-14";
+    date = "2023-08-15";
   };
   uassets-prod = {
     pname = "uassets-prod";
-    version = "d162d0c3db6bae690a000db098e1431cc00622ec";
+    version = "ab30f7a88dc8d17f0e582c3eada5d660462f0a13";
     src = fetchFromGitHub {
       owner = "uBlockOrigin";
       repo = "uAssets";
-      rev = "d162d0c3db6bae690a000db098e1431cc00622ec";
+      rev = "ab30f7a88dc8d17f0e582c3eada5d660462f0a13";
       fetchSubmodules = false;
-      sha256 = "sha256-DRiio0V1pWWT1WOJC9F0cKkd+Gqw+iOTY5zSR9NE1SY=";
+      sha256 = "sha256-AHlrRMiwCtsDJ/qWkzTjBrKvfeH2GH/cYO+Zc8+oNbQ=";
     };
-    date = "2023-08-14";
+    date = "2023-08-15";
   };
   ublock = {
     pname = "ublock";
@@ -319,6 +335,15 @@
       sha256 = "sha256-CZVRZ2ztZ74jXTR/kfdBwuuisAuKX8Imk/g08rAbj1c=";
     };
     date = "2023-06-21";
+  };
+  wgsl_analyzer = {
+    pname = "wgsl_analyzer";
+    version = "latest";
+    src = fetchurl {
+      url =
+        "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64";
+      sha256 = "sha256-HvQfvfvXcgkfk3Ly47eam0PpaIOQaMEZp6dqVnQgrAY=";
+    };
   };
   whisper-cpp = {
     pname = "whisper-cpp";

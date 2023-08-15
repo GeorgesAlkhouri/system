@@ -11,24 +11,51 @@ let
   };
   build = [ pkgs.cmake pkgs.gcc pkgs.gnumake pkgs.mold pkgs.pkgconfig ];
   runtime = [
+    (pkgs.opencv4.override {
+      enableGtk3 = true;
+      enableFfmpeg = true;
+      enableCuda = true;
+      enableUnfree = true;
+    })
+    pkgs.blas
+    pkgs.cmake
     pkgs.cudaPackages.cudatoolkit
     pkgs.cudaPackages.cudatoolkit.lib
+    pkgs.cudaPackages.cudnn
+    pkgs.cudatoolkit
+    pkgs.freeglut
+    pkgs.gcc
+    pkgs.glib
     pkgs.glibc
     pkgs.glibc.out
-    pkgs.libtorch-bin
+    pkgs.gperf
+    pkgs.libconfig
+    pkgs.libGL
+    pkgs.libGLU
     pkgs.libxkbcommon
-    pkgs.linuxPackages_latest.nvidia_x11
-    pkgs.openblas
+    pkgs.linuxPackages.nvidia_x11
     pkgs.openssl
+    pkgs.pkgconfig
+    pkgs.procps
+    pkgs.python3
     pkgs.stdenv.cc
     pkgs.stdenv.cc.cc
     pkgs.stdenv.cc.cc.lib
     pkgs.udev
+    pkgs.xorg.libX11
+    pkgs.xorg.libXext
+    pkgs.xorg.libXi
+    pkgs.xorg.libXmu
+    pkgs.xorg.libXrandr
+    pkgs.xorg.libXv
     pkgs.zlib
   ];
 in {
   name = "cude environment";
-  imports = [ inputs.std.std.devshellProfiles.default "${inputs.std.inputs.devshell}/extra/language/rust.nix" ];
+  imports = [
+    inputs.std.std.devshellProfiles.default
+    "${inputs.std.inputs.devshell}/extra/language/rust.nix"
+  ];
   packages = build ++ runtime;
   env = [
     {
@@ -76,7 +103,7 @@ in {
     }
     {
       name = "EXTRA_LDFLAGS";
-      value = "-L${pkgs.linuxPackages_latest.nvidia_x11}/lib";
+      value = "-L${pkgs.linuxPackages.nvidia_x11}/lib";
     }
     {
       name = "EXTRA_CCFLAGS";
@@ -87,7 +114,14 @@ in {
       value = "-C link-arg=-fuse-ld=mold";
     }
   ];
-  nixago = [ cell.configs.conform cell.configs.adrgen cell.configs.editorconfig cell.configs.lefthook cell.configs.treefmt cell.configs.githubsettings ];
+  nixago = [
+    cell.configs.conform
+    cell.configs.adrgen
+    cell.configs.editorconfig
+    cell.configs.lefthook
+    cell.configs.treefmt
+    cell.configs.githubsettings
+  ];
   language = {
     rust = {
       packageSet = cell.rust;

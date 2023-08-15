@@ -1,6 +1,40 @@
-{ inputs, cell }: {
+{ inputs, cell }:
+let
+  l = inputs.nixpkgs.lib // builtins;
+  pkgs = import inputs.nixpkgs { inherit (inputs.nixpkgs) system; };
+in {
   enable = true;
-  package = inputs.helix.packages.${inputs.nixpkgs.system}.default;
+  package =
+    inputs.helix.packages.${pkgs.hostPlatform.system}.default.overrideAttrs
+    (self: {
+      makeWrapperArgs = self.makeWrapperArgs or [ ] ++ [
+        "--suffix"
+        "PATH"
+        ":"
+        (l.makeBinPath [
+          pkgs.black
+          pkgs.clang-tools
+          pkgs.luajitPackages.lua-lsp
+          pkgs.marksman
+          pkgs.nil
+          pkgs.nixfmt
+          pkgs.nls
+          pkgs.nodePackages.bash-language-server
+          pkgs.nodePackages.prettier
+          pkgs.nodePackages.vscode-css-languageserver-bin
+          pkgs.nodePackages.vscode-langservers-extracted
+          pkgs.python3Packages.python-lsp-black
+          pkgs.python3Packages.python-lsp-ruff
+          pkgs.python3Packages.python-lsp-server
+          pkgs.rust-analyzer
+          pkgs.rustfmt
+          pkgs.shellcheck
+          pkgs.taplo
+          pkgs.topiary
+        ])
+      ];
+    });
+
   settings = {
     editor = {
       auto-info = false;
@@ -15,31 +49,11 @@
         normal = "block";
         select = "underline";
       };
-      whitespace = {
-        render = {
-          space = "none";
-          tab = "none";
-          newline = "none";
-        };
-        characters = {
-          space = "·";
-          nbsp = "⍽";
-          tab = "→";
-          newline = "⏎";
-          tabpad = "·";
-        };
-      };
       file-picker = { hidden = false; };
       line-number = "relative";
       indent-guides = {
         render = true;
         character = "┊";
-      };
-      statusline = {
-        left = [ "mode" "spinner" "file-name" ];
-        center = [ ];
-        right = [ "diagnostics" "selections" "position" "file-encoding" "file-line-ending" "file-type" ];
-        separator = "│";
       };
       lsp = {
         enable = true;
@@ -65,40 +79,53 @@
         esc = [ "collapse_selection" "keep_primary_selection" ];
         ret = [ "open_below" "normal_mode" ];
       };
-      insert = { C-n = [ "normal_mode" "extend_line" ":insert-output echo 'FILL_THIS'" ]; };
+      insert = {
+        C-n = [ "normal_mode" "extend_line" ":insert-output echo 'FILL_THIS'" ];
+      };
     };
-    theme = "base16_transparent";
+    theme = "base16_transparent_alternative";
+  };
+  themes = {
+    base16_transparent_alternative = {
+      inherits = "base16_transparent";
+      "ui.selection" = { bg = "#222222"; };
+    };
   };
   languages = {
     language-server = {
-      typst-lsp = { command = "${inputs.nixpkgs.typst-lsp}/bin/typst-lsp"; };
-      typescript-language-server = with inputs.nixpkgs.nodePackages; {
-        command = "${typescript-language-server}/bin/typescript-language-server";
-        args = [ "--stdio" "--tsserver-path=${typescript}/lib/node_modules/typescript/lib" ];
-      };
+      typst-lsp = { command = "${pkgs.typst-lsp}/bin/typst-lsp"; };
     };
     language = [
       {
+        name = "bash";
+        auto-format = true;
+        formatter = {
+          command = l.getExe pkgs.shfmt;
+          args = [ "-i" "2" "-" ];
+        };
+      }
+      {
+        name = "nix";
+        auto-format = true;
+        formatter = {
+          command = l.getExe pkgs.nixfmt;
+          args = [ ];
+        };
+      }
+      {
         name = "rust";
         auto-format = true;
+        formatter = { command = "${pkgs.rustfmt}/bin/rustfmt"; };
       }
       {
         name = "nickel";
         auto-format = true;
       }
       {
-        name = "nix";
-        auto-format = true;
-        formatter = {
-          command = "${inputs.nixpkgs.nixfmt}/bin/nixfmt";
-          args = [ "--width" "160" ];
-        };
-      }
-      {
         name = "typst";
         scope = "source.typst";
         auto-format = true;
-        formatter = { command = "${inputs.nixpkgs.typst-fmt}/bin/typst-fmt"; };
+        formatter = { command = "${pkgs.typst-fmt}/bin/typest-fmt"; };
         injection-regex = "typst";
         file-types = [ "typst" "typ" ];
         roots = [ ];

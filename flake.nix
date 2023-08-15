@@ -1,9 +1,18 @@
 {
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } ({ flake-parts-lib, ... }:
-      let flakeModules.hive = flake-parts-lib.importApply ./hive-flake-module.nix { inherit (inputs) hive; };
+    inputs.flake-parts.lib.mkFlake { inherit inputs; }
+    ({ flake-parts-lib, ... }:
+      let
+        flakeModules.hive =
+          flake-parts-lib.importApply ./hive-flake-module.nix {
+            inherit (inputs) hive;
+          };
       in {
-        imports = [ inputs.std.flakeModule inputs.hercules-ci-effects.flakeModule flakeModules.hive ];
+        imports = [
+          inputs.std.flakeModule
+          inputs.hercules-ci-effects.flakeModule
+          flakeModules.hive
+        ];
         systems = import inputs.systems;
         perSystem = { config, system, ... }: { };
         std = {
@@ -26,7 +35,11 @@
           };
           harvest = {
             devShells = [[ "environment" "shells" ]];
-            packages = [ [ "documentation" "packages" ] [ "experience" "packages" ] [ "environment" "packages" ] [ "workstation" "packages" ] ];
+            packages = [
+              [ "documentation" "packages" ]
+              [ "experience" "packages" ]
+              [ "workstation" "packages" ]
+            ];
           };
         };
         hive.collect = [ "nixosConfigurations" "homeConfigurations" ];
@@ -156,6 +169,7 @@
   };
   nixConfig = {
     extra-experimental-features = "nix-command flakes";
+
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://cuda-maintainers.cachix.org"

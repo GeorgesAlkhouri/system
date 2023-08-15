@@ -1,3 +1,0 @@
-[wgsl_analyzer]
-src.manual = "latest"
-fetch.url = "https://github.com/wgsl-analyzer/wgsl-analyzer/releases/latest/download/wgsl_analyzer-linux-x64"

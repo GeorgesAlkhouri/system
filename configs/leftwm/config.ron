@@ -23,8 +23,6 @@
         (command: ToggleFullScreen, value: "", modifier: ["modkey", "Control"], key: "c"),
         (command: FocusWorkspaceNext, value: "", modifier: ["modkey", "Control"], key: "l"),
         (command: FocusWorkspacePrevious, value: "", modifier: ["modkey", "Control"], key: "j"),
-        (command: FocusNextTag, value: "", modifier: ["modkey", "Control"], key: "y"),
-        (command: FocusPreviousTag, value: "", modifier: ["modkey", "Control"], key: "h"),
         (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
         (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
         (command: GotoTag, value: "3", modifier: ["modkey"], key: "3"),

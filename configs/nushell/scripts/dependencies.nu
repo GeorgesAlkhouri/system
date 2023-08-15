@@ -88,36 +88,13 @@ def get-head [parent: string] {
   | str trim
 }
 
-export def-env traverse [dir = "references"] {
-  let list = $in
-
-  if ($env | get --ignore-errors "COUNTER" | is-empty) {
-    $env.COUNTER = 0
-  }
-
-  if ($list | get --ignore-errors ($env.COUNTER | into int) | is-empty) {
-    $env.COUNTER = 0
-  }
-
-  let name = ($list | get ($env.COUNTER | into int))
-
-  $env.COUNTER  = (($env.COUNTER | into int)  + 1)
-
-  ls $dir | find $name | get name | ansi strip | to text | cd $in
-}
-
-export def review [type = all] {
-  cd $in
-  rg --files --sort path --type $type --hidden | lines | hx $in
-}
-
 export def multigrep [type: string, query1 = "", query2 = "", query3 = ""] {
-  cd ([$env.HOME "references"] | path join)
-
+  let dir = pwd
+  cd $dir
   let repos = (glob */.git | lines | path parse | get parent | path parse | get stem)
   let found = [(find-match $type $query1) (find-match $type $query2) (find-match $type $query3)]
   let filtered = ($found | where {|i| (not ($i | is-empty))})
-  let list = ($repos | each {|i| $filtered | all {|e| (not ($e | find $i | is-empty)) } | if ($in == true) { $i }})
+  let list = ($repos | each {|i| $filtered | all {|e| (not ($e | find $i | is-empty)) } | if ($in == true) { [$dir $i] | path join }})
 
   $list | sort | uniq
 }
@@ -135,4 +112,38 @@ def find-match [type: string, query: string] {
     | get column1
     | uniq    
   }
+}
+
+export def review [arg = all] {
+  cd $in
+  mut list = []
+  if (rg --type-list | lines | split column ":" | get column1 | find $arg | is-empty) { 
+    $list = (rg --files --sort path --glob $arg --hidden | lines)
+  } else {
+    $list = (rg --files --sort path --type $arg --hidden | lines)
+  }
+  if (not ($list | is-empty)) { $list | hx $in }
+}
+
+export def-env next [arg: string] {
+  let arg = ([$env.HOME ($arg | str replace "~/" "")] | path join)
+  try {$env.COUNTER} catch { $env.COUNTER = 0 }
+  let counter = ($env.COUNTER | into int)
+  let list = (if (($arg | path type) == "file") {let a = (open $arg | lines); $a} else {(ls $arg | get name)})
+  let dist = ($list | get $counter)
+  $env.COUNTER = ($counter + 1)
+  if ($dist | path exists) { cd $dist }
+  clear
+  show-all
+}
+
+export def-env counter-reset [] {
+  $env.COUNTER = 0
+}
+
+export def show-all [] {
+  ls --all **/*
+  | where name !~ ".direnv/"
+  | where name !~ ".git/"
+  | where name !~ "node_modules"  
 }
