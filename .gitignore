@@ -3,6 +3,7 @@
 # Nix artifacts
 /result*
 /default*
+/cuda-env*
 
 # Added by cargo
 target

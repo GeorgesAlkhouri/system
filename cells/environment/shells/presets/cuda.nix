@@ -51,7 +51,7 @@ let
     pkgs.zlib
   ];
 in {
-  name = "cude environment";
+  name = "cuda environment";
   imports = [
     inputs.std.std.devshellProfiles.default
     "${inputs.std.inputs.devshell}/extra/language/rust.nix"

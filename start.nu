@@ -48,7 +48,7 @@ export def cache [] {
   nix develop --profile default -c "true"
   cachix push cognitive-singularity default
 
-  nix develop --profile cude-env -c "true"
+  nix develop --profile cuda-env -c "true"
   cachix push cognitive-singularity default
 }
 
